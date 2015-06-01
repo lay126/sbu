@@ -1,0 +1,31 @@
+<form action="login.do" method="post">
+#springBind("login")
+#foreach($error in $status.errorMessages) <b>$error</b> <br> #end
+<p>
+	<label for="loginType">#springMessage("login.form.type")</label>
+	#springBind("login.loginType")
+	<select id="${status.expression}" name="${status.expression}">
+		#foreach($option in $loginTypes)
+			<option value="${option}"
+			#if("$!status.value" == "$option")
+				selected="selected"
+			#end>
+			$option</option>
+		#end
+	</select>
+</p>
+<p>
+	<label for="id">#springMessage("login.form.id")</label>
+	#springBind("login.id")
+	<input type="text" name="${status.expression}" id="${status.expression}" value="$!status.value" /> 
+	#springShowErrors("<br/>" "")
+</p>
+<p>
+	<label for="password">#springMessage("login.form.password")</label>
+	#springFormPasswordInput("login.password" "")
+	#springShowErrors("<br/>" "")
+</p>
+<p>
+	<input type="submit" value="#springMessage("login.form.submit")">
+</p>
+</form>

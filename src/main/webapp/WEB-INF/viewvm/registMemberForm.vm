@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>회원 등록 폼</title>
+</head>
+<body>
+<form action="regist.do" method="post">
+<p>
+	<label for="userId">회원 ID</label>
+	#springFormInput("memberInfo.userId" "")
+	#springShowErrors("<br/>" ":font-size:15pt; ")
+</p>
+<p>
+	<label for="name">이름</label>
+	#springFormInput("memberInfo.name" "class='input'")
+	#springShowErrors("<br/>" "error")
+</p>
+<p>
+	<label for="address.address1">주소1</label>
+	#springFormInput("memberInfo.address.address1" "")
+	#springShowErrors("<br/>" "")
+</p>
+<p>
+	<label for="address.address2">주소2</label>
+	#springFormInput("memberInfo.address.address2" "")
+	#springShowErrors("<br/>" "")
+</p>
+<p>
+	<label for="jobCode">직업</label>
+	#springFormSingleSelect("memberInfo.jobCode" $jobCodes "")
+	#springShowErrors("<br/>" "")
+</p>
+<p>
+	<label for="favorites">선호 OS</label>
+	#springFormCheckboxes("memberInfo.favorites" $favoritesOsNames "&nbsp;|&nbsp;" "")
+	#springShowErrors("<br/>" "")
+</p>
+<p>
+	<label for="tool">주로 사용하는 개발툴</label>
+	#springFormRadioButtons("memberInfo.tool" $tools "" "")
+</p>
+<p>
+	<label for="etc">기타</label>
+	#springFormTextarea("memberInfo.etc" "cols='20' rows='3'")
+</p>
+<p>
+	#springFormCheckbox("memberInfo.contractAgreement" "")
+	<label for="contractAgreement">약관에 동의합니다.</label>
+</p>
+<p>
+	<input type="submit" value="회원 등록">
+</p>
+</form>
+</body>
+</html>

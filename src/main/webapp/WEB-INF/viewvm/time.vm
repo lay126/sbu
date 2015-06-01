@@ -1,0 +1,10 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>#springMessage("title.currentTime")</title>
+</head>
+<body>
+#springMessage("label.currentTime")
+: $dateTool.format("yyyy-MM-dd HH:mm:ss", $time)
+</body>
+</html>
