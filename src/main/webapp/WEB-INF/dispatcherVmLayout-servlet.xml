@@ -8,17 +8,17 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<bean class="madvirus.spring.chap07.controller.LoginController">
+	<bean class="sbu.spring.controller.LoginController">
 		<property name="authenticator">
-			<bean class="madvirus.spring.chap07.controller.MockAuthenticator" />
+			<bean class="sbu.spring.controller.MockAuthenticator" />
 		</property>
 	</bean>
 
-	<bean class="madvirus.spring.chap07.controller.RegistMemberControllerForVelocity" />
+	<bean class="sbu.spring.controller.RegistMemberControllerForVelocity" />
 
-	<bean class="madvirus.spring.chap07.controller.HelloController" />
+	<bean class="sbu.spring.controller.HelloController" />
 	
-	<bean class="madvirus.spring.chap07.controller.TimeController" />
+	<bean class="sbu.spring.controller.TimeController" />
 	
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
