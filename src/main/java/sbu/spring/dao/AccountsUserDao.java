@@ -11,8 +11,8 @@ public interface AccountsUserDao {
 	AccountsUser getAccountsUser(String username) throws DataAccessException;
 	AccountsUser getAccountsUser(String usernaem, String userpwd) throws DataAccessException;
 	
-	AccountsUser insertAccountsUser(AccountsUser accountUser) throws DataAccessException;
-	AccountsUser updateAccountsUser(AccountsUser accountUser) throws DataAccessException;
+	void insertAccountsUser(AccountsUser accountUser) throws DataAccessException;
+	void updateAccountsUser(AccountsUser accountUser) throws DataAccessException;
 	
 	List<String> getUsernameList() throws DataAccessException;
 
