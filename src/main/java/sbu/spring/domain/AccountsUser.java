@@ -1,3 +1,5 @@
+/** ayoung **/
+
 package sbu.spring.domain;
 
 import java.io.Serializable;
