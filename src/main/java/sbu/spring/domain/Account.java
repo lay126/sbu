@@ -5,7 +5,7 @@ package sbu.spring.domain;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class AccountsUser implements Serializable {
+public class Account implements Serializable {
 
 	private String usernum;
 	private String username;

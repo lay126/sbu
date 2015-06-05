@@ -1,4 +1,4 @@
-package sbu.spring.controller;
+package sbu.spring.controller_tmp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,15 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/select/user.do")
-public class SelectUserController {
-
-
-
+@RequestMapping("/join/user.do")
+public class UserJoinController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String form() {
-		return "UserMain";
+		return "UserJoinForm";
 	}
 
 	

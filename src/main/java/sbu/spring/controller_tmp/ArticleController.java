@@ -1,4 +1,4 @@
-package sbu.spring.controller;
+package sbu.spring.controller_tmp;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

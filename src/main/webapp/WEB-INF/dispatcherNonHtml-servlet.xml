@@ -5,11 +5,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans   
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="downloadController" class="sbu.spring.controller.DownloadController" />
+	<bean id="downloadController" class="sbu.spring.controller_tmp.DownloadController" />
 
-	<bean id="pageRanksController" class="sbu.spring.controller.PageRanksController" />
+	<bean id="pageRanksController" class="sbu.spring.controller_tmp.PageRanksController" />
 
-	<bean id="pageReportController" class="sbu.spring.controller.PageReportController" />
+	<bean id="pageReportController" class="sbu.spring.controller_tmp.PageReportController" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.BeanNameViewResolver" />
@@ -29,7 +29,7 @@
 	<bean id="marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
 		<property name="classesToBeBound">
 			<list>
-				<value>sbu.spring.controller.PageRankReport</value>
+				<value>sbu.spring.controller_tmp.PageRankReport</value>
 			</list>
 		</property>
 	</bean>

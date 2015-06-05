@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.view.document.AbstractPdfView;
 
-import sbu.spring.controller.PageRank;
+import sbu.spring.controller_tmp.PageRank;
 
 import com.lowagie.text.Cell;
 import com.lowagie.text.Document;

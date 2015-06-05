@@ -12,7 +12,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.web.servlet.view.document.AbstractExcelView;
 
-import sbu.spring.controller.PageRank;
+import sbu.spring.controller_tmp.PageRank;
 
 public class PageRanksView extends AbstractExcelView {
 

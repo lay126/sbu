@@ -1,4 +1,4 @@
-package sbu.spring.controller;
+package sbu.spring.controller_tmp;
 
 public interface Authenticator {
 
