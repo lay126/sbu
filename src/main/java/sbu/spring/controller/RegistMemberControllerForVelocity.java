@@ -1,4 +1,4 @@
-package sbu.spring.controller_tmp;
+package sbu.spring.controller;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

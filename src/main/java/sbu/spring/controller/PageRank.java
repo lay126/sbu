@@ -1,4 +1,4 @@
-package sbu.spring.controller_tmp;
+package sbu.spring.controller;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

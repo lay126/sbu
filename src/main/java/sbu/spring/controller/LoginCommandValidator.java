@@ -1,4 +1,4 @@
-package sbu.spring.controller_tmp;
+package sbu.spring.controller;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
