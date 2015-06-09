@@ -1,5 +1,5 @@
 package sbu.spring.controller;
-
+//test
 public class Address {
 
 	private String address1;
