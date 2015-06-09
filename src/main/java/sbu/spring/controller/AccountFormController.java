@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.WebUtils;
-
+//aaaaa
 @Controller
 @RequestMapping({"/join/newAccount.do"}) //"/shop/newAccount.do","/shop/editAccount.do"
 public class AccountFormController { 
