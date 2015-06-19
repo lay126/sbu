@@ -12,7 +12,7 @@
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">ID</td>
 			<td align="center" bgcolor="#9CA8B3"><input type="text"
-				name="id" size="10" /></td>
+				name=userId size="10" /></td>
 		</tr>
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">PWD</td>

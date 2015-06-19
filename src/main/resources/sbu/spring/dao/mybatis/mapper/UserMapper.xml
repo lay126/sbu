@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sbu.spring.dao.mybatis.mapper.UserMapper">
+	<cache />
+
+	<select id="getUserByUserId" parameterType="int" resultType="sbu.spring.domain.User">
+		SELECT 
+			user_num,
+			user_name,
+			user_pwd,
+			user_email,
+			user_phone,
+			user_brith,
+			user_point
+		FROM USERDB
+		WHERE USER_ID = #{loginUser.id}
+</select>
+</mapper>

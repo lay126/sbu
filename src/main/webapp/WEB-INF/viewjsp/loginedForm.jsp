@@ -7,19 +7,19 @@
  
 
 <%-- <form:form commandName="loginUser" method="post" action="/jsp/user/login.do"> --%>
-<form id="loginUser" action="<c:url value='/jsp/user/login.do' />" method="POST">
+<form id="loginUser" action="<c:url value='/jsp/user/logout.do' />" method="POST">
 	<table align="left" bgcolor="#6D839A" width="200" height="200">
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">ID</td>
-			<td align="center" bgcolor="#9CA8B3">aaa</td>
+			<td align="center" bgcolor="#9CA8B3"><c:out value="${loginCommand.id}"/></td>
 		</tr>
 		<tr>
-			<td align="center" bgcolor="#9CA8B3">PWD</td>
-			<td align="center" bgcolor="#9CA8B3">aaa</td>
+			<td align="center" bgcolor="#9CA8B3">POINT</td>
+			<td align="center" bgcolor="#9CA8B3"><c:out value="${loginCommand.point}"/></td>
 		</tr>
 		<tr>
 			<td align="center" bgcolor="#9CA8B3"><input type="submit"
-				value="login" /></td>
+				value="LOGOUT" /></td>
 			<td align="center" bgcolor="#9CA8B3"><a
 				href="<c:url value='/jsp/join/user.do'/>">join</a></td>
 		</tr>

@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import sbu.spring.domain.User;
+
 @Controller
 public class LoginController {
 
@@ -25,8 +27,6 @@ public class LoginController {
 	public String submit(@ModelAttribute("loginUser") LoginCommand loginCommand,
 			BindingResult result) {
 		
-		System.out.println("1: " + loginCommand.getId());
-		
 		new LoginCommandValidator().validate(loginCommand, result);
 		if (result.hasErrors()) {
 			return "UserMain";
@@ -38,6 +38,8 @@ public class LoginController {
 		} catch (AuthenticationException ex) {
 			result.reject("invalidIdOrPassword", new Object[] { loginCommand
 					.getId() }, null);
+			
+//			System.out.println("1: " + loginCommand.getId());
 			return "UserMain";
 		}
 	}

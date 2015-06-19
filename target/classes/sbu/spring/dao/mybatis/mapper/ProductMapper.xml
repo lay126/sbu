@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sbu.spring.dao.mybatis.mapper.ProductMapper">
+	<cache />
+
+	<select id="getProductListByCategory" resultType="Product">
+		SELECT 
+			PRODUCT_NUM,
+			PRODUCT_NAME,
+			PRODUCT_REMAIN,
+			PRODUCT_DESCRIPTION,
+			PRODUCT_PRICE,
+			PRODUCT_CATE_NUM
+		FROM PRODUCT
+		WHERE PRODUCT_CATE_NUM = #{}
+</select>
+</mapper>
