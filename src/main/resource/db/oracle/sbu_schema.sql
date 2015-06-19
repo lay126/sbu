@@ -85,3 +85,10 @@ ADD user_birth varchar(32);
 
 ALTER TABLE productDB
 modify product_remain int;
+
+ALTER TABLE productDB
+ADD product_description varchar(100);
+
+ALTER TABLE productDB
+ADD product_price varchar(32);
+
