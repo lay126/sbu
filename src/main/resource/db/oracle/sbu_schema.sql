@@ -6,6 +6,7 @@ create sequence seq_wish_product_num increment by 1 start with 1 nocache nocycle
 create sequence seq_reco_product_num increment by 1 start with 1 nocache nocycle;
 create sequence seq_buy_product_num increment by 1 start with 1 nocache nocycle;*/
 
+drop sequence seq_user_num;
 drop table userDB;
 drop table categoryDB;
 drop table productDB;
@@ -14,9 +15,10 @@ drop table wishlistDB;
 drop table buylistDB;
 drop table recolistDB;
 
+
 create table userDB (
 	user_num int not null PRIMARY KEY,
-    user_id varchar(32) not null,
+    
     user_name varchar(16) not null,
     user_pwd varchar(32) not null,
     user_email  varchar(64) not null,
@@ -75,3 +77,11 @@ create table buylistDB (
     FOREIGN KEY (buy_user_num) REFERENCES userDB(user_num)
 );
 
+ALTER TABLE userDB 
+ADD user_id varchar(32)unique;
+
+ALTER TABLE userDB
+ADD user_birth varchar(32);
+
+ALTER TABLE productDB
+modify product_remain int;
