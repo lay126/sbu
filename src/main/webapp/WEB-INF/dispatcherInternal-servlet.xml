@@ -8,7 +8,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-<!-- 	<bean class="sbu.spring.controller.LoginController">
+ 	<bean class="sbu.spring.controller.LoginController">
 		<property name="authenticator">
 			<bean class="sbu.spring.controller.MockAuthenticator" />
 		</property>
@@ -20,22 +20,14 @@
 
 	<bean class="sbu.spring.controller.RegistMemberController" />
 
-	<bean class="sbu.spring.controller.ArticleController" />
-
-	<bean class="sbu.spring.controller.LocaleChangeController">
-		<property name="localeResolver" ref="localeResolver" />
-	</bean>
-
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
-
-	<bean class="sbu.spring.controller.LocaleChangeController2" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/viewjsp/" />
 		<property name="suffix" value=".jsp" />
-	</bean> -->
+	</bean> 
 
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">

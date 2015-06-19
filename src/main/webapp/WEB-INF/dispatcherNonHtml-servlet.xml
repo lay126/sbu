@@ -4,13 +4,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans   
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-<!-- 
+ <!-- 
 	<bean id="downloadController" class="sbu.spring.controller.DownloadController" />
 
 	<bean id="pageRanksController" class="sbu.spring.controller.PageRanksController" />
 
-	<bean id="pageReportController" class="sbu.spring.controller.PageReportController" />
-
+	<bean id="pageReportController" class="sbu.spring.controller.PageReportController" /> -->
+<!--
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.BeanNameViewResolver" />
 
