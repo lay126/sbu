@@ -22,12 +22,4 @@ public class LoginCommand {
 		this.password = password;
 	}
 
-	public String getLoginType() {
-		return loginType;
-	}
-
-	public void setLoginType(String loginType) {
-		this.loginType = loginType;
-	}
-
 }

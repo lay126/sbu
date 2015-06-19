@@ -11,8 +11,6 @@ public class LoginCommandValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "id", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password",
 				"required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "loginType",
-				"required");
 	}
 
 	@Override
