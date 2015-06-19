@@ -7,6 +7,7 @@ public class Product {
 	private int productRemain;
 	private int productCateNum;
 	private String productPrice;
+	private String productDescription;
 	
 	public int getProductNum() {
 		return productNum;
