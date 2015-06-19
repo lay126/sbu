@@ -7,11 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+@SuppressWarnings("unused")
 @Controller
 public class ViewProductController {
 
+	Product product = new Product();
 	private sBuFacade sBu;
 
 	@Autowired
@@ -19,8 +22,8 @@ public class ViewProductController {
 		this.sBu = sBu;
 	}
 
-	@RequestMapping("jsp/shop/viewProduct.do")
-	public String handleRequest(@RequestParam("ProductNum") int productNum,
+	@RequestMapping("/viewProduct.do")
+	public String handleRequest(@RequestParam("productNum") int productNum,
 			ModelMap model) throws Exception {
 		Product product = this.sBu.getProduct(productNum);
 		model.put("product", product);
@@ -28,8 +31,6 @@ public class ViewProductController {
 		System.out.println("product name : " + product.getProductName()); 
 
 		return "Product";
-		
-		
 	}
 
 }

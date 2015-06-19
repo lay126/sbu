@@ -5,7 +5,7 @@
 <mapper namespace="sbu.spring.dao.mybatis.mapper.ProductMapper">
 	<cache />
 
-	<select id="getProductListByCategory" parameterType="int" resultType="Product">
+	<select id="getProductListByCategory" resultType="Product">
 		SELECT 
 			PRODUCT_NUM,
 			PRODUCT_NAME,
@@ -14,6 +14,6 @@
 			PRODUCT_PRICE,
 			PRODUCT_CATE_NUM
 		FROM PRODUCT
-		WHERE PRODUCT_NUM = #{productNum}
+		WHERE PRODUCT_CATE_NUM = #{}
 </select>
 </mapper>

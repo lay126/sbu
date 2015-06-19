@@ -1,4 +1,5 @@
-
+product jsp
+<!-- 
 <table align="left" bgcolor="#008800" border="0" cellspacing="2"
 	cellpadding="2">
 	<tr>
@@ -35,4 +36,5 @@
 				pattern="$#,##0.00" /></td>
 	</tr>
 </table>
+ -->
 
