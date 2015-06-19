@@ -18,33 +18,33 @@ public class LoginController {
 
 	private Authenticator authenticator;
 
-	private sBuFacade sBuFacade;
+	private sBuFacade sBuf;
 
 	@Autowired
-	public void setSbuFacade(sBuFacade sBuFacade) {
-		this.sBuFacade = sBuFacade;
+	public void setSBuFacade(sBuFacade sBuFacade) {
+		this.sBuf = sBuFacade;
 	}
-
-	// @ModelAttribute("loginUser")
-	// public LoginCommand formBacking() {
-	// return new LoginCommand();
-	// }
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String form() {
 		return "loginForm";
 	}
 
-	//
+	
 	@RequestMapping(value = "/user/login.do", method = RequestMethod.POST)
 	public ModelAndView handleRequest(
 			HttpServletRequest request,
 			@RequestParam("userId") String userId,
 			@RequestParam("userPwd") String userPwd,
-			@RequestParam(value = "frowardAction", required = false) String forwardAction,
+			@RequestParam(value = "forwardAction", required = false) String forwardAction,
 			Model model) throws Exception {
-		System.out.println("위치: loginController" + userId);
-		User user = this.sBuFacade.getUser(userId, userPwd);
+		System.out.println("위치: loginController: " + userId+", "+userPwd);
+		System.out.println("위치: forwardAction: " + forwardAction);
+//		if (sBuf == null) {
+			System.out.println("sBuFacade: "+sBuf);
+//			return new ModelAndView("Error", "message", "no sBuFacade");
+//		}
+		User user = sBuf.getUser(userId, userPwd);
 		if (user == null) {
 			return new ModelAndView("Error", "message", "no login");
 		} else {

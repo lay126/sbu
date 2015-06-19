@@ -18,4 +18,6 @@ public interface UserMapper {
 
 	String getUserNameByUserId(int userId);
 
+	User getUserByUserId(String userId, String userPwd);
+
 }

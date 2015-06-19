@@ -32,12 +32,7 @@ public class MybatisUserDao implements UserDao{
 	}
 
 	public User getUser(String userId, String userPwd) throws DataAccessException{
-		
-		//User user = userMapper.getUserByUserUserIdAndUserPwd(userUserId, userPwd);
-		User user = new User();
-		user.setUserId(userId);
-		user.setUserPwd(userPwd);
-		return userMapper.getUserByUserIdAndUserPwd(user);
+		return userMapper.getUserByUserId(userId, userPwd);
 	}
 
 	public String getUserNameByUserId(int userId) {

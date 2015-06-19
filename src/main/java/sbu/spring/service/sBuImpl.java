@@ -18,10 +18,12 @@ public class sBuImpl implements sBuFacade {
 	private UserDao userDAO;
 
 	@Autowired
+	@Transactional
 	public User getUser(String userId) {
 		return userDAO.getUser(userId);
 	}
-
+	
+	@Autowired
 	public User getUser(String userId, String userPwd) {
 		return userDAO.getUser(userId, userPwd);
 	}
