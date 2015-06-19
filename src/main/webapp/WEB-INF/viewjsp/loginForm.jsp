@@ -7,7 +7,7 @@
  
 
 <%-- <form:form commandName="loginUser" method="post" action="/jsp/user/login.do"> --%>
-<form action="<c:url value='jsp/user/login.do' />" method="POST">
+<form action="<c:url value='/jsp/user/login.do' />" method="POST">
 	<table align="left" bgcolor="#6D839A" width="200" height="200">
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">ID</td>

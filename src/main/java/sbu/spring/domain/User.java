@@ -15,7 +15,6 @@ public class User implements Serializable{
 	private String Point;
 	private int userNumber; //sequence
 	
-	
 	public int getUserNumber() {
 		return userNumber;
 	}

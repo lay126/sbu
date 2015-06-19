@@ -18,8 +18,8 @@ public class LoginController {
 
 	private Authenticator authenticator;
 
-	
 	private sBuFacade sBuFacade;
+
 	@Autowired
 	public void setSbuFacade(sBuFacade sBuFacade) {
 		this.sBuFacade = sBuFacade;
@@ -49,7 +49,7 @@ public class LoginController {
 			return new ModelAndView("Error", "message", "no login");
 		} else {
 			UserSession userSession = new UserSession(user);
-			System.out.println("위치 확인" +userSession.getUser());
+			System.out.println("위치 확인" + userSession.getUser());
 		}
 
 		if (forwardAction != null) {
