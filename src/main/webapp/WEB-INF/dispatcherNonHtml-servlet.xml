@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans   
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-
+<!-- 
 	<bean id="downloadController" class="sbu.spring.controller.DownloadController" />
 
 	<bean id="pageRanksController" class="sbu.spring.controller.PageRanksController" />
@@ -18,7 +18,7 @@
 
 	<bean id="pageRanks" class="sbu.spring.view.PageRanksView" />
 
-	<bean id="pageReport" class="sbu.spring.view.PageReportView" />
+	<bean id="pageReport" class="sbu.spring.view.PageReportView" /> -->
 
 	<bean id="pageXmlReport"
 		class="org.springframework.web.servlet.view.xml.MarshallingView">

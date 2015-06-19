@@ -8,7 +8,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<bean class="sbu.spring.controller.LoginController">
+<!-- 	<bean class="sbu.spring.controller.LoginController">
 		<property name="authenticator">
 			<bean class="sbu.spring.controller.MockAuthenticator" />
 		</property>
@@ -35,7 +35,7 @@
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/viewjsp/" />
 		<property name="suffix" value=".jsp" />
-	</bean>
+	</bean> -->
 
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">

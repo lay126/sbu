@@ -4,7 +4,6 @@ public class MemberInfo {
 
 	private String userId;
 	private String name;
-	private Address address;
 	private String[] favorites;
 	private String jobCode;
 	private String tool;
@@ -25,14 +24,6 @@ public class MemberInfo {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
 	}
 
 	public String[] getFavorites() {
