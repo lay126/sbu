@@ -16,6 +16,6 @@
 			user_brith as userBirth,
 			user_point as userPoint
 		FROM USERDB
-		WHERE USER_ID = #{userId}
+		WHERE USER_ID = #{user_id}
 </select>
 </mapper>

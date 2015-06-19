@@ -18,9 +18,9 @@ public class LoginController {
 
 	private Authenticator authenticator;
 
-	@Autowired
+	
 	private sBuFacade sBuFacade;
-
+	@Autowired
 	public void setSbuFacade(sBuFacade sBuFacade) {
 		this.sBuFacade = sBuFacade;
 	}
