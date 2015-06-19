@@ -4,7 +4,6 @@ public class LoginCommand {
 
 	private String id;
 	private String password;
-	private String loginType;
 
 	public String getId() {
 		return id;

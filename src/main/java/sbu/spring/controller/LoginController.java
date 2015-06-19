@@ -22,29 +22,26 @@ public class LoginController {
 	}
 
 	@RequestMapping(value="/user/login.do", method = RequestMethod.POST)
-	public String submit(@ModelAttribute("login") LoginCommand loginCommand,
+	public String submit(@ModelAttribute("loginUser") LoginCommand loginCommand,
 			BindingResult result) {
+		
+		System.out.println("" + loginCommand.getId());
+		
 		new LoginCommandValidator().validate(loginCommand, result);
-		
-		authenticator.authenticate(loginCommand.getId(), loginCommand
-				.getPassword());
-		return "loginSuccess";
-		
-		
-//		if (result.hasErrors()) {
-//			return "loginForm";
-//		}
-//		try {
-//			authenticator.authenticate(loginCommand.getId(), loginCommand
-//					.getPassword());
-//			return "loginSuccess";
-//		} catch (AuthenticationException ex) {
-//			result.reject("invalidIdOrPassword", new Object[] { loginCommand
-//					.getId() }, null);
-//			return "loginForm";
-//		}
+		if (result.hasErrors()) {
+			return "loginForm";
+		}
+		try {
+			authenticator.authenticate(loginCommand.getId(), loginCommand
+					.getPassword());
+			return "loginSuccess";
+		} catch (AuthenticationException ex) {
+			result.reject("invalidIdOrPassword", new Object[] { loginCommand
+					.getId() }, null);
+			return "loginForm";
+		}
 	}
-
+	
 	public void setAuthenticator(Authenticator authenticator) {
 		this.authenticator = authenticator;
 	}

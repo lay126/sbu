@@ -6,8 +6,8 @@
 
  
 
-<%-- <form:form commandName="accountUserForm" method="post"> --%>
-<form action="<c:url value='/jsp/user/login.do' />" method="POST">
+<%-- <form:form commandName="loginUser" method="post" action="/jsp/user/login.do"> --%>
+<form id="loginUser" action="<c:url value='/jsp/user/login.do' />" method="POST">
 	<table align="left" bgcolor="#6D839A" width="200" height="200">
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">ID</td>
@@ -17,7 +17,7 @@
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">PWD</td>
 			<td align="center" bgcolor="#9CA8B3"><input type="password"
-				name="userpwd" size="10" /></td>
+				name="password" size="10" /></td>
 		</tr>
 		<tr>
 			<td align="center" bgcolor="#9CA8B3"><input type="submit"
