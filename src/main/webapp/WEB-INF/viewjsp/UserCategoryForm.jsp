@@ -18,7 +18,7 @@
 	</tr>
 	<tr>
 		<td align="center" bgcolor="#ffe4e1">
-		<a href="<c:url value='/shop/viewItem.do'/>">colors</a></td>
+		<a href="<c:url value='/shop/viewProduct.do'/>">colors</a></td>
 	</tr>
 </table>
 

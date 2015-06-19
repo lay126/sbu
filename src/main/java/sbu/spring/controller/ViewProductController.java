@@ -19,7 +19,7 @@ public class ViewProductController {
 		this.sBu = sBu;
 	}
 
-	@RequestMapping("/shop/viewItem.do")
+	@RequestMapping("/shop/viewProduct.do")
 	public String handleRequest(@RequestParam("ProductNum") int productNum,
 			ModelMap model) throws Exception {
 		Product product = this.sBu.getProduct(productNum);
