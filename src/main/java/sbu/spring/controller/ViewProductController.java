@@ -19,13 +19,17 @@ public class ViewProductController {
 		this.sBu = sBu;
 	}
 
-	@RequestMapping("/shop/viewProduct.do")
+	@RequestMapping("jsp/shop/viewProduct.do")
 	public String handleRequest(@RequestParam("ProductNum") int productNum,
 			ModelMap model) throws Exception {
 		Product product = this.sBu.getProduct(productNum);
-		//model.put("product", product);
+		model.put("product", product);
 		model.put("product", product.getProductName());
+		System.out.println("product name : " + product.getProductName()); 
+
 		return "Product";
+		
+		
 	}
 
 }
