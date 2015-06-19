@@ -7,14 +7,14 @@
 
 	<select id="getUserByUserId" parameterType="int" resultType="sbu.spring.domain.User">
 		SELECT 
-			user_num,
-			user_name,
-			user_pwd,
-			user_email,
-			user_phone,
-			user_brith,
-			user_point
+			user_num as userNum,
+			user_name as userName,
+			user_pwd as userPwd,
+			user_email as userEmail,
+			user_phone as userPhone,
+			user_brith as userBirth,
+			user_point as userPoint
 		FROM USERDB
-		WHERE USER_ID = #{loginUser.id}
+		WHERE USER_ID = #{userId}
 </select>
 </mapper>

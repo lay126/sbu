@@ -3,16 +3,6 @@ package sbu.spring.domain;
 
 import java.io.Serializable;
 
-/*Student —> 필요한거 뭐있을까 
-studentId —> idx
-studentName
-studentNumber  —> 학번 = 아이디
-studentPwd
-studentProfessor
-studentEmail
-studentPhone
-student*/
-
 @SuppressWarnings("serial")
 public class User implements Serializable{
 	

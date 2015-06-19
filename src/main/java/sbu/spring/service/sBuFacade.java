@@ -2,21 +2,23 @@ package sbu.spring.service;
 
 import java.util.List;
 
-
 import sbu.spring.domain.User;
-import sbu.spring.domain.Account;
 import sbu.spring.domain.Product;
 
 public interface sBuFacade {
 
-	Account getAccount(String username);
+	User getUser(String userId);
 
-	Account getAccount(String username, String password);
+	User getUser(String userId, String userPwd);
 
-	void insertAccount(Account account);
+	void insertUser(User user);
 
-	void updateAccount(Account account);
+	void updateUser(User user);
 
+	List<String> getUserList();
+
+	//String getUserNameByUserId(int userId);
+	
 	List<String> getUsernameList();
 
 	List<Product> getProductListByCategory(int productCateNum);
@@ -25,11 +27,10 @@ public interface sBuFacade {
 
 	Product getProduct(int productNum);
 
-
-//	void insertOrder(Order order);
-//
-//	Order getOrder(int orderId);
-//
-//	List<Order> getOrdersByUsername(String username);
+	// void insertOrder(Order order);
+	//
+	// Order getOrder(int orderId);
+	//
+	// List<Order> getOrdersByUsername(String username);
 
 }
