@@ -1,8 +1,5 @@
 package sbu.spring.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/login/login.do")
+@RequestMapping("/user/login.do")
 public class LoginController {
 
 	private Authenticator authenticator;
@@ -43,14 +40,14 @@ public class LoginController {
 		}
 	}
 
-	@ModelAttribute("loginTypes")
-	protected List<String> referenceData() throws Exception {
-		List<String> loginTypes = new ArrayList<String>();
-		loginTypes.add("일반회원");
-		loginTypes.add("기업회원");
-		loginTypes.add("헤드헌터회원");
-		return loginTypes;
-	}
+//	@ModelAttribute("loginTypes")
+//	protected List<String> referenceData() throws Exception {
+//		List<String> loginTypes = new ArrayList<String>();
+//		loginTypes.add("일반회원");
+//		loginTypes.add("기업회원");
+//		loginTypes.add("헤드헌터회원");
+//		return loginTypes;
+//	}
 
 	public void setAuthenticator(Authenticator authenticator) {
 		this.authenticator = authenticator;

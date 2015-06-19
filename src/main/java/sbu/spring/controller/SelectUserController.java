@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/select/user.do")
 public class SelectUserController {
-
-
-
-
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public String form() {
 		return "UserMain";
