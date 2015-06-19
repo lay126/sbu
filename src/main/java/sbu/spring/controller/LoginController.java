@@ -11,7 +11,7 @@ public class LoginController {
 
 	private Authenticator authenticator;
 
-	@ModelAttribute("login")
+	@ModelAttribute("loginUser")
 	public LoginCommand formBacking() {
 		return new LoginCommand();
 	}
@@ -25,20 +25,20 @@ public class LoginController {
 	public String submit(@ModelAttribute("loginUser") LoginCommand loginCommand,
 			BindingResult result) {
 		
-		System.out.println("" + loginCommand.getId());
+		System.out.println("1: " + loginCommand.getId());
 		
 		new LoginCommandValidator().validate(loginCommand, result);
 		if (result.hasErrors()) {
-			return "loginForm";
+			return "UserMain";
 		}
 		try {
 			authenticator.authenticate(loginCommand.getId(), loginCommand
 					.getPassword());
-			return "loginSuccess";
+			return "UserMainLogined";
 		} catch (AuthenticationException ex) {
 			result.reject("invalidIdOrPassword", new Object[] { loginCommand
 					.getId() }, null);
-			return "loginForm";
+			return "UserMain";
 		}
 	}
 	

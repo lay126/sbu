@@ -11,13 +11,11 @@
 	<table align="left" bgcolor="#6D839A" width="200" height="200">
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">ID</td>
-			<td align="center" bgcolor="#9CA8B3"><input type="text"
-				name="username" size="10" /></td>
+			<td align="center" bgcolor="#9CA8B3">aaa</td>
 		</tr>
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">PWD</td>
-			<td align="center" bgcolor="#9CA8B3"><input type="password"
-				name="password" size="10" /></td>
+			<td align="center" bgcolor="#9CA8B3">aaa</td>
 		</tr>
 		<tr>
 			<td align="center" bgcolor="#9CA8B3"><input type="submit"
