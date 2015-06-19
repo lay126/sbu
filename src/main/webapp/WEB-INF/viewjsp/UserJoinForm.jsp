@@ -27,7 +27,7 @@
 						</tr>
 						<tr height="20">
 							<td align="left" bgcolor="#E7EBC9"><label for="user_pwd">PASS</label>
-								<%--  --%><form:password path="account.password" />
+								<%-- <form:password path="account.password" /> --%>
 								<input type="text" id="user_pwd" size="14" maxlength="12" />
 							</td>
 						</tr>

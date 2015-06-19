@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/user/login.do")
 public class LoginController {
 
 	private Authenticator authenticator;
@@ -22,7 +21,7 @@ public class LoginController {
 		return "loginForm";
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value="/user/login.do", method = RequestMethod.POST)
 	public String submit(@ModelAttribute("login") LoginCommand loginCommand,
 			BindingResult result) {
 		new LoginCommandValidator().validate(loginCommand, result);
