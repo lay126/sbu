@@ -17,23 +17,23 @@ public class MybatisUserDao implements UserDao{
 	@Autowired
 	private UserMapper userMapper;
 
-	@Override
+//	@Override
 	public User getUser(String userId) throws DataAccessException {
 		return userMapper.getUserByUserId(userId);
 	}
 
-	@Override
+//	@Override
 	public User getUser(String userId, String userPwd)
 			throws DataAccessException {
 		return userMapper.getUserByUserIdAndUserPwd(userId, userPwd);
 	}
 
-	@Override
+//	@Override
 	public List<Purchase> getUserList(String userId) throws DataAccessException {
 		return userMapper.getPurchaseList(userId);
 	}
 
-	@Override
+//	@Override
 	public String getUserNameByUserId(String userId) {
 		return userMapper.getUserNameByUserId(userId);
 	}

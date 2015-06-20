@@ -9,8 +9,6 @@ public class UserSession implements Serializable {
 
 	private User user;
 
-	//private PagedListHolder<Product> myList;
-
 	public UserSession(User user) {
 		this.user = user;
 	}
@@ -19,12 +17,4 @@ public class UserSession implements Serializable {
 		return user;
 	}
 
-//
-//	public void setMyList(PagedListHolder<Product> myList) {
-//		this.myList = myList;
-//	}
-//
-//	public PagedListHolder<Product> getMyList() {
-//		return myList;
-//	}
 }

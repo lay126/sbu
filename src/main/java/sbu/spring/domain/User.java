@@ -12,7 +12,7 @@ public class User implements Serializable{
 	private String userEmail;
 	private String userPhone;
 	private String userBirth;
-	private String Point;
+	private String userPoint;
 	private int userNumber; //sequence
 	
 	public int getUserNumber() {
@@ -58,9 +58,9 @@ public class User implements Serializable{
 		this.userBirth = userBirth;
 	}
 	public String getPoint() {
-		return Point;
+		return userPoint;
 	}
 	public void setPoint(String point) {
-		Point = point;
+		this.userPoint = point;
 	}
 }

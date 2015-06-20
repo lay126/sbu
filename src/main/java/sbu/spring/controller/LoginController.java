@@ -35,7 +35,7 @@ public class LoginController {
 			@RequestParam(value = "forwardAction", required = false) String forwardAction,
 			Model model) throws Exception {
 	
-		User user = sBuf.getUser(userId, userPwd);
+		User user = this.sBuf.getUser(userId, userPwd);
 		if (user == null) {
 			return new ModelAndView("Error", "message", "no login");
 		} else {
@@ -45,7 +45,7 @@ public class LoginController {
 		if (forwardAction != null) {
 			return new ModelAndView("redirect:" + forwardAction);
 		} else {
-			return new ModelAndView("UserMain");
+			return new ModelAndView("UserMainLogined");
 		}
 	}
 
