@@ -92,3 +92,16 @@ ADD product_description varchar(100);
 ALTER TABLE productDB
 ADD product_price varchar(32);
 
+drop table buylistDB;
+
+
+create table buylistDB (
+   buy_num int not null,
+    buy_product_num int not null,
+    buy_user_id varchar(32) not null,
+    buy_date varchar(64) null,
+      constraint pk_buylistDB primary key (buy_product_num, buy_user_id),
+    FOREIGN KEY (buy_product_num) REFERENCES productDB(product_num),
+    FOREIGN KEY (buy_user_id) REFERENCES userDB(user_id)
+);
+
