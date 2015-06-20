@@ -32,22 +32,44 @@ public class LoginController {
 			HttpServletRequest request,
 			@RequestParam("userId") String userId,
 			@RequestParam("userPwd") String userPwd,
-			@RequestParam(value = "forwardAction", required = false) String forwardAction,
 			Model model) throws Exception {
 	
 		User user = this.sBuf.getUser(userId, userPwd);
+		
+		UserSession userSession = new UserSession(user);
+				
 		if (user == null) {
-			return new ModelAndView("Error", "message", "no login");
-		} else {
-			UserSession userSession = new UserSession(user);
-		}
-
-		if (forwardAction != null) {
-			return new ModelAndView("redirect:" + forwardAction);
+//			return new ModelAndView("Error", "message", "no login");
+			return new ModelAndView("UserMain");
 		} else {
 			return new ModelAndView("UserMainLogined");
 		}
+
+		
 	}
+
+	
+//	@RequestMapping(value="/user/login.do", method = RequestMethod.POST)
+//	public ModelAndView handleRequest(
+//			HttpServletRequest request,
+//			@RequestParam("userId") String userId,
+//			@RequestParam("userPwd") String userPwd,
+//			@RequestParam(value = "forwardAction", required = false) String forwardAction,
+//			Model model) throws Exception {
+//	
+//		User user = this.sBuf.getUser(userId, userPwd);
+//		if (user == null) {
+//			return new ModelAndView("Error", "message", "no login");
+//		} else {
+//			UserSession userSession = new UserSession(user);
+//		}
+//
+//		if (forwardAction != null) {
+//			return new ModelAndView("redirect:" + forwardAction);
+//		} else {
+//			return new ModelAndView("UserMainLogined");
+//		}
+//	}
 
 	@RequestMapping(value = "/user/login.do", method = RequestMethod.GET)
 	public String form() {
