@@ -22,7 +22,8 @@ public class ViewProductController {
 		this.sBuf = sBu;
 	}
 
-	//@RequestMapping(value = "/jsp/viewProduct.do", method = RequestMethod.POST)
+	// @RequestMapping(value = "/jsp/viewProduct.do", method =
+	// RequestMethod.POST)
 	@RequestMapping("/jsp/viewProduct.do")
 	public String handleRequest(
 			@RequestParam(value = "productNum", defaultValue = "1") int productNum,
