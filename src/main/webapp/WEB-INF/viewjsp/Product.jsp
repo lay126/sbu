@@ -1,10 +1,30 @@
-product jsp
-<%-- 
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>ProductList</title>
+</head>
+<body>
+
+	product jsp
+
+	<%
+	if (request != null) {
+		System.out.println("not null");
+	} else {
+		System.out.println("null");
+	}
+%>
+	<%-- 
 <table align="left" bgcolor="#008800" border="0" cellspacing="2"
 	cellpadding="2">
 	<tr>
 		<td bgcolor="#FFFF88"><a
-			href="<c:url value="/shop/viewProduct.do"><c:param name="productNum" value="${product.productNum}"/></c:url>">
+			href="<c:url value="/shop/viewProduct.do">
+					<c:param name="productNum" value="${product.productNum}"/>
+				</c:url>">
 				<b><font color="BLACK" size="2">&lt;&lt; <c:out
 							value="${product.productName}" /></font></b>
 		</a></td>
@@ -37,4 +57,5 @@ product jsp
 	</tr>
 </table>
  --%>
-
+</body>
+</html>
