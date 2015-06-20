@@ -4,17 +4,58 @@
 
 <mapper namespace="sbu.spring.dao.mybatis.mapper.UserMapper">
 	<cache />
-	<select id="getUserByUserId"  resultType="UserDao">
-		SELECT 
-			user_id as userId,
-			user_num as userNum,
-			user_name as userName,
-			user_pwd as userPwd,
-			user_email as userEmail,
-			user_phone as userPhone,
-			user_brith as userBirth,
-			user_point as userPoint
+	<select id="getUserByUserId" resultType="sbu.spring.domain.User">
+		SELECT
+		USERDB.user_id as
+		userId,
+		USERDB.user_num as userNum,
+		USERDB.user_name as userName,
+		USERDB.user_pwd as userPwd,
+		USERDB.user_email as userEmail,
+		USERDB.user_phone as userPhone,
+		USERDB.user_brith as userBirth,
+		USERDB.user_point as userPoint
 		FROM USERDB
-		WHERE user_id = #{userId}
-</select>
+		WHERE
+		USERDB.user_id =
+		#{userId, jddbcType=VARCHAR} and
+		USERDB.user_pwd = #{userPwd,
+		jdbcType=VARCHAR}
+	</select>
+
+	<select id="getUserByUserId" resultType="sbu.spring.domain.User">
+		USERDB.user_id as
+		userId,
+		USERDB.user_num as userNum,
+		USERDB.user_name as userName,
+		USERDB.user_pwd as userPwd,
+		USERDB.user_email as userEmail,
+		USERDB.user_phone as userPhone,
+		USERDB.user_brith as userBirth,
+		USERDB.user_point as userPoint
+		FROM USERDB
+		WHERE
+		userId = {#userId,
+		jdbcType="String"}
+
+	</select>
+	<select id="getUserNameByUserId" resultType="String">
+		SELECT
+		USERDB.user_name AS userName
+		FROM USERDB
+		WHERE
+		userId = #{userId}
+	</select>
+
+	<select id="getPurchaseList" parameterType="String"
+		resultType="sbu.sproing.domain.Purchase">
+		SELECT
+		BUYLISTDB.buy_date AS buyDate,
+		BUYLISTDB.buy_user_id AS buyUserID,
+		BUYLISTDB.buy_product_num AS buyProductNum,
+		BUYLISTDB.buy_num AS buyNum
+		FROM BUYLISTDB
+		WHERE
+		buy_user_id = #{userId}
+	</select>
 </mapper>

@@ -1,23 +1,17 @@
 package sbu.spring.dao.mybatis.mapper;
 
 import java.util.List;
-
+import sbu.spring.domain.Purchase;
 import sbu.spring.domain.User;
 
 public interface UserMapper {
 
-	User getUserByUserId(String userId);
+	User getUserByUserId(String userId, String userPwd);
 
 	User getUserByUserIdAndUserPwd(User user);
 
-	void insertUser(User user);
-
-	void updateUser(User user);
-
-	List<String> getUserList();
-
-	User getUserNameByUserId(int userId);
-
-	User getUserByUserId(String userId, String userPwd);
-
+	String getUserNameByUserId(int userId);
+	
+	List<Purchase> getPurchaseList(String userId);
+	
 }

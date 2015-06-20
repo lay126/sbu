@@ -1,7 +1,8 @@
 package sbu.spring.controller;
 
 import java.io.Serializable;
-import sbu.spring.domain.*;
+
+import sbu.spring.domain.User;
 
 @SuppressWarnings("serial")
 public class UserForm implements Serializable {

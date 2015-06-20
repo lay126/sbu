@@ -1,14 +1,13 @@
 package sbu.spring.controller;
 
-import sbu.spring.domain.Product;
-import sbu.spring.service.sBuFacade;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import sbu.spring.domain.Product;
+import sbu.spring.service.sBuFacade;
 
 @SuppressWarnings("unused")
 @Controller

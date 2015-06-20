@@ -2,8 +2,6 @@ package sbu.spring.controller;
 
 import java.io.Serializable;
 
-import org.springframework.beans.support.PagedListHolder;
-
 import sbu.spring.domain.User;
 
 @SuppressWarnings("serial")
