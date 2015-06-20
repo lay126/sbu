@@ -39,10 +39,6 @@ public class LoginController {
 		System.out.println("위치: forwardAction: " + forwardAction);
 		System.out.println("sBuFacade: " + sBuf);
 		
-//		User user = new User();
-//		user.setUserId(userId);
-//		user.setUserPwd(userPwd);
-		
 		User user = sBuf.getUser(userId, userPwd);
 		if (user == null) {
 			return new ModelAndView("Error", "message", "no login");
