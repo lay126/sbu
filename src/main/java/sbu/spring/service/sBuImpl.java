@@ -12,7 +12,6 @@ import sbu.spring.domain.Purchase;
 import sbu.spring.domain.User;
 
 @Service
-@Transactional
 public class sBuImpl implements sBuFacade {
 
 	@Autowired

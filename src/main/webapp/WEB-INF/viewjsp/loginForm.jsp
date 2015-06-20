@@ -28,7 +28,7 @@
 			<td align="center" bgcolor="#9CA8B3"><input type="submit"
 				value="login" /></td>
 			<td align="center" bgcolor="#9CA8B3"><a
-				href="<c:url value='/jsp/join/user.do'/>">join</a></td>
+				href="<c:url value='/join/user.do'/>">join</a></td>
 		</tr>
 	</table>
 

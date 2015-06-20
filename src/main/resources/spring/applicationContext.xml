@@ -78,7 +78,7 @@
 	-->
 	<tx:annotation-driven/>
 	
-	<aop:config>
+	<!-- <aop:config> -->
 		<!--
 			This definition creates auto-proxy infrastructure based on the given pointcut,
 			expressed in AspectJ pointcut language. Here: applying the advice named
@@ -87,7 +87,7 @@
 		<!--
 		<aop:advisor pointcut="execution(* *..PetStoreFacade.insertOrder(*..Order))" advice-ref="emailAdvice"/>
 		-->
-	</aop:config>
+	<!-- </aop:config> -->
 
 	<!-- AOP advice used to send confirmation email after order has been submitted -->
 	<!--
