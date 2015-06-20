@@ -182,5 +182,10 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.6.6</version>
+		</dependency>
 	</dependencies>
 </project>

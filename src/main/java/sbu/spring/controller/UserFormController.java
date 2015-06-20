@@ -63,19 +63,6 @@ public class UserFormController {
 			BindingResult result) throws Exception {
 		
 		if (result.hasErrors()) return formViewName;
-		try {
-			if (userForm.isNewuser()) {
-				sBuf.insertUser(userForm.getuser());
-			}
-			else {
-				sBuf.updateUser(userForm.getuser());
-			}
-		}
-		catch (DataIntegrityViolationException ex) {
-			result.rejectValue("account.username", "USER_ID_ALREADY_EXISTS",
-					"User ID already exists: choose a different ID.");
-			return formViewName; 
-		}
 		
 		UserSession userSession = new UserSession(
 			sBuf.getUser(userForm.getuser().getUserId()));

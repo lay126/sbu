@@ -17,58 +17,39 @@ public class sBuImpl implements sBuFacade {
 
 	@Autowired
 	private UserDao userDao;
+	
+	@Autowired
+	private ProductDao productDao;
 
 	@Override
 	public User getUser(String userId) {
-		// TODO Auto-generated method stub
-		return null;
+		return userDao.getUser(userId);
 	}
 
 	@Override
 	public User getUser(String userId, String userPwd) {
-		// TODO Auto-generated method stub
-		return null;
+		return userDao.getUser(userId, userPwd);
 	}
 
 	@Override
 	public List<Purchase> getPurchaseList(String userId) {
-		// TODO Auto-generated method stub
-		return null;
+		return userDao.getUserList(userId);
 	}
 
 	@Override
 	public List<Product> getProductListByCategory(int productCateNum) {
-		// TODO Auto-generated method stub
-		return null;
+		return productDao.getProductListByCategory(productCateNum);
 	}
 
 	@Override
 	public Product getProduct(int productNum) {
-		// TODO Auto-generated method stub
-		return null;
+		return productDao.getProduct(productNum);
 	}
 
 	@Override
-	public void insertUser(User user) {
-		// TODO Auto-generated method stub
-		
+	public String getUserNameByUserId(String userId) {
+		return userDao.getUserNameByUserId(userId);
 	}
 
-	@Override
-	public void updateUser(User user) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<String> getUserList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<String> getUsernameList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }
