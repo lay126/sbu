@@ -25,7 +25,7 @@ public class LoginController {
 		this.sBuf = sBuf;
 	}
 
-	@RequestMapping(value = "/user/login.do", method = RequestMethod.POST)
+	@RequestMapping(value="/user/login.do", method = RequestMethod.POST)
 	public ModelAndView handleRequest(
 			HttpServletRequest request,
 			@RequestParam("userId") String userId,
@@ -37,11 +37,11 @@ public class LoginController {
 		System.out.println("위치: forwardAction: " + forwardAction);
 		System.out.println("sBuFacade: " + sBuf);
 		
-		User user = new User();
-		user.setUserId(userId);
-		user.setUserPwd(userPwd);
+//		User user = new User();
+//		user.setUserId(userId);
+//		user.setUserPwd(userPwd);
 		
-//		User user = user.getUser(userId, userPwd);
+		User user = sBuf.getUser(userId, userPwd);
 		if (user == null) {
 			return new ModelAndView("Error", "message", "no login");
 		} else {
