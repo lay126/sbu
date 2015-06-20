@@ -34,18 +34,12 @@ public class LoginController {
 			@RequestParam("userPwd") String userPwd,
 			@RequestParam(value = "forwardAction", required = false) String forwardAction,
 			Model model) throws Exception {
-		
-		System.out.println("위치: loginController: " + userId + ", " + userPwd);
-		System.out.println("위치: forwardAction: " + forwardAction);
-		System.out.println("sBuFacade: " + sBuf);
-		
+	
 		User user = sBuf.getUser(userId, userPwd);
 		if (user == null) {
 			return new ModelAndView("Error", "message", "no login");
 		} else {
 			UserSession userSession = new UserSession(user);
-			System.out.println("위치 확인1" + userSession.getUser().getUserId());
-			System.out.println("위치 확인2" + userSession.getUser().getUserEmail());
 		}
 
 		if (forwardAction != null) {

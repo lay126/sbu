@@ -6,19 +6,18 @@
 	<cache />
 	<select id="getUserByUserIdAndUserPwd" resultType="sbu.spring.domain.User">
 		SELECT
-		USERDB.user_id as
-		userId,
-		USERDB.user_num as userNum,
+		USERDB.user_id as userId,
+		USERDB.user_num as userNumber,
 		USERDB.user_name as userName,
 		USERDB.user_pwd as userPwd,
 		USERDB.user_email as userEmail,
 		USERDB.user_phone as userPhone,
-		USERDB.user_brith as userBirth,
+		USERDB.user_birth as userBirth,
 		USERDB.user_point as userPoint
 		FROM USERDB
 		WHERE
 		USERDB.user_id =
-		#{userId, jddbcType=VARCHAR} and
+		#{userId, jdbcType=VARCHAR} and
 		USERDB.user_pwd = #{userPwd,
 		jdbcType=VARCHAR}
 	</select>
@@ -26,7 +25,7 @@
 	<select id="getUserByUserId" resultType="sbu.spring.domain.User">
 		USERDB.user_id as
 		userId,
-		USERDB.user_num as userNum,
+		USERDB.user_num as userNumber,
 		USERDB.user_name as userName,
 		USERDB.user_pwd as userPwd,
 		USERDB.user_email as userEmail,
