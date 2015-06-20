@@ -57,7 +57,7 @@ public class LoginController {
 		}
 	}
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value = "/user/login.do", method = RequestMethod.GET)
 	public String form() {
 		return "loginForm";
 	}

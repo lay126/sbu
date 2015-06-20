@@ -7,7 +7,7 @@
  
 
 <%-- <form:form commandName="loginUser" method="post" action="/jsp/user/login.do"> --%>
-<form action="<c:url value='/jsp/user/login.do' />" method="POST">
+<form action="<c:url value='/user/login.do' />" method="POST">
 
 <c:if test="${!empty signonForwardAction}">
 	<input type="hidden" name="forwardAction" value="<c:url value="${signonForwardAction}" />"/>
