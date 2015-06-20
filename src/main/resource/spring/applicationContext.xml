@@ -23,7 +23,7 @@
 
 	<!-- ========================= GENERAL DEFINITIONS ========================= -->
 
-	<context:component-scan base-package="org.springframework.samples.jpetstore.service" /> 
+	<context:component-scan base-package="sbu.spring.service" /> 
 
 	<!-- Configurer that replaces ${...} placeholders with values from properties files -->
 	<!-- (in this case, mail and JDBC related properties) -->

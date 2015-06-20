@@ -18,9 +18,9 @@ public class UserSession implements Serializable {
 	}
 
 	public User getUser() {
-		System.out.println("user test");
 		return user;
 	}
+
 //
 //	public void setMyList(PagedListHolder<Product> myList) {
 //		this.myList = myList;

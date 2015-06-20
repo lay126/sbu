@@ -18,7 +18,7 @@
 	<!-- (see dataAccessContext-jta.xml for an alternative) -->
 	<!-- The placeholders are resolved from jdbc.properties through -->
 	<!-- the PropertyPlaceholderConfigurer in applicationContext.xml -->
-	
+
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />
@@ -26,7 +26,7 @@
 		<property name="username" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
 	</bean>
-	
+
 
 	<!-- Transaction manager for a single JDBC DataSource -->
 	<!-- (see dataAccessContext-jta.xml for an alternative) -->
@@ -49,5 +49,6 @@
 		<property name="basePackage" value="sbu.spring.dao.mybatis.mapper" />
 	</bean>
 
+	<tx:annotation-driven />
 </beans>
 

@@ -4,8 +4,7 @@
 
 <mapper namespace="sbu.spring.dao.mybatis.mapper.UserMapper">
 	<cache />
-
-	<select id="getUserByUserId"  resultType="dao.UserDao">
+	<select id="getUserByUserId"  resultType="UserDao">
 		SELECT 
 			user_id as userId,
 			user_num as userNum,
@@ -16,6 +15,6 @@
 			user_brith as userBirth,
 			user_point as userPoint
 		FROM USERDB
-		WHERE USER_ID = #{userId} and USER_PWD =#{userPwd}
+		WHERE user_id = #{userId}
 </select>
 </mapper>

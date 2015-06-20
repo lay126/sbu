@@ -35,7 +35,7 @@ public class MybatisUserDao implements UserDao{
 		return userMapper.getUserByUserId(userId, userPwd);
 	}
 
-	public String getUserNameByUserId(int userId) {
+	public User getUserNameByUserId(int userId) {
 		// TODO Auto-generated method stub
 		return userMapper.getUserNameByUserId(userId);
 	}

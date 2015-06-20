@@ -21,16 +21,10 @@ public class LoginController {
 	private sBuFacade sBuf;
 
 	@Autowired
-	public void setSBuFacade(sBuFacade sBuFacade) {
-		this.sBuf = sBuFacade;
+	public void setSBuf(sBuFacade sBuf) {
+		this.sBuf = sBuf;
 	}
 
-	@RequestMapping(method = RequestMethod.GET)
-	public String form() {
-		return "loginForm";
-	}
-
-	
 	@RequestMapping(value = "/user/login.do", method = RequestMethod.POST)
 	public ModelAndView handleRequest(
 			HttpServletRequest request,
@@ -38,18 +32,22 @@ public class LoginController {
 			@RequestParam("userPwd") String userPwd,
 			@RequestParam(value = "forwardAction", required = false) String forwardAction,
 			Model model) throws Exception {
-		System.out.println("위치: loginController: " + userId+", "+userPwd);
+		
+		System.out.println("위치: loginController: " + userId + ", " + userPwd);
 		System.out.println("위치: forwardAction: " + forwardAction);
-//		if (sBuf == null) {
-			System.out.println("sBuFacade: "+sBuf);
-//			return new ModelAndView("Error", "message", "no sBuFacade");
-//		}
-		User user = sBuf.getUser(userId, userPwd);
+		System.out.println("sBuFacade: " + sBuf);
+		
+		User user = new User();
+		user.setUserId(userId);
+		user.setUserPwd(userPwd);
+		
+//		User user = user.getUser(userId, userPwd);
 		if (user == null) {
 			return new ModelAndView("Error", "message", "no login");
 		} else {
 			UserSession userSession = new UserSession(user);
-			System.out.println("위치 확인" + userSession.getUser());
+			System.out.println("위치 확인1" + userSession.getUser().getUserId());
+			System.out.println("위치 확인2" + userSession.getUser().getUserEmail());
 		}
 
 		if (forwardAction != null) {
@@ -59,11 +57,19 @@ public class LoginController {
 		}
 	}
 
-	public void setAuthenticator(Authenticator authenticator) {
-		this.authenticator = authenticator;
+	@RequestMapping(method = RequestMethod.GET)
+	public String form() {
+		return "loginForm";
 	}
+	
+	 public void setAuthenticator(Authenticator authenticator) {
+	 this.authenticator = authenticator;
+	 }
 }
 
+// public void setAuthenticator(Authenticator authenticator) {
+// this.authenticator = authenticator;
+// }
 //
 //
 //

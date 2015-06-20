@@ -16,5 +16,5 @@ public interface UserDao {
 
 	List<String> getUserList()  throws DataAccessException;
 	
-	String getUserNameByUserId(int userId);
+	User getUserNameByUserId(int userId);
 }

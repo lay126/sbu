@@ -15,25 +15,33 @@ import sbu.spring.domain.User;
 public class sBuImpl implements sBuFacade {
 
 	@Autowired
-	private UserDao userDAO;
+	private UserDao userDao;
+
+	public UserDao getUserDao() {
+		return userDao;
+	}
+
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
+	}
 
 	@Autowired
 	@Transactional
 	public User getUser(String userId) {
-		return userDAO.getUser(userId);
+		return userDao.getUser(userId);
 	}
 	
 	@Autowired
 	public User getUser(String userId, String userPwd) {
-		return userDAO.getUser(userId, userPwd);
+		return userDao.getUser(userId, userPwd);
 	}
 
 	public void insertUser(User user) {
-		userDAO.insertUser(user);
+		userDao.insertUser(user);
 	}
 
 	public void updateUser(User user) {
-		userDAO.updateUser(user);
+		userDao.updateUser(user);
 	}
 
 	@Override

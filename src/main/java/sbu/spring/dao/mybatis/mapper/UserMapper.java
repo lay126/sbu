@@ -16,7 +16,7 @@ public interface UserMapper {
 
 	List<String> getUserList();
 
-	String getUserNameByUserId(int userId);
+	User getUserNameByUserId(int userId);
 
 	User getUserByUserId(String userId, String userPwd);
 
