@@ -21,6 +21,6 @@
 		PRODUCTDB.product_name AS productName
 		FROM PRODUCTDB
 		WHERE
-		product_id = #{productNum}
+		product_num = #{productNum}
 	</select>
 </mapper>
