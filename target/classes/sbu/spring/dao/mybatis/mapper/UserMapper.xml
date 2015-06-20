@@ -4,7 +4,7 @@
 
 <mapper namespace="sbu.spring.dao.mybatis.mapper.UserMapper">
 	<cache />
-	<select id="getUserByUserId" resultType="sbu.spring.domain.User">
+	<select id="getUserByUserIdAndUserPwd" resultType="sbu.spring.domain.User">
 		SELECT
 		USERDB.user_id as
 		userId,

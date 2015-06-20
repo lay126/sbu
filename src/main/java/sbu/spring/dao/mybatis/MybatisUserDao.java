@@ -2,6 +2,7 @@ package sbu.spring.dao.mybatis;
 
 import sbu.spring.dao.UserDao;
 import sbu.spring.dao.mybatis.mapper.UserMapper;
+import sbu.spring.domain.Purchase;
 import sbu.spring.domain.User;
 
 import java.util.List;
@@ -18,27 +19,23 @@ public class MybatisUserDao implements UserDao{
 
 	@Override
 	public User getUser(String userId) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+		return userMapper.getUserByUserId(userId);
 	}
 
 	@Override
 	public User getUser(String userId, String userPwd)
 			throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+		return userMapper.getUserByUserIdAndUserPwd(userId, userPwd);
 	}
 
 	@Override
-	public List<String> getUserList(String userId) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Purchase> getUserList(String userId) throws DataAccessException {
+		return userMapper.getPurchaseList(userId);
 	}
 
 	@Override
-	public User getUserNameByUserId(int userId) {
-		// TODO Auto-generated method stub
-		return null;
+	public String getUserNameByUserId(String userId) {
+		return userMapper.getUserNameByUserId(userId);
 	}
 
 }
