@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import sbu.spring.dao.*;
 import sbu.spring.domain.Product;
+import sbu.spring.domain.Purchase;
 import sbu.spring.domain.User;
 
 @Service
@@ -17,41 +18,20 @@ public class sBuImpl implements sBuFacade {
 	@Autowired
 	private UserDao userDao;
 
-	public UserDao getUserDao() {
-		return userDao;
-	}
-
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
-	}
-
-	@Autowired
-	@Transactional
-	public User getUser(String userId) {
-		return userDao.getUser(userId);
-	}
-	
-	@Autowired
-	public User getUser(String userId, String userPwd) {
-		return userDao.getUser(userId, userPwd);
-	}
-
-	public void insertUser(User user) {
-		userDao.insertUser(user);
-	}
-
-	public void updateUser(User user) {
-		userDao.updateUser(user);
-	}
-
 	@Override
-	public List<String> getUserList() {
+	public User getUser(String userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<String> getUsernameList() {
+	public User getUser(String userId, String userPwd) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Purchase> getPurchaseList(String userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -68,4 +48,27 @@ public class sBuImpl implements sBuFacade {
 		return null;
 	}
 
+	@Override
+	public void insertUser(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateUser(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<String> getUserList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<String> getUsernameList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

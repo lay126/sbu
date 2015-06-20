@@ -2,6 +2,7 @@ package sbu.spring.service;
 
 import java.util.List;
 
+import sbu.spring.domain.Purchase;
 import sbu.spring.domain.User;
 import sbu.spring.domain.Product;
 
@@ -20,6 +21,8 @@ public interface sBuFacade {
 	//String getUserNameByUserId(int userId);
 	
 	List<String> getUsernameList();
+	
+	List<Purchase> getPurchaseList(String userId);
 
 	List<Product> getProductListByCategory(int productCateNum);
 

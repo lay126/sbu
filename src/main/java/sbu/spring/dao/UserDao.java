@@ -9,12 +9,8 @@ public interface UserDao {
 	User getUser(String userId) throws DataAccessException;
 	
 	User getUser(String userId, String userPwd) throws DataAccessException;
-	
-	void insertUser(User user) throws DataAccessException;
-	
-	void updateUser(User user) throws DataAccessException;
 
-	List<String> getUserList()  throws DataAccessException;
+	List<String> getUserList(String userId)  throws DataAccessException;
 	
 	User getUserNameByUserId(int userId);
 }
