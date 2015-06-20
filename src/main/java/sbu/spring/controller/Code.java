@@ -14,7 +14,7 @@ public class Code {
 	}
 
 	public String getCode() {
-		return code;
+		return code; 
 	}
 
 	public void setCode(String code) {
