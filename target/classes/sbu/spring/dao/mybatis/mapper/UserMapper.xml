@@ -14,7 +14,8 @@
 		USERDB.user_phone as userPhone,
 		USERDB.user_birth as userBirth,
 		USERDB.user_point as userPoint
-		FROM USERDB
+		FROM
+		USERDB
 		WHERE
 		USERDB.user_id =
 		#{userId, jdbcType=VARCHAR} and
@@ -30,12 +31,12 @@
 		USERDB.user_pwd as userPwd,
 		USERDB.user_email as userEmail,
 		USERDB.user_phone as userPhone,
-		USERDB.user_brith as userBirth,
+		USERDB.user_birth as userBirth,
 		USERDB.user_point as userPoint
 		FROM USERDB
 		WHERE
-		userId = {#userId,
-		jdbcType="String"}
+		user_id = {#userId,
+		jdbcType=VARCHAR}
 
 	</select>
 	<select id="getUserNameByUserId" resultType="String">
@@ -43,14 +44,15 @@
 		USERDB.user_name AS userName
 		FROM USERDB
 		WHERE
-		userId = #{userId}
+		user_id = #{userId}
 	</select>
 
 	<select id="getPurchaseList" parameterType="String"
 		resultType="sbu.spring.domain.Purchase">
 		SELECT
 		BUYLISTDB.buy_date AS buyDate,
-		BUYLISTDB.buy_user_id AS buyUserID,
+		BUYLISTDB.buy_user_id
+		AS buyUserID,
 		BUYLISTDB.buy_product_num AS buyProductNum,
 		BUYLISTDB.buy_num AS buyNum
 		FROM BUYLISTDB
