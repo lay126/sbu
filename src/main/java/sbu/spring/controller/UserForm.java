@@ -6,7 +6,7 @@ import sbu.spring.domain.User;
 
 @SuppressWarnings("serial")
 public class UserForm implements Serializable {
-
+	//test
 	private User user;
 
 	private boolean newuser;

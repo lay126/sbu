@@ -5,15 +5,22 @@
 <mapper namespace="sbu.spring.dao.mybatis.mapper.ProductMapper">
 	<cache />
 
-	<select id="getProductListByCategory" resultType="Product">
+	<select id="getProductListByCategory" resultType="sbu.spring.domian.Product">
 		SELECT 
-			PRODUCT_NUM,
-			PRODUCT_NAME,
-			PRODUCT_REMAIN,
-			PRODUCT_DESCRIPTION,
-			PRODUCT_PRICE,
-			PRODUCT_CATE_NUM
-		FROM PRODUCT
-		WHERE PRODUCT_CATE_NUM = #{}
+			PRODUCTDB.product_num AS productNum,
+			PRODUCTDB.product_name AS productName,
+			PRODUCTDB.product_remain AS productRemain,
+			PRODUCTDB.product_descriptoin AS productDescription,
+			PRODUCTDB.product_price AS productPrice,
+			PRODUCTDB.product_cate_num AS productCateaNum
+		FROM PRODUCTDB
+		WHERE product_cate_num = #{productCateNum}
 </select>
+	<select id="getProduct" resultType="sbu.spring.domian.Product">
+		SELECT
+		PRODUCTDB.product_name AS productName
+		FROM PRODUCTDB
+		WHERE
+		product_id = #{productNum}
+	</select>
 </mapper>
