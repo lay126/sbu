@@ -19,13 +19,8 @@ public class MybatisProductDao implements ProductDao {
 
 	@Override
 	public Product getProduct(int productNum) {
-		// TODO Auto-generated method stub
-		return null;
+		return productMapper.getProduct(productNum);
 	}
 
-//	@Override
-//	public Product getProduct(int productNum) {
-//		return productMapper.getProduct(productNum);
-//	}
 
 }

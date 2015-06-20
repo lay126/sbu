@@ -48,7 +48,7 @@
 	</select>
 
 	<select id="getPurchaseList" parameterType="String"
-		resultType="sbu.sproing.domain.Purchase">
+		resultType="sbu.spring.domain.Purchase">
 		SELECT
 		BUYLISTDB.buy_date AS buyDate,
 		BUYLISTDB.buy_user_id AS buyUserID,
