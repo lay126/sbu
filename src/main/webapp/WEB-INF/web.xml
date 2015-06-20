@@ -20,6 +20,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			classpath:spring/mybatis_config.xml
+			classpath:spring/dataAccessContext-local-mybatis.xml
 			classpath:spring/applicationContext.xml
 		</param-value>
 	</context-param>
