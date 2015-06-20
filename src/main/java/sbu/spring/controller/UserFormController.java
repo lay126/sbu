@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.WebUtils;
 
-import sbu.spring.service.AccountFormValiator;
 import sbu.spring.service.sBuFacade;
 
 @Controller
@@ -32,12 +31,7 @@ public class UserFormController {
 		this.sBuf = sBuf;
 	}
 
-	@Autowired
-	private AccountFormValiator validator;
-	public void setValidator(AccountFormValiator validator) {
-		this.validator = validator;
-	}
-		
+
 	@ModelAttribute("accountForm")
 	public UserForm formBackingObject(HttpServletRequest request) 
 			throws Exception {
@@ -67,7 +61,6 @@ public class UserFormController {
 			HttpServletRequest request, HttpSession session,
 			@ModelAttribute("accountForm") UserForm userForm,
 			BindingResult result) throws Exception {
-		validator.validate(userForm, result);
 		
 		if (result.hasErrors()) return formViewName;
 		try {
