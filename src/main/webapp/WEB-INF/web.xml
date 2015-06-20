@@ -13,7 +13,9 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
@@ -30,11 +32,11 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>dispatcherInternal</servlet-name>
-		<url-pattern>*.do</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>/WEB-INF/view/index.jsp</welcome-file>
 	</welcome-file-list>
 
 </web-app>
