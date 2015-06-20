@@ -1,10 +1,10 @@
 product jsp
-<!-- 
+<%-- 
 <table align="left" bgcolor="#008800" border="0" cellspacing="2"
 	cellpadding="2">
 	<tr>
 		<td bgcolor="#FFFF88"><a
-			href="<c:url value="/shop/viewProduct.do"><c:param name="productId" value="${product.productId}"/></c:url>">
+			href="<c:url value="/shop/viewProduct.do"><c:param name="productNum" value="${product.productNum}"/></c:url>">
 				<b><font color="BLACK" size="2">&lt;&lt; <c:out
 							value="${product.productName}" /></font></b>
 		</a></td>
@@ -36,5 +36,5 @@ product jsp
 				pattern="$#,##0.00" /></td>
 	</tr>
 </table>
- -->
+ --%>
 
