@@ -6,19 +6,21 @@
 	<cache />
 
 	<select id="getProductListByCategory" resultType="sbu.spring.domain.Product">
-		SELECT 
-			PRODUCTDB.product_num AS productNum,
-			PRODUCTDB.product_name AS productName,
-			PRODUCTDB.product_remain AS productRemain,
-			PRODUCTDB.product_descriptoin AS productDescription,
-			PRODUCTDB.product_price AS productPrice,
-			PRODUCTDB.product_cate_num AS productCateNum
+		SELECT
+		PRODUCTDB.product_num AS productNum,
+		PRODUCTDB.product_name AS productName,
+		PRODUCTDB.product_remain AS productRemain,
+		PRODUCTDB.product_description AS productDescription,
+		PRODUCTDB.product_price AS productPrice,
+		PRODUCTDB.product_cate_num AS productCateNum
 		FROM PRODUCTDB
-		WHERE product_cate_num = #{productCateNum}
-</select>
+		WHERE product_cate_num =
+		#{productCateNum}
+	</select>
 	<select id="getProduct" resultType="sbu.spring.domain.Product">
 		SELECT
-		PRODUCTDB.product_name AS productName
+		PRODUCTDB.product_name
+		AS productName
 		FROM PRODUCTDB
 		WHERE
 		product_num = #{productNum}
