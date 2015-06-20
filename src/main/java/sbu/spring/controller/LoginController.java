@@ -18,8 +18,6 @@ import sbu.spring.service.sBuFacade;
 @SessionAttributes("userSession")
 public class LoginController {
 
-	private Authenticator authenticator;
-
 	private sBuFacade sBuf;
 
 	@Autowired
@@ -27,21 +25,23 @@ public class LoginController {
 		this.sBuf = sBuf;
 	}
 
-	@RequestMapping(value="/user/login.do", method = RequestMethod.POST)
+	@RequestMapping("/user/login.do")
 	public ModelAndView handleRequest(
 			HttpServletRequest request,
 			@RequestParam("userId") String userId,
 			@RequestParam("userPwd") String userPwd,
 			Model model) throws Exception {
 	
+		System.out.println("LoginController");
 		User user = this.sBuf.getUser(userId, userPwd);
 		
-		UserSession userSession = new UserSession(user);
-				
 		if (user == null) {
 //			return new ModelAndView("Error", "message", "no login");
 			return new ModelAndView("UserMain");
 		} else {
+			UserSession userSession = new UserSession(user);
+			model.addAttribute("userSession", userSession);
+			
 			return new ModelAndView("UserMainLogined");
 		}
 
@@ -71,12 +71,8 @@ public class LoginController {
 //		}
 //	}
 
-	@RequestMapping(value = "/user/login.do", method = RequestMethod.GET)
-	public String form() {
-		return "loginForm";
-	}
-	
-	 public void setAuthenticator(Authenticator authenticator) {
-	 this.authenticator = authenticator;
-	 }
+//	@RequestMapping(value = "/user/login.do", method = RequestMethod.GET)
+//	public String form() {
+//		return "loginForm";
+//	}
 }

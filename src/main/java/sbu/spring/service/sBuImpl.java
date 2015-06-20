@@ -26,6 +26,7 @@ public class sBuImpl implements sBuFacade {
 
 	@Override
 	public User getUser(String userId, String userPwd) {
+		System.out.println("sBuImpl");
 		return userDao.getUser(userId, userPwd);
 	}
 

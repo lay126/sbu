@@ -25,6 +25,7 @@ public class MybatisUserDao implements UserDao{
 //	@Override
 	public User getUser(String userId, String userPwd)
 			throws DataAccessException {
+		System.out.println("MybatisUserDao");
 		return userMapper.getUserByUserIdAndUserPwd(userId, userPwd);
 	}
 
