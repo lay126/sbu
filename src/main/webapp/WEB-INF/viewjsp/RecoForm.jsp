@@ -24,10 +24,10 @@ ${userSession.user.userId }님과 비슷한 나이대의 ${recoAgeAge }살의 ${
 </a> ]] 입니다! ${userSession.user.userId }님도 한번 사용해 보세요!
 <br>
 <br>
-구매목록 기반 추천 :
-<a
+최근에 ${userSession.user.userId }님이 구매하신 제품들을 보고 <br> 저희가
+[[ <a
 	href="<c:url value='/jsp/viewProduct.do'>
 <c:param name='productNum' value='${ recoBuyProduct.productNum }' />
 <c:param name='product' value='${ recoBuyProduct }' /></c:url>">
 	<c:out value='${recoBuyProduct.productName}' />
-</a>
+</a> ]] 이 제품을 추천해 드립니다 ❤︎

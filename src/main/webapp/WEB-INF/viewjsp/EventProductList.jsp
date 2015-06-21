@@ -9,9 +9,9 @@
 </head>
 <body>
 	<center>
-		<h2>상품 목록</h2>
+		<h2>이벤트 상품 목록</h2>
 		<br>
-		<c:if test='${ empty productList }'>
+		<c:if test='${ empty eventProductList }'>
 			<c:out value='등록된 상품이 없습니다.' />
 		</c:if>
 
@@ -19,13 +19,13 @@
 			<table border="1" cellspacing="0" width="900" cellpadding="20"
 				bgcolor="#ffe4e1">
 				<tr>
-				
-					<td><a
+					<td width="400" align="center"><a
 						href="<c:url value='/jsp/viewProduct.do'><c:param name='productNum' value='${ product.productNum }' /><c:param name='product' value='${ product }' /></c:url>">
 							<c:out value='${ product.productName }' />
 					</a></td>
-					<td><c:out value='가격 : ${ product.productPrice } 원' /></td>
-					<td><c:out value='남은 수량 : ${ product.productRemain } 개' /></td>
+					<td width="250""><c:out value='가격 : ${ product.productPrice } 원' /></td>
+					</td>
+					<td width="250""><c:out value='남은 수량 : ${ product.productRemain } 개' /></td>
 				</tr>
 
 			</table>

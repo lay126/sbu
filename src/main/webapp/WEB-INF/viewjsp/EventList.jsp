@@ -38,7 +38,24 @@
 				</td>
 			</tr>
 			<tr>
-				<td><%@ include file="EventListView.jsp"%>
+				<td><%-- %@ include file="EventProductList.jsp"%> --%>
+				<h2>이벤트 상품 목록</h2>
+		<br>
+		<c:if test='${ empty eventList }'>
+			<c:out value='등록된 상품이 없습니다.' />
+		</c:if>
+
+		<c:forEach var="event" items="${ eventList.pageList }">
+			<table border="1" cellspacing="0" width="900" cellpadding="20"
+				bgcolor="#ffe4e1">
+				<tr>
+					<td width="400"><c:out value='이벤트 명: ${ event.eventName } ' /></td>
+					<td width="500"><c:out value='이벤트 내용: ${ event.eventText } ' /></td>
+				</tr>
+
+			</table>
+			<br>
+		</c:forEach>
 				</td>
 			</tr>
 

@@ -32,7 +32,7 @@ public class ViewEventProductListController {
 		eventProductList = new PagedListHolder<Product>(
 				this.sBuf.getProductListByEventNum(eventNum));
 		eventProductList.setPageSize(10);
-
+		
 		model.put("eventProductList", eventProductList);
 		model.put("eventText", eventNum);
 

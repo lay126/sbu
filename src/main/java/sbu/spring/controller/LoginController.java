@@ -31,6 +31,10 @@ public class LoginController {
 	Product recoProduct = null;
 	private sBuFacade sBuf;
 
+	int cate1 = 0;
+	int cate2 = 0;
+	int cate3 = 0;
+
 	@Autowired
 	public void setSBuf(sBuFacade sBuf) {
 		this.sBuf = sBuf;
@@ -94,13 +98,33 @@ public class LoginController {
 			}
 
 			// reco by buyList
-
+			for (int i = 0; i < purchaseList.getNrOfElements(); i++) {
+				System.out.println("purchaseList.getSource().get(i).getBuyUserId(): "+purchaseList.getSource().get(i).getBuyUserId());
+				if (purchaseList.getSource().get(i).getBuyUserId()
+						.equals(userId)) {
+					if (sBuf.getProduct(
+							purchaseList.getSource().get(i).getProductNum())
+							.getProductCateNum() == 1) {
+						cate1 += 1;
+					} else if (sBuf.getProduct(
+							purchaseList.getSource().get(i).getProductNum())
+							.getProductCateNum() == 2) {
+						cate2 += 1;
+					} else if (sBuf.getProduct(
+							purchaseList.getSource().get(i).getProductNum())
+							.getProductCateNum() == 3) {
+						cate3 += 1;
+					}
+					System.out.println("cate1: "+cate1);
+				}
+			}
+			System.out.println("11cate1: "+cate1);
 			model.put(
 					"recoBuyProduct",
 					productAll.getPageList().get(
 							productAll.getLastElementOnPage()));
 		} catch (Exception e) {
-			
+
 		}
 
 		if (user.getUserId().equals("admin")) {
