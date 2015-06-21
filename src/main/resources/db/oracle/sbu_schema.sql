@@ -1,4 +1,5 @@
 create sequence seq_user_num  increment by 1 start with 1 nocache nocycle;
+create sequence seq_event_num  increment by 1 start with 1 nocache nocycle;
 /*create sequence seq_cate_num  increment by 1 start with 1 nocache nocycle;
 create sequence seq_product_num  increment by 1 start with 1 nocache nocycle;
 create sequence seq_event_num  increment by 1 start with 1 nocache nocycle;
@@ -7,6 +8,7 @@ create sequence seq_reco_product_num increment by 1 start with 1 nocache nocycle
 create sequence seq_buy_product_num increment by 1 start with 1 nocache nocycle;*/
 
 drop sequence seq_user_num;
+drop sequence seq_event_num;
 drop table userDB;
 drop table categoryDB;
 drop table productDB;
