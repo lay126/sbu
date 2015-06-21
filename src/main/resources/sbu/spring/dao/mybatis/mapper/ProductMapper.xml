@@ -17,6 +17,7 @@
       FROM PRODUCTDB
       WHERE product_cate_num =
       #{productCateNum}
+      ORDER BY product_num DESC
    </select>
    
    <select id="getProduct" resultType="sbu.spring.domain.Product">

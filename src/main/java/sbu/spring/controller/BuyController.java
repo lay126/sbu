@@ -33,6 +33,7 @@ public class BuyController {
 				+ salesNum);
 		product = this.sBuf.getProduct(productNum);
 		user = this.sBuf.getUser(userId);
+		System.out.println("user userId" + user + ", " + userId);
 
 		// productNum 의 productRemain 을 salesNum 만큼 빼주기
 		int productRemain = product.getProductRemain() - salesNum;
