@@ -10,26 +10,24 @@
 		EVENTDB.event_num As
 		eventNum,
 		EVENTDB.event_name As eventName,
-		EVENTDB.event_kind As
-		eventKind,
-		EVENTDB.event_product_Num As eventProductNum,
-		EVENTDB.event_start_Date As eventStartDate,
+		EVENTDB.event_start_Date As
+		eventStartDate,
 		EVENTDB.event_end_Date As
 		eventEndDate,
 		EVENTDB.event_text As eventText
 		FROM EVENTDB
 	</select>
-	
+
 	<insert id="insertEvent" parameterType="sbu.spring.domain.Event">
 		INSERT INTO EVENTDB
-		(EVENT_NAME, EVENT_KIND, EVENT_PRODUCT_NUM,
+		(EVENT_NAME,
 		EVENT_START_DATE, EVENT_END_DATE, EVENT_TEXT)
 		VALUES
-		(#{eventName}, #{eventKind},
-		#{eventProductNum},
-		#{eventStartDate}, #{eventEndDate}, #{eventText})
+		(#{eventName},
+		#{eventStartDate},
+		#{eventEndDate}, #{eventText})
 	</insert>
-	
+
 	<delete id="deleteEvent" parameterType="int">
 		DELETE FROM EVENTDB
 		WHERE
