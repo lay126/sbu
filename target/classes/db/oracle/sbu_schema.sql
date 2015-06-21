@@ -104,6 +104,9 @@ modify user_point int;
 ALTER TABLE productDB
 modify product_remain int;
 
+
+ALTER TABLE productDB add (product_price int);
+
 drop table userDB;
 
 create table buylistDB (

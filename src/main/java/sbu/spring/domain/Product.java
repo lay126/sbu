@@ -9,7 +9,7 @@ public class Product implements Serializable{
 	private String productName;
 	private int productRemain;
 	private int productCateNum;
-	private String productPrice;
+	private int productPrice;
 	private String productDescription;
 	private int productEventNum;
 
@@ -53,11 +53,11 @@ public class Product implements Serializable{
 		this.productCateNum = productCateNum;
 	}
 
-	public String getProductPrice() {
+	public int getProductPrice() {
 		return productPrice;
 	}
 
-	public void setProductPrice(String productPrice) {
+	public void setProductPrice(int productPrice) {
 		this.productPrice = productPrice;
 	}
 

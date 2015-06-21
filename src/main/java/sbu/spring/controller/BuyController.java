@@ -40,8 +40,10 @@ public class BuyController {
 		this.sBuf.insertPurchase(productNum, userId);
 
 		// userId 의 userPoint 를 productPrice의 10퍼센트 증가
-		
-		
+		int userPoint = user.getUserPoint()
+				+ (int) (product.getProductPrice() * 0.1);
+		this.sBuf.updateUserPoint(userPoint, userId);
+
 		model.put("product", product);
 
 		return "AdminSellForm";
