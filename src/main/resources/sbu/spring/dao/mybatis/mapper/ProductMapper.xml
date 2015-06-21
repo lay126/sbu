@@ -29,4 +29,17 @@
 		WHERE
 		product_num = #{productNum}
 	</select>
+	
+	
+	<update id="updateProductRemain" parameterType="productNum">
+		UPDATE
+		SET
+		board_title = #{boardTitle, jdbcType=VARCHAR},
+		board_content = #{boardContent, jdbcType=CLOB},
+		board_date = #{boardDate, jdbcType=VARCHAR},
+		user_id = #{userId, jdbcType=INTEGER},
+		class_id = #{classId, jdbcType=INTEGER}	
+		WHERE board_id = #{boardId, jdbcType=INTEGER}
+	</update
+
 </mapper>
