@@ -59,33 +59,38 @@ public class LoginController {
 
 		userAll = new PagedListHolder<User>(this.sBuf.getUserAll());
 
-		// get new product (recoLastProduct)
+		// reco by newProduct
 		for (int i = 0; i < productAll.getNrOfElements(); i++) {
 			if (i == productAll.getNrOfElements() - 1) {
 				model.put("recoLastProduct", productAll.getSource().get(i));
 			}
 		}
 
-		// get same age
+		// reco by age
 		for (int i = 0; i < userAll.getNrOfElements(); i++) {
 			if (userAll.getSource().get(i).getUserBirth().subSequence(0, 1)
 					.equals(user.getUserBirth().subSequence(0, 1))
 					&& (userAll.getSource().get(i).getUserId() != user
 							.getUserId())) {
+
+				purchaseList = new PagedListHolder<Purchase>(
+						this.sBuf.getPurchaseListByUserId(userAll.getSource()
+								.get(i).getUserId()));
+				recoProduct = sBuf.getProduct(purchaseList.getSource().get(1)
+						.getProductNum());
+
+				model.put("recoAgeProduct", recoProduct);
+				int tmpage = Integer.parseInt("19"+userAll.getSource().get(i).getUserBirth().subSequence(0, 2));
+				tmpage = 2015-tmpage;
 				
-				purchaseList = new PagedListHolder<Purchase>(this.sBuf.getPurchaseListByUserId(userAll.getSource().get(i).getUserId()));
-				recoProduct = sBuf.getProduct(purchaseList.getSource().get(1).getProductNum());
-				
-				System.out.println("a: "+purchaseList.getSource().get(0).getBuyUserId());
-				System.out.println("b: "+purchaseList.getSource().get(0).getProductNum());
-				System.out.println("c: "+purchaseList.getSource().get(0).getBuyDate());
-				model.put("recoAgeProduct",
-						recoProduct);
+				model.put("recoAgeAge", tmpage);
+				model.put("recoAgeName", userAll.getSource().get(i).getUserId());
 				break;
 			}
 		}
 
-		
+		// reco by buyList
+
 		model.put("recoBuyProduct",
 				productAll.getPageList().get(productAll.getLastElementOnPage()));
 

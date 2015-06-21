@@ -5,22 +5,23 @@
    "http://www.w3.org/TR/html4/loose.dtd">
 
 
-신상품 추천 :
+새로운 신상품이 들어왔어요 :) <br> 예쁜 색상의 [[
 <a
 	href="<c:url value='/jsp/viewProduct.do'>
 <c:param name='productNum' value='${ recoLastProduct.productNum }' />
 <c:param name='product' value='${ recoLastProduct }' /></c:url>">
 	<c:out value='${recoLastProduct.productName}' />
-</a>
+</a> ]] 입니다! 눌러서 상품을 확인해 보세요~
+<br><br>
 <br>
-<br>
-나이대 추천 :
+
+${userSession.user.userId }님과 비슷한 나이대의 ${recoAgeAge }살의 ${recoAgeName }님이 최근에 구매하신 <br> [[
 <a
 	href="<c:url value='/jsp/viewProduct.do'>
 <c:param name='productNum' value='${ recoAgeProduct.productNum }' />
 <c:param name='product' value='${ recoAgeProduct }' /></c:url>">
 	<c:out value='${recoAgeProduct.productName}' />
-</a>
+</a> ]] 입니다! ${userSession.user.userId }님도 한번 사용해 보세요!
 <br>
 <br>
 구매목록 기반 추천 :
