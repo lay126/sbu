@@ -1,5 +1,6 @@
 create sequence seq_user_num  increment by 1 start with 1 nocache nocycle;
 create sequence seq_event_num  increment by 1 start with 1 nocache nocycle;
+create sequence seq_product_num  increment by 1 start with 1 nocache nocycle;
 /*create sequence seq_cate_num  increment by 1 start with 1 nocache nocycle;
 create sequence seq_product_num  increment by 1 start with 1 nocache nocycle;
 create sequence seq_event_num  increment by 1 start with 1 nocache nocycle;

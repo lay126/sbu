@@ -11,6 +11,8 @@ public interface ProductMapper {
 
      Product getProduct(int productNum);
      
+     Product getLastProduct();
+     
      List<Product> getProductListByEventNum(int productEventNum);
      
      void updateProductRemain(@Param("productNum") int productNum,@Param("productRemain") int productRemain);
