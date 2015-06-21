@@ -9,13 +9,15 @@
 <body>
 	<table>
 		<tr>
-			<td><%@ include file="loginForm.jsp"%></td>
+			<td><c:if test="${empty userSession.user}">
+					<%@ include file="loginForm.jsp"%>
+				</c:if> <c:if test="${!empty userSession.user}">
+					<%@ include file="loginedForm.jsp"%>
+				</c:if></td>
 			<td rowspan="2"><%@ include file="UserEventForm.jsp"%></td>
 		</tr>
 		<tr>
-			<td>
-			
-			<%@ include file="UserCategoryForm.jsp"%></td>
+			<td><%@ include file="UserCategoryForm.jsp"%></td>
 		</tr>
 	</table>
 </body>

@@ -1,6 +1,15 @@
 <table align="left" bgcolor="#ffe4c4" width="700" height="600">
 	<tr>
-		<td align="center" bgcolor="#ffe4c4">please login!</td>
+		<td align="center" bgcolor="#ffe4c4">
+		
+		<c:if
+				test="${empty userSession.user}">
+				please login!
+			</c:if> <c:if test="${!empty userSession.user}">
+				welcome!
+			</c:if>
+		
+		</td>
 		<td align="center" bgcolor="#ffe4c4"><input type="button" value="more"/></td>
 	</tr>
 	<tr>

@@ -37,14 +37,13 @@ public class LoginController {
 		User user = this.sBuf.getUser(userId);
 		model.put("user", user);
 
-		if (user == null) {
-			return "UserMain";
-		} else {
+		if (user != null) {
 			UserSession userSession = new UserSession(user);
 			model.addAttribute("userSession", userSession);
 
-			return "UserMainLogined";
 		}
+		
+		return "UserMain";
 
 	}
 }
