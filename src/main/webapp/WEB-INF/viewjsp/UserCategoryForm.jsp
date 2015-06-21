@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
-<table align="left" bgcolor="#ffe4e1" width="200" height="400" >
+<table align="left" bgcolor="#ffe4e1" width="200" height="400">
 	<tr>
 		<td align="center" bgcolor="#ffb6c1">wishlist</td>
 	</tr>
@@ -11,15 +11,22 @@
 		<td align="center" bgcolor="#ffb6c1">purchase</td>
 	</tr>
 	<tr>
-		<td align="center" bgcolor="#ffe4e1">base</td>
-	</tr>
-	<tr>
-		<td align="center" bgcolor="#ffe4e1">face</td>
+		<td align="center" bgcolor="#ffe4e1">
+			<a href="<c:url value='/jsp/viewProductList.do'><c:param name='productCateNum' value='1'/></c:url>">
+			base</a>
+		</td>
 	</tr>
 	<tr>
 		<td align="center" bgcolor="#ffe4e1">
-		<a href="<c:url value='/jsp/viewProduct.do'/>">colors</a></td>
+			<a href="<c:url value='/jsp/viewProductList.do'><c:param name='productCateNum' value='2'/></c:url>">face
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" bgcolor="#ffe4e1">
+			<a href="<c:url value='/jsp/viewProductList.do'><c:param name='productCateNum' value='3'/></c:url>">
+			colors</a>
+		</td>
 	</tr>
 </table>
 
-   

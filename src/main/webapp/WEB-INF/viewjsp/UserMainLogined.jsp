@@ -13,9 +13,7 @@
 			<td rowspan="2"><%@ include file="UserEventFormLogined.jsp"%></td>
 		</tr>
 		<tr>
-			<td>
-			
-			<%@ include file="UserCategoryForm.jsp"%></td>
+			<td><%@ include file="UserCategoryForm.jsp"%></td>
 		</tr>
 	</table>
 </body>
