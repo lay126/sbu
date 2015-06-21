@@ -12,7 +12,7 @@ import sbu.spring.service.sBuFacade;
 @Controller
 public class ViewProductController {
 
-	Product product = new Product();
+	Product product;
 	private sBuFacade sBuf;
 
 	@Autowired
@@ -28,7 +28,7 @@ public class ViewProductController {
 			ModelMap model) throws Exception {
 		Product product = this.sBuf.getProduct(productNum);
 		model.put("product", product);
-		model.put("product", product.getProductName());
+
 		if (product == null) {
 			System.out.println("product null");
 		} else {
