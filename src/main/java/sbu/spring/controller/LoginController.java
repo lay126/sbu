@@ -52,11 +52,21 @@ public class LoginController {
 		
 		productAll = new PagedListHolder<Product>(this.sBuf.getProductAll());
 		model.put("productAll", productAll);
+		model.put("productLastNum", productAll.getNrOfElements());
 		
-		recoLastProduct = this.sBuf.getProduct(3);
-		model.put("recoLastProduct", recoLastProduct);
+		// get new product (recoLastProduct)
+		for (int i = 0; i < productAll.getNrOfElements(); i++ ){
+			if (i == productAll.getNrOfElements()-1) {
+				model.put("recoLastProduct", productAll.getSource().get(i));
+			}
+		}
 		
-		if (user.getUserId().equals("admin") ) {
+		
+		
+		model.put("recoAgeProduct", productAll.getPageList().get(productAll.getLastElementOnPage()));
+		model.put("recoBuyProduct", productAll.getPageList().get(productAll.getLastElementOnPage()));
+		
+		if (user.getUserId().equals("admin")) {
 			return "AdminMain";
 		} else {
 			return "UserMain";
