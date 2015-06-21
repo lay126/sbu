@@ -48,6 +48,11 @@ public class LoginController {
 		eventList = new PagedListHolder<Event>(this.sBuf.getEventList());
 		model.put("eventList", eventList);
 		
-		return "UserMain";
+		if (user.getUserPoint() == null ) {
+			return "AdminMain";
+		} else {
+			return "UserMain";
+		}
+		
 	}
 }
