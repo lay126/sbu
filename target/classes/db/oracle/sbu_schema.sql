@@ -94,7 +94,10 @@ ADD product_description varchar(100);
 ALTER TABLE productDB
 ADD product_price varchar(32);
 
-drop table buylistDB;
+ALTER TABLE userDB
+modify user_point int;
+
+drop table userDB;
 
 
 create table buylistDB (
