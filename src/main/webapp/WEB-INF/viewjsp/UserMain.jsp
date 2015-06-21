@@ -15,14 +15,19 @@
 					</c:if> <c:if test="${!empty userSession.user}">
 						<%@ include file="loginedForm.jsp"%>
 					</c:if></td>
-				<td rowspan="2"><c:if test="${empty userSession.user}"><%@ include
+				<td rowspan="2"><%-- <c:if test="${empty userSession.user}"><%@ include
 							file="UserEventForm.jsp"%></c:if>
 					<c:if test="${!empty userSession.user}">
 						
 					
 					
 					
-					</c:if></td>
+					</c:if> --%>
+					
+					<%@ include
+							file="UserEventForm.jsp"%>
+					
+					</td>
 			</tr>
 			<tr>
 				<td><%@ include file="UserCategoryForm.jsp"%></td>
