@@ -91,6 +91,9 @@ ALTER TABLE productDB
 ADD product_description varchar(100);
 
 ALTER TABLE productDB
+ADD product_event_num int;
+
+ALTER TABLE productDB
 ADD product_price varchar(32);
 
 ALTER TABLE userDB
