@@ -9,18 +9,16 @@
 </head>
 <body>
 
-Purchase List
-<!-- 
-	<table align="left" bgcolor="#ffe4c4" width="700" height="600">
+<br/>
+	<table align="left" bgcolor="#ffe4c4" width="700">
 		<tr>
 			<td align="center" bgcolor="#ffe4c4"><c:if
 					test="${empty userSession.user}">
 				please login!
 			</c:if> <c:if test="${!empty userSession.user}">
-				welcome!
+				your purchase product LIST
 			</c:if></td>
-			<td align="center" bgcolor="#ffe4c4"><input type="button"
-				value="more" /></td>
+
 		</tr>
 
 		<c:forEach var="purchase" items="${ purchaseList.pageList }">
@@ -33,6 +31,6 @@ Purchase List
 
 		</c:forEach>
 	</table>
-	 -->
+
 </body>
 </html>

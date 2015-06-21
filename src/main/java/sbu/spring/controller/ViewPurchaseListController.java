@@ -34,9 +34,10 @@ public class ViewPurchaseListController {
 				this.sBuf.getPurchaseListByUserId(userSession.getUser().getUserId()));
 		
 		purchaseList.setPageSize(10);
+		System.out.println("kkkkk"+purchaseList.getPageCount());
 		model.put("purchaseList", purchaseList);
 		model.put("userId",userSession.getUser().getUserId());
 		
-		return "purchaseList";
+		return "PurchaseList";
 	}
 }
