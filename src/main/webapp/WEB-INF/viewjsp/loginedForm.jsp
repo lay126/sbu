@@ -6,21 +6,23 @@
 
  
 
-<form id="loginUser" action="<c:url value='/jsp/user/logout.do' />" method="POST">
+<form id="logoutUser" action="<c:url value='/user/logout.do' />" method="POST">
 	<table align="left" bgcolor="#6D839A" width="200" height="200">
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">ID</td>
-			<td align="center" bgcolor="#9CA8B3"><c:out value="${user.userId}"/></td>
+			<td align="center" bgcolor="#9CA8B3"><c:out value="${userSession.user.userId}"/></td>
+		</tr>
+		<tr>
+			<td align="center" bgcolor="#9CA8B3">EMAIL</td>
+			<td align="center" bgcolor="#9CA8B3"><c:out value="${userSession.user.userEmail}"/></td>
 		</tr>
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">POINT</td>
-			<td align="center" bgcolor="#9CA8B3"><c:out value="${user.userPoint}"/></td>
+			<td align="center" bgcolor="#9CA8B3"><c:out value="${userSession.user.userPoint}"/></td>
 		</tr>
 		<tr>
-			<td align="center" bgcolor="#9CA8B3"><input type="submit"
+			<td colspan="2" align="center" bgcolor="#9CA8B3"><input type="submit"
 				value="LOGOUT" /></td>
-			<td align="center" bgcolor="#9CA8B3"><a
-				href="<c:url value='/jsp/join/user.do'/>">join</a></td>
 		</tr>
 	</table>
 

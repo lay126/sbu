@@ -40,10 +40,8 @@ public class LoginController {
 		if (user != null) {
 			UserSession userSession = new UserSession(user);
 			model.addAttribute("userSession", userSession);
-
 		}
 		
 		return "UserMain";
-
 	}
 }
