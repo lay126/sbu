@@ -30,7 +30,7 @@ public class BuyController {
 		user = this.sBuf.getUser(userId);
 
 		int productRemain = product.getProductRemain() - salesNum;
-		this.sBuf.updateProductRemain(productNum);
+		this.sBuf.updateProductRemain(productNum, productRemain);
 		// productNum 의 productRemain 을 salesNum 만큼 빼주기
 		// userId 의 userPoint 를 productPrice의 10퍼센트 증가
 

@@ -10,7 +10,7 @@ public interface ProductMapper {
      
      List<Product> getProductListByEventNum(int productEventNum);
      
-     void updateProductRemain(int productNum);
+     void updateProductRemain(int productNum, int productRemain);
 
      //List<Product> searchProductList(String keywords);
 

@@ -34,5 +34,5 @@ public interface sBuFacade {
 
 	Category getCategory(int cateNum);
 
-	void updateProductRemain(int productNum);
+	void updateProductRemain(int productNum, int productRemain);
 }

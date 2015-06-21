@@ -72,9 +72,8 @@ public class sBuImpl implements sBuFacade {
 
 
 	@Override
-	public void updateProductRemain(int productNum) {
-		// TODO Auto-generated method stub
-
+	public void updateProductRemain(int productNum, int productRemain) {
+		
 	}
 
 	@Override

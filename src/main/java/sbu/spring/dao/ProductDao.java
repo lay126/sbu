@@ -12,7 +12,7 @@ public interface ProductDao {
 
 	Product getProduct(int productNum) throws DataAccessException;
 
-	void updateProductRemain(int productNum) throws DataAccessException;
+	void updateProductRemain(int productNum, int productRemain) throws DataAccessException;
 
 	List<Product> getProductListByEventNum(int productEventNum)
 			throws DataAccessException;
