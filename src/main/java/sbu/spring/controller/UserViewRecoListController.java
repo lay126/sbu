@@ -16,28 +16,8 @@ import sbu.spring.service.sBuFacade;
 @SessionAttributes("userSession")
 public class UserViewRecoListController {
 
-	PagedListHolder<Purchase> purchaseList = null;
-	User user = new User();
-	private sBuFacade sBuf;
-
-	@Autowired
-	public void setSBuf(sBuFacade sBuf) {
-		this.sBuf = sBuf;
-	}
-	//model.addAttribute("userSession", userSession);
-
-	@RequestMapping("/jsp/viewPurchaseList.do")
-	public String handleRequest(@ModelAttribute("userSession") UserSession userSession,
-			ModelMap model) throws Exception {
-		System.out.println(userSession.getUser().getUserId());
-		purchaseList = new PagedListHolder<Purchase>(
-				this.sBuf.getPurchaseListByUserId(userSession.getUser().getUserId()));
-		
-		purchaseList.setPageSize(10);
-		System.out.println("kkkkk"+purchaseList.getPageCount());
-		model.put("purchaseList", purchaseList);
-		model.put("userId",userSession.getUser().getUserId());
-		
-		return "PurchaseList";
-	}
+	
+	
+	
+	
 }
