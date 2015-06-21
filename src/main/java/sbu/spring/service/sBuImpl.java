@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sbu.spring.dao.*;
+import sbu.spring.domain.Category;
 import sbu.spring.domain.Event;
 import sbu.spring.domain.Product;
 import sbu.spring.domain.Purchase;
@@ -23,6 +24,9 @@ public class sBuImpl implements sBuFacade {
 	@Autowired
 	private EventDao eventDao;
 
+	@Autowired
+	private CategoryDao categoryDao;
+	
 	@Override
 	public User getUser(String userId) {
 		return userDao.getUser(userId);
@@ -66,6 +70,11 @@ public class sBuImpl implements sBuFacade {
 	@Override
 	public void deleteEvent(int eventNum) {
 		eventDao.deleteEvent(eventNum);
+	}
+
+	@Override
+	public Category getCategory(int cateNum) {
+		return categoryDao.getCategory(cateNum);
 	}
 
 	
