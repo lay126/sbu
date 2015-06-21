@@ -31,9 +31,8 @@ public class MybatisProductDao implements ProductDao {
    }
 
    @Override
-   public void updateProductRemain(int productNum, int productRemain) throws DataAccessException {
-      
-      
+   public void updateProductRemain(int productNum, int productRemain) {
+      productMapper.updateProductRemain(productNum, productRemain);
    }
 
 

@@ -52,8 +52,8 @@
       UPDATE
       PRODUCTDB
       SET
-      product_remain = #{productRemain, jdbcType=INT}
-      WHERE product_num = #{productNum, jdbcType=INT}
+      product_remain = #{productRemain, jdbcType=INTEGER}
+      WHERE product_num = #{productNum, jdbcType=INTEGER}
    </update>
 
 </mapper>
