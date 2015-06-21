@@ -20,10 +20,10 @@
 
 	<insert id="insertEvent">
 		INSERT INTO EVENTDB
-		(seq_event_num.NEXTVAL, EVENT_NAME,
+		(EVENT_NUM, EVENT_NAME,
 		EVENT_START_DATE, EVENT_END_DATE, EVENT_TEXT)
 		VALUES
-		(#{eventName, jdbcType=VARCHAR},
+		(seq_event_num.NEXTVAL, #{eventName, jdbcType=VARCHAR},
 		#{eventStartDate, jdbcType=INTEGER},
 		#{eventEndDate, jdbcType=INTEGER}, #{eventText, jdbcType=VARCHAR})
 	</insert>

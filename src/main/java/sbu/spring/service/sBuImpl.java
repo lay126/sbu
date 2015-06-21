@@ -117,9 +117,11 @@ public class sBuImpl implements sBuFacade {
 		return userDao.getUserAll();
 	}
 
+
 @Override
-public void insertEvent(String eventName, int eventStartDate, String eventText,
-		int eventEndDate) {
+public void insertEvent(String eventName, int eventStartDate, int eventEndDate,
+		String eventText) {
+	// TODO Auto-generated method stub
 	eventDao.insertEvent(eventName, eventStartDate, eventEndDate, eventText);
 }
 

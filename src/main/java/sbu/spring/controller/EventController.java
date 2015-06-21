@@ -33,7 +33,7 @@ public class EventController {
 			@RequestParam("eventText")String eventText,
 			ModelMap model)throws Exception{
 			
-			this.sBuf.insertEvent(eventName, eventStartDate, eventText, eventEndDate);
+			this.sBuf.insertEvent(eventName, eventStartDate, eventEndDate,eventText);
 			
 			//model.put("event", event);
 			//eventName = event.getEventName();
