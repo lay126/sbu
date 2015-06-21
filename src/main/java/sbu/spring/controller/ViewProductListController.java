@@ -14,6 +14,7 @@ import sbu.spring.service.sBuFacade;
 public class ViewProductListController {
 
 	PagedListHolder<Product> productList = null;
+	// Category category = null;
 	private sBuFacade sBuf;
 
 	@Autowired
@@ -29,6 +30,7 @@ public class ViewProductListController {
 				this.sBuf.getProductListByCategory(productCateNum));
 		productList.setPageSize(10);
 		model.put("productList", productList);
+		model.put("cateNum", productCateNum);
 		
 		return "ProductList";
 	}
