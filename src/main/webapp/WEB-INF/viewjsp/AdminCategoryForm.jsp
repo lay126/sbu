@@ -24,7 +24,7 @@
 	</tr>
 	<tr>
 		<td align="center" bgcolor="#ffe4e1"><a
-			href="<c:url value='/jsp/viewEventProductList.do'><c:param name='eventNum' value='3'/></c:url>">
+			href="<c:url value='/jsp/viewProductList.do'><c:param name='productCateNum' value='3'/></c:url>">
 				event</a></td>
 	</tr>
 </table>
