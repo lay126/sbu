@@ -58,7 +58,7 @@
       PRODUCTDB.product_event_num AS productEventNum
       FROM PRODUCTDB
       WHERE
-      product_num = LAST_INSERT_ID()
+      product_num = 2
    </select>
    
    <update id="updateProductRemain">

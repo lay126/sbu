@@ -24,6 +24,7 @@ public class LoginController {
 
 	User user = new User();
 	PagedListHolder<Event> eventList = null;
+	Product recoLastProduct = null;
 	private sBuFacade sBuf;
 	
 	@Autowired
@@ -47,6 +48,9 @@ public class LoginController {
 		
 		eventList = new PagedListHolder<Event>(this.sBuf.getEventList());
 		model.put("eventList", eventList);
+		
+		recoLastProduct = this.sBuf.getProduct(3);
+		model.put("recoLastProduct", recoLastProduct);
 		
 		if (user.getUserPoint() == null ) {
 			return "AdminMain";
