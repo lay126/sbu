@@ -31,5 +31,7 @@ public interface sBuFacade {
 	void deleteEvent(int eventNum);
 	
 	Category getCategory(int cateNum);
+	
+	List<Purchase> getpurchaseList(String userId);
 
 }
