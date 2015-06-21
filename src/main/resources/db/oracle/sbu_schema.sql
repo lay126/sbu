@@ -39,13 +39,15 @@ create table productDB (
     FOREIGN KEY (product_cate_num) REFERENCES categoryDB(cate_num)
 )
 
+//eventText추가  int 형 변환 
 create table eventDB (
     event_num int not null PRIMARY KEY,
    	event_name varchar(32) not null,
-    event_kind varchar(32) not null,
+    event_kind int not null,
     event_product_num int not null,
     event_start_date varchar(64) null,
     event_end_date varchar(64) null,
+    event_text varchar(64) null,
     FOREIGN KEY (event_product_num) REFERENCES productDB(product_num)
 );
 

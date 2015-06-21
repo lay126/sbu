@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sbu.spring.dao.mybatis.mapper.EventMapper">
+	<cache />
+
+	<select id="getEventList" resultType="sbu.spring.domain.Event">
+		SELECT
+		EVENTDB.event_num As eventNum,
+		EVENTDB.event_name As eventName,
+		EVENTDB.event_kind As eventKind,
+		EVENTDB.event_productNum As eventProductNum,
+		EVENTDB.event_startDatd As eventStartDate,
+		EVENTDB.event_endDatd As eventEndDate,
+		EVENTDB.event_text As eventText
+		FROM EVENTDB
+	</select>
+	<insert id="insertEvent">
+		INSERT
+		<!-- EVENTDB.event_num As eventNum,
+		EVENTDB.event_name As eventName,
+		EVENTDB.event_kind As eventKind,
+		EVENTDB.event_productNum As eventProductNum,
+		EVENTDB.event_startDatd As eventStartDate,
+		EVENTDB.event_endDatd As eventEndDate, -->
+	</insert>
+	<delete id="deleteEvent">
+		DELETE
+	</delete>
+</mapper>
