@@ -5,4 +5,9 @@
    "http://www.w3.org/TR/html4/loose.dtd">
 
  
-${recoLastProduct.productName}
+ 
+ 신상품 추천 : ${recoLastProduct.productName}
+ <br> <br>
+ 나이대 추천 : ${recoLastProduct.productName}
+ <br> <br>
+ 구매목록 기반 추천 : ${recoLastProduct.productName}

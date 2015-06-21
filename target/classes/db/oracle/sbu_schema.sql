@@ -62,12 +62,9 @@ create table wishlistDB (
 );
 
 create table recolistDB (
-	reco_num int not null,
+	reco_num int not null primary key,
     reco_product_num int not null,
-    reco_user_num int not null,
-   	constraint pk_recolistDB primary key (reco_product_num, reco_user_num),
-  	FOREIGN KEY (reco_product_num) REFERENCES productDB(product_num),
-  	FOREIGN KEY (reco_user_num) REFERENCES userDB(user_num)
+    reco_user_num int not null
 );
 
 create table buylistDB (
