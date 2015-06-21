@@ -34,7 +34,7 @@
    <update id="updateProductRemain">
       UPDATE
       SET
-      procuct_remain = #{productRemain, jdbcType=INTEGER}
+      product_remain = #{productRemain, jdbcType=INTEGER}
       WHERE product_num = #{productNum, jdbcType=INTEGER}
    </update>
 

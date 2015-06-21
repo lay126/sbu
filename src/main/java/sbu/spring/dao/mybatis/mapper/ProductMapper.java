@@ -8,7 +8,7 @@ public interface ProductMapper {
 
      Product getProduct(int productNum);
      
-     void updateProductRemian(int productNum);
+     void updateProductRemain(int productNum);
 
      //List<Product> searchProductList(String keywords);
 

@@ -28,8 +28,9 @@ public class BuyController {
 			throws Exception {
 		product = this.sBuf.getProduct(productNum);
 		user = this.sBuf.getUser(userId);
-		
-		// int productRemain = this.sBuf
+
+		int productRemain = product.getProductRemain() - salesNum;
+		this.sBuf.updateProductRemian(productRemain);
 		// productNum 의 productRemain 을 salesNum 만큼 빼주기
 		// userId 의 userPoint 를 productPrice의 10퍼센트 증가
 

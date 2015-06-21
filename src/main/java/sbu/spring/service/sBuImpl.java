@@ -85,4 +85,10 @@ public class sBuImpl implements sBuFacade {
 		return null;
 	}
 
+	@Override
+	public void updateProductRemain(int productNum) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
