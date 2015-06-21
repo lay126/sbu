@@ -29,11 +29,6 @@ public class MybatisUserDao implements UserDao{
 	}
 
 //	@Override
-	public List<Purchase> getUserList(String userId) throws DataAccessException {
-		return userMapper.getPurchaseList(userId);
-	}
-
-//	@Override
 	public String getUserNameByUserId(String userId) {
 		return userMapper.getUserNameByUserId(userId);
 	}

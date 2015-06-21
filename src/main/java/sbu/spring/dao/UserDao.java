@@ -12,8 +12,6 @@ public interface UserDao {
 	User getUser(String userId) throws DataAccessException;
 	
 	User getUser(String userId, String userPwd) throws DataAccessException;
-
-	List<Purchase> getUserList(String userId)  throws DataAccessException;
 	
 	String getUserNameByUserId(String userId);
 }

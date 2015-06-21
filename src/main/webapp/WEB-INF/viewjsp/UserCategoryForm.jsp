@@ -9,6 +9,7 @@
 	</tr>
 	<tr>
 		<td align="center" bgcolor="#ffb6c1">purchase</td>
+		<form action="<c:url value='/jsp/viewPurchaseList.do' />" method="POST">
 	</tr>
 	<tr>
 		<td align="center" bgcolor="#ffe4e1">
