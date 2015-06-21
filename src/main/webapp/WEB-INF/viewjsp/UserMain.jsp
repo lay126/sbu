@@ -7,18 +7,27 @@
 <title>Main page</title>
 </head>
 <body>
-	<table>
-		<tr>
-			<td><c:if test="${empty userSession.user}">
-					<%@ include file="loginForm.jsp"%>
-				</c:if> <c:if test="${!empty userSession.user}">
-					<%@ include file="loginedForm.jsp"%>
-				</c:if></td>
-			<td rowspan="2"><%@ include file="UserEventForm.jsp"%></td>
-		</tr>
-		<tr>
-			<td><%@ include file="UserCategoryForm.jsp"%></td>
-		</tr>
-	</table>
+	<center>
+		<table>
+			<tr>
+				<td><c:if test="${empty userSession.user}">
+						<%@ include file="loginForm.jsp"%>
+					</c:if> <c:if test="${!empty userSession.user}">
+						<%@ include file="loginedForm.jsp"%>
+					</c:if></td>
+				<td rowspan="2"><c:if test="${empty userSession.user}"><%@ include
+							file="UserEventForm.jsp"%></c:if>
+					<c:if test="${!empty userSession.user}">
+						
+					
+					
+					
+					</c:if></td>
+			</tr>
+			<tr>
+				<td><%@ include file="UserCategoryForm.jsp"%></td>
+			</tr>
+		</table>
+	</center>
 </body>
 </html>
