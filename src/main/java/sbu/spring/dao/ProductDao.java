@@ -11,6 +11,8 @@ public interface ProductDao {
 			throws DataAccessException;
 
 	Product getProduct(int productNum) throws DataAccessException;
+	
+	Product getLastProduct() throws DataAccessException;
 
 	void updateProductRemain(int productNum, int productRemain) throws DataAccessException;
 

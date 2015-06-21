@@ -101,6 +101,11 @@ public class sBuImpl implements sBuFacade {
 		purchaseDao.insertPurchase(buyProductNum, buyUserId);
 	}
 
+	@Override
+	public Product getLastProduct() {
+		return productDao.getLastProduct();
+	}
+
 
 
 }

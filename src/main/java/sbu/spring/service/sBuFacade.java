@@ -26,6 +26,8 @@ public interface sBuFacade {
 
 	Product getProduct(int productNum);
 	
+	Product getLastProduct();
+	
 	List<Product> getProductListByEventNum(int productEventNum);
 
 	List<Event> getEventList();
