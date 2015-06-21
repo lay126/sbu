@@ -2,6 +2,9 @@ package sbu.spring.service;
 
 import java.util.List;
 
+import org.springframework.dao.DataAccessException;
+
+import sbu.spring.domain.Category;
 import sbu.spring.domain.Event;
 import sbu.spring.domain.Purchase;
 import sbu.spring.domain.User;
@@ -26,5 +29,7 @@ public interface sBuFacade {
 	void insertEvent(Event event);
 	
 	void deleteEvent(int eventNum);
+	
+	Category getCategory(int cateNum);
 
 }
