@@ -18,25 +18,24 @@
 		USERDB
 		WHERE
 		USERDB.user_id =
-		#{userId, jdbcType=VARCHAR} and
-		USERDB.user_pwd = #{userPwd,
-		jdbcType=VARCHAR}
+		#{param1} and
+		USERDB.user_pwd = #{param2}
 	</select>
 
 	<select id="getUserByUserId" resultType="sbu.spring.domain.User">
-		USERDB.user_id as
+		SELECT
+		USERDB.user_id AS
 		userId,
-		USERDB.user_num as userNumber,
-		USERDB.user_name as userName,
-		USERDB.user_pwd as userPwd,
-		USERDB.user_email as userEmail,
-		USERDB.user_phone as userPhone,
-		USERDB.user_birth as userBirth,
-		USERDB.user_point as userPoint
+		USERDB.user_num AS userNumber,
+		USERDB.user_name AS userName,
+		USERDB.user_pwd AS userPwd,
+		USERDB.user_email AS userEmail,
+		USERDB.user_phone AS userPhone,
+		USERDB.user_birth AS userBirth,
+		USERDB.user_point AS userPoint
 		FROM USERDB
 		WHERE
-		user_id = {#userId,
-		jdbcType=VARCHAR}
+		user_id = #{userId}
 
 	</select>
 	<select id="getUserNameByUserId" resultType="String">

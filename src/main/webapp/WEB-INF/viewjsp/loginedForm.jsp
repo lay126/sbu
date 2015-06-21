@@ -6,12 +6,11 @@
 
  
 
-<%-- <form:form commandName="loginUser" method="post" action="/jsp/user/login.do"> --%>
 <form id="loginUser" action="<c:url value='/jsp/user/logout.do' />" method="POST">
 	<table align="left" bgcolor="#6D839A" width="200" height="200">
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">ID</td>
-			<td align="center" bgcolor="#9CA8B3"><c:out value="${loginCommand.id}"/></td>
+			<td align="center" bgcolor="#9CA8B3"><c:out value="${userSession.userId}"/></td>
 		</tr>
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">POINT</td>
@@ -26,5 +25,4 @@
 	</table>
 
 </form>
-<%-- </form:form> --%>
 

@@ -14,13 +14,6 @@ public class User implements Serializable{
 	private String userBirth;
 	private String userPoint;
 	private int userNumber; //sequence
-	
-	public int getUserNumber() {
-		return userNumber;
-	}
-	public void setUserNumber(int userNumber) {
-		this.userNumber = userNumber;
-	}
 	public String getUserId() {
 		return userId;
 	}
@@ -57,10 +50,19 @@ public class User implements Serializable{
 	public void setUserBirth(String userBirth) {
 		this.userBirth = userBirth;
 	}
-	public String getPoint() {
+	public String getUserPoint() {
 		return userPoint;
 	}
-	public void setPoint(String point) {
-		this.userPoint = point;
+	public void setUserPoint(String userPoint) {
+		this.userPoint = userPoint;
 	}
+	public int getUserNumber() {
+		return userNumber;
+	}
+	public void setUserNumber(int userNumber) {
+		this.userNumber = userNumber;
+	}
+	
+	
+	
 }

@@ -30,16 +30,13 @@ public class LoginController {
 
 	@RequestMapping("/user/login.do")
 	public ModelAndView handleRequest(HttpServletRequest request,
-			@RequestParam(value="userId") String userId,
-			@RequestParam(value="userPwd") String userPwd, Model model)
+			@RequestParam("userId") String userId,
+			@RequestParam("userPwd") String userPwd, ModelMap model)
 			throws Exception {
 
-		User user = this.sBuf.getUser(userId, userPwd);
-		String a = this.sBuf.getUserNameByUserId(userId);
-		System.out.println("a: "+a);
+		User user = this.sBuf.getUser(userId);
 
 		if (user == null) {
-			// return new ModelAndView("Error", "message", "no login");
 			return new ModelAndView("UserMain");
 		} else {
 			UserSession userSession = new UserSession(user);
