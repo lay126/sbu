@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import sbu.spring.domain.Product;
+import sbu.spring.domain.Purchase;
 import sbu.spring.domain.User;
 import sbu.spring.service.sBuFacade;
 
@@ -14,6 +15,8 @@ import sbu.spring.service.sBuFacade;
 public class BuyController {
 	User user;
 	Product product;
+	Purchase purchase; 
+	
 	private sBuFacade sBuf;
 
 	@Autowired
@@ -37,6 +40,9 @@ public class BuyController {
 		// productNum 의 productRemain 을 salesNum 만큼 빼주기
 		// userId 의 userPoint 를 productPrice의 10퍼센트 증가
 
+		this.sBuf.insertPurchase(productNum, userId);
+		
+		
 		model.put("product", product);
 
 		return "AdminSellForm";

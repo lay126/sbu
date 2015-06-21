@@ -37,4 +37,6 @@ public interface sBuFacade {
 	Category getCategory(int cateNum);
 
 	void updateProductRemain(int productNum, int productRemain);
+	
+	void insertPurchase(int buyProductNum, String buyUserId);
 }

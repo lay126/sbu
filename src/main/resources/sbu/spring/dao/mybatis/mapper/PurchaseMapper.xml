@@ -16,5 +16,11 @@
 		WHERE
 		buy_user_id = #{userId}
 	</select>
+	
+	<insert id="insertPurchase">
+		INSERT INTO 
+		BUYLISTDB (buy_product_num, buy_user_id, buy_date)
+		VALUES (#{buyProductNum, jdbcType=INTEGER}, #{buyUserId, jdbcType=VARCHAR}, now())
+	</insert>
 
 </mapper>

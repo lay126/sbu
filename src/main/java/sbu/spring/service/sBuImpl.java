@@ -96,6 +96,11 @@ public class sBuImpl implements sBuFacade {
 		return userDao.getUserByUserBirth(userBirth);
 	}
 
-	
+	@Override
+	public void insertPurchase(int buyProductNum, String buyUserId) {
+		purchaseDao.insertPurchase(buyProductNum, buyUserId);
+	}
+
+
 
 }
