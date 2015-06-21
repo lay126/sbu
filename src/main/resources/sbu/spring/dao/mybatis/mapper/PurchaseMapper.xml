@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sbu.spring.dao.mybatis.mapper.PurchaseMapper">
+	<cache />
+	<select id="getPurchaseList" parameterType="String"
+		resultType="sbu.spring.domain.Purchase">
+		SELECT
+		BUYLISTDB.buy_date AS buyDate,
+		BUYLISTDB.buy_user_id
+		AS buyUserID,
+		BUYLISTDB.buy_product_num AS buyProductNum,
+		BUYLISTDB.buy_num AS buyNum
+		FROM BUYLISTDB
+		WHERE
+		buy_user_id = #{userId}
+	</select>
+
+</mapper>

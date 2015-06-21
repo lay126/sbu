@@ -45,18 +45,4 @@
 		WHERE
 		user_id = #{userId}
 	</select>
-
-	<select id="getPurchaseList" parameterType="String"
-		resultType="sbu.spring.domain.Purchase">
-		SELECT
-		BUYLISTDB.buy_date AS buyDate,
-		BUYLISTDB.buy_user_id
-		AS buyUserID,
-		BUYLISTDB.buy_product_num AS buyProductNum,
-		BUYLISTDB.buy_num AS buyNum
-		FROM BUYLISTDB
-		WHERE
-		buy_user_id = #{userId}
-	</select>
-
 </mapper>

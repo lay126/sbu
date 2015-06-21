@@ -8,8 +8,8 @@
 		<td align="center" bgcolor="#ffb6c1">wishlist</td>
 	</tr>
 	<tr>
-		<td align="center" bgcolor="#ffb6c1">purchase</td>
-		<form action="<c:url value='/jsp/viewPurchaseList.do' />" method="POST">
+		<td align="center" bgcolor="#ffb6c1"><a href="<c:url value='/jsp/viewPurchaseList.do'><c:param name='productCateNum' value='1'/></c:url>">
+			Purchase</a></td>
 	</tr>
 	<tr>
 		<td align="center" bgcolor="#ffe4e1">

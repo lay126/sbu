@@ -16,13 +16,13 @@ import sbu.spring.domain.Purchase;
 public class MybatisPurchaseDao implements PurchaseDao{
 
 	@Autowired
-	PurchaseMapper userMapper;
+	PurchaseMapper purchaseMapper;
 
 	@Override
 	public List<Purchase> getPurchaseListByUserId(String userId)
 			throws DataAccessException {
 		// TODO Auto-generated method stub
-		return null;
-	}
+		return purchaseMapper.getPurchaseList(userId);
+				}
 
 }
