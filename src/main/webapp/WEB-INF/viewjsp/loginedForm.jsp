@@ -16,10 +16,13 @@
 			<td align="center" bgcolor="#9CA8B3">EMAIL</td>
 			<td align="center" bgcolor="#9CA8B3"><c:out value="${userSession.user.userEmail}"/></td>
 		</tr>
+		<c:if test="${!empty userSession.user.userPoint}">
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">POINT</td>
-			<td align="center" bgcolor="#9CA8B3"><c:out value="${userSession.user.userPoint}"/></td>
+			<td align="center" bgcolor="#9CA8B3">
+			<c:out value="${userSession.user.userPoint}"/></td>
 		</tr>
+		</c:if>
 		<tr>
 			<td colspan="2" align="center" bgcolor="#9CA8B3"><input type="submit"
 				value="LOGOUT" /></td>
