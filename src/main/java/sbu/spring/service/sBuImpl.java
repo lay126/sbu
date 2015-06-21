@@ -44,6 +44,11 @@ public class sBuImpl implements sBuFacade {
 	public Product getProduct(int productNum) {
 		return productDao.getProduct(productNum);
 	}
+	
+	@Override
+	public Product getProductAll() {
+		return productDao.getProductAll();
+	}
 
 	@Override
 	public String getUserNameByUserId(String userId) {

@@ -40,4 +40,9 @@ public class MybatisProductDao implements ProductDao {
 		return productMapper.getLastProduct();
 	}
 
+	@Override
+	public Product getProductAll() throws DataAccessException {
+		return productMapper.getProductAll();
+	}
+
 }

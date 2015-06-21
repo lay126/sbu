@@ -17,6 +17,8 @@ public interface ProductMapper {
      
      void updateProductRemain(@Param("productNum") int productNum,@Param("productRemain") int productRemain);
 
+	Product getProductAll();
+
      //List<Product> searchProductList(String keywords);
 
 }

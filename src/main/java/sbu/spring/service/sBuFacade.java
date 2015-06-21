@@ -43,4 +43,6 @@ public interface sBuFacade {
 	void insertPurchase(int buyProductNum, String buyUserId);
 
 	void updateUserPoint(int userPoint, String userId);
+
+	Product getProductAll();
 }
