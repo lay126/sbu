@@ -16,8 +16,8 @@ public class ViewProductController {
 	private sBuFacade sBuf;
 
 	@Autowired
-	public void setSBuf(sBuFacade sBuf) {
-		this.sBuf = sBuf;
+	public void setPetStore(sBuFacade sBu) {
+		this.sBuf = sBu;
 	}
 
 	// @RequestMapping(value = "/jsp/viewProduct.do", method =
@@ -26,9 +26,9 @@ public class ViewProductController {
 	public String handleRequest(
 			@RequestParam(value = "productNum", defaultValue = "1") int productNum,
 			ModelMap model) throws Exception {
-		product = this.sBuf.getProduct(productNum);
+		Product product = this.sBuf.getProduct(productNum);
 		model.put("product", product);
-		// model.put("productName", product.getProductName());
+		model.put("product", product.getProductName());
 		if (product == null) {
 			System.out.println("product null");
 		} else {

@@ -9,15 +9,21 @@
 </head>
 <body>
 	<center>
-		<h2>상품 목록</h2>
-		${ productList }
-		<%-- 
-		<!--  하는중  -->
-		<table>
-			<tr>
-				<td><c:forEach var="product" items="${ productList }"> </c:forEach>
-		</table> 
-		--%>
+		<h2>상품 목록</h2> <br>
+		 <c:out value='${ cateNum }'/>
+		  
+		<c:forEach var="product" items="${ productList.pageList }">
+			<table>
+				<tr>
+					<td><a
+						href="<c:url value='/jsp/viewProduct.do'><c:param name='productId' value='${ product.productNum }' /></c:url>">
+							<c:out value='${ productproductName }' />
+					</a></td>
+				</tr>
+
+			</table>
+			<br>
+		</c:forEach>
 	</center>
 </body>
 </html>
