@@ -1,6 +1,9 @@
 package sbu.spring.dao.mybatis.mapper;
 import sbu.spring.domain.Product;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
 
 public interface ProductMapper {
 
@@ -10,7 +13,7 @@ public interface ProductMapper {
      
      List<Product> getProductListByEventNum(int productEventNum);
      
-     void updateProductRemain(int productNum, int productRemain);
+     void updateProductRemain(@Param("productNum") int productNum,@Param("productRemain") int productRemain);
 
      //List<Product> searchProductList(String keywords);
 

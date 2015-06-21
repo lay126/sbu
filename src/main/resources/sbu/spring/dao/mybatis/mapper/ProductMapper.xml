@@ -50,9 +50,10 @@
    
    <update id="updateProductRemain">
       UPDATE
+      PRODUCTDB
       SET
-      product_remain = #{productRemain, jdbcType=INTEGER}
-      WHERE product_num = #{productNum, jdbcType=INTEGER}
+      product_remain = #{productRemain, jdbcType=INT}
+      WHERE product_num = #{productNum, jdbcType=INT}
    </update>
 
 </mapper>

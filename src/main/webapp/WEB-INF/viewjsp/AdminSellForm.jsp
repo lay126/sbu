@@ -24,17 +24,17 @@
 			<tr>
 				<td align="left" width="150">customer id :</td>
 				<td><input type="text" name="userId" /></td>
-				<td rowspan="2"> <input
-					type="submit" value="done" /></td>
+				<td rowspan="2"><input type="submit" value="done" /></td>
 			</tr>
 			<tr>
 				<td align="left" width="150">number of sales :</td>
 				<td><input type="text" name="salesNum" /></td>
 			</tr>
 		</table>
-		<input type="hidden" name="productNum"
-			value="document.productNumForm.productNum.value" />
-
+		<c:if test="${!empty product}">
+			<input type="hidden" name="productNum"
+				value="${ product.productNum }" />
+		</c:if>
 	</form>
 
 	<br>
@@ -51,7 +51,7 @@
 						<font color="RED" size="2"> no remain </font>
 					</c:if> <c:if test='${product.productRemain > 0}'>
 						<font size="2"><fmt:formatNumber
-								value='${product.productRemain}' /> ${product.productRemain} 남음
+								value='${product.productRemain}' /> ${product.productRemain} 개 남음
 						</font>
 					</c:if></td>
 			</tr>

@@ -31,9 +31,14 @@ public class BuyController {
 
 		int productRemain = product.getProductRemain() - salesNum;
 		this.sBuf.updateProductRemain(productNum, productRemain);
+		System.out.println("*****productNum, userId, salesNum, productRemain: " + productNum
+				+ ", " + userId + ", " + salesNum + ", " + productRemain);
+		System.out.println("*****product.productRemain: " + product.getProductRemain());
 		// productNum 의 productRemain 을 salesNum 만큼 빼주기
 		// userId 의 userPoint 를 productPrice의 10퍼센트 증가
 
-		return "UserMain";
+		model.put("product", product);
+
+		return "AdminSellForm";
 	}
 }
