@@ -10,16 +10,16 @@
 		USERDB.user_num as userNumber,
 		USERDB.user_name as userName,
 		USERDB.user_pwd as userPwd,
-		USERDB.user_email as userEmail,
-		USERDB.user_phone as userPhone,
-		USERDB.user_birth as userBirth,
-		USERDB.user_point as userPoint
+		USERDB.user_email AS userEmail,
+		USERDB.user_phone AS userPhone,
+		USERDB.user_birth AS userBirth,
+		USERDB.user_point AS userPoint
 		FROM
 		USERDB
 		WHERE
 		USERDB.user_id =
-		#{param1} and
-		USERDB.user_pwd = #{param2}
+		#{userId,javaType=String,jdbcType=VARCHAR} and
+		USERDB.user_pwd = #{userPwd,javaType=String,jdbcType=VARCHAR}
 	</select>
 
 	<select id="getUserByUserId" resultType="sbu.spring.domain.User">
@@ -58,5 +58,5 @@
 		WHERE
 		buy_user_id = #{userId}
 	</select>
-	
+
 </mapper>

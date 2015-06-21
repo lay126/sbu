@@ -9,5 +9,9 @@ public interface EventMapper {
 	  Product getProduct(int productNum);
 
 	  //List<Product> searchProductList(String keywords);
+	  
+//	  getEventList
+//	  insertEvent
+//	  deleteEvent
 
 }

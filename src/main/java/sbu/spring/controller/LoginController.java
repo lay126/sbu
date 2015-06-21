@@ -34,7 +34,7 @@ public class LoginController {
 			@RequestParam("userPwd") String userPwd, ModelMap model)
 			throws Exception {
 
-		User user = this.sBuf.getUser(userId);
+		User user = this.sBuf.getUser(userId, userPwd);
 		model.put("user", user);
 
 		if (user != null) {

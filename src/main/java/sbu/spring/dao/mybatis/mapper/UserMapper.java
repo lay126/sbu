@@ -2,12 +2,14 @@ package sbu.spring.dao.mybatis.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import sbu.spring.domain.Purchase;
 import sbu.spring.domain.User;
 
 public interface UserMapper {
 
-	User getUserByUserIdAndUserPwd(String userId, String userPwd);
+	 User getUserByUserIdAndUserPwd(@Param("userId")String userId, @Param("userPwd")String userPwd);
 
 	User getUserByUserId(String userId);
 
