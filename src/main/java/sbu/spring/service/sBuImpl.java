@@ -87,4 +87,9 @@ public class sBuImpl implements sBuFacade {
 		return purchaseDao.getPurchaseListByUserId(userId);
 	}
 
+	@Override
+	public Product getProductByEventNum(int productEventNum) {
+		return productDao.getProductByEventNum(productEventNum);
+	}
+
 }

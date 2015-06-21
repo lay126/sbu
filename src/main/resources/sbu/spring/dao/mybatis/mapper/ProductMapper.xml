@@ -18,6 +18,7 @@
       WHERE product_cate_num =
       #{productCateNum}
    </select>
+   
    <select id="getProduct" resultType="sbu.spring.domain.Product">
       SELECT
       PRODUCTDB.product_num AS productNum,
@@ -30,6 +31,20 @@
       FROM PRODUCTDB
       WHERE
       product_num = #{productNum}
+   </select>
+   
+   <select id="getProductByEventNum" resultType="sbu.spring.domain.Product">
+      SELECT
+      PRODUCTDB.product_num AS productNum,
+      PRODUCTDB.product_name AS productName,
+      PRODUCTDB.product_remain AS productRemain,
+      PRODUCTDB.product_description AS productDescription,
+      PRODUCTDB.product_price AS productPrice,
+      PRODUCTDB.product_cate_num AS productCateNum,
+      PRODUCTDB.product_event_num AS productEventNum
+      FROM PRODUCTDB
+      WHERE
+      product_event_num = #{productEventNum}
    </select>
    
    

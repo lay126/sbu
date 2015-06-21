@@ -8,6 +8,8 @@ public interface ProductMapper {
 
      Product getProduct(int productNum);
      
+     Product getProductByEventNum(int producEventNum);
+     
      void updateProductRemain(int productNum);
 
      //List<Product> searchProductList(String keywords);

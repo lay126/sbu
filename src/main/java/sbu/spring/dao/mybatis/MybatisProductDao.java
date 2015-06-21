@@ -24,6 +24,11 @@ public class MybatisProductDao implements ProductDao {
    public Product getProduct(int productNum) {
       return productMapper.getProduct(productNum);
    }
+   
+   @Override
+   public Product getProductByEventNum(int productEventNum) {
+      return productMapper.getProductByEventNum(productEventNum);
+   }
 
    @Override
    public void updateProductRemain(int productNum) throws DataAccessException {

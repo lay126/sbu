@@ -23,6 +23,8 @@ public interface sBuFacade {
 	List<Purchase> getPurchaseListByUserId(String userId);
 
 	Product getProduct(int productNum);
+	
+	Product getProductByEventNum(int producEventNum);
 
 	List<Event> getEventList();
 	
