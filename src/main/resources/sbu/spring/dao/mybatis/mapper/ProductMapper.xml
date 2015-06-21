@@ -61,6 +61,18 @@
       product_num = 2
    </select>
    
+     <select id="getProductAll" resultType="sbu.spring.domain.Product">
+      SELECT
+      PRODUCTDB.product_num AS productNum,
+      PRODUCTDB.product_name AS productName,
+      PRODUCTDB.product_remain AS productRemain,
+      PRODUCTDB.product_description AS productDescription,
+      PRODUCTDB.product_price AS productPrice,
+      PRODUCTDB.product_cate_num AS productCateNum,
+      PRODUCTDB.product_event_num AS productEventNum
+      FROM PRODUCTDB 
+   </select>
+   
    <update id="updateProductRemain">
       UPDATE
       PRODUCTDB
