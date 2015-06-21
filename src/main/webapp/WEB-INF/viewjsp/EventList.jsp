@@ -54,23 +54,8 @@
 			</center>
 		</form>
 
-		<h2>이벤트 상품 목록</h2>
-		<br>
-		<c:if test='${ empty eventList }'>
-			<c:out value='등록된 상품이 없습니다.' />
-		</c:if>
-
-		<c:forEach var="event" items="${ eventList.pageList }">
-			<table border="1" cellspacing="0" width="900" cellpadding="20"
-				bgcolor="#ffe4e1">
-				<tr>
-					<td><c:out value='이벤트 명: ${ event.eventName } ' /></td>
-					<td><c:out value='이벤트 내용: ${ event.eventText } ' /></td>
-				</tr>
-
-			</table>
-			<br>
-		</c:forEach>
+<%@ include file="EventListView.jsp"%>
+		
 	</center>
 
 </body>
