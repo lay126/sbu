@@ -19,7 +19,11 @@
 			<table border="1" cellspacing="0" width="900" cellpadding="20"
 				bgcolor="#ffe4e1">
 				<tr>
-					<td><c:out value='${ product.productName }' /></td>
+				
+					<td><a
+						href="<c:url value='/jsp/viewProduct.do'><c:param name='productNum' value='${ product.productNum }' /><c:param name='product' value='${ product }' /></c:url>">
+							<c:out value='${ product.productName }' />
+					</a></td>
 					<td><c:out value='가격 : ${ product.productPrice } 원' /></td>
 					<td><c:out value='남은 수량 : ${ product.productRemain } 개' /></td>
 				</tr>
