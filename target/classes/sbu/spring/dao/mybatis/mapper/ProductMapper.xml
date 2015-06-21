@@ -3,43 +3,39 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="sbu.spring.dao.mybatis.mapper.ProductMapper">
-	<cache />
+   <cache />
 
-	<select id="getProductListByCategory" resultType="sbu.spring.domain.Product">
-		SELECT
-		PRODUCTDB.product_num AS productNum,
-		PRODUCTDB.product_name AS productName,
-		PRODUCTDB.product_remain AS productRemain,
-		PRODUCTDB.product_description AS productDescription,
-		PRODUCTDB.product_price AS productPrice,
-		PRODUCTDB.product_cate_num AS productCateNum
-		FROM PRODUCTDB
-		WHERE product_cate_num =
-		#{productCateNum}
-	</select>
-	<select id="getProduct" resultType="sbu.spring.domain.Product">
-		SELECT
-		PRODUCTDB.product_num AS productNum,
-		PRODUCTDB.product_name AS productName,
-		PRODUCTDB.product_remain AS productRemain,
-		PRODUCTDB.product_description AS productDescription,
-		PRODUCTDB.product_price AS productPrice,
-		PRODUCTDB.product_cate_num AS productCateNum
-		FROM PRODUCTDB
-		WHERE
-		product_num = #{productNum}
-	</select>
-	
-	
-	<update id="updateProductRemain" parameterType="productNum">
-		UPDATE
-		SET
-		board_title = #{boardTitle, jdbcType=VARCHAR},
-		board_content = #{boardContent, jdbcType=CLOB},
-		board_date = #{boardDate, jdbcType=VARCHAR},
-		user_id = #{userId, jdbcType=INTEGER},
-		class_id = #{classId, jdbcType=INTEGER}	
-		WHERE board_id = #{boardId, jdbcType=INTEGER}
-	</update
+   <select id="getProductListByCategory" resultType="sbu.spring.domain.Product">
+      SELECT
+      PRODUCTDB.product_num AS productNum,
+      PRODUCTDB.product_name AS productName,
+      PRODUCTDB.product_remain AS productRemain,
+      PRODUCTDB.product_description AS productDescription,
+      PRODUCTDB.product_price AS productPrice,
+      PRODUCTDB.product_cate_num AS productCateNum
+      FROM PRODUCTDB
+      WHERE product_cate_num =
+      #{productCateNum}
+   </select>
+   <select id="getProduct" resultType="sbu.spring.domain.Product">
+      SELECT
+      PRODUCTDB.product_num AS productNum,
+      PRODUCTDB.product_name AS productName,
+      PRODUCTDB.product_remain AS productRemain,
+      PRODUCTDB.product_description AS productDescription,
+      PRODUCTDB.product_price AS productPrice,
+      PRODUCTDB.product_cate_num AS productCateNum
+      FROM PRODUCTDB
+      WHERE
+      product_num = #{productNum}
+   </select>
+   
+   
+   <update id="updateProductRemain">
+      UPDATE
+      SET
+      procuct_remain = #{productRemain, jdbcType=INTEGER}
+      WHERE product_num = #{productNum, jdbcType=INTEGER}
+   </update>
 
 </mapper>
