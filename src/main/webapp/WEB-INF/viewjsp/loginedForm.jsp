@@ -10,11 +10,11 @@
 	<table align="left" bgcolor="#6D839A" width="200" height="200">
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">ID</td>
-			<td align="center" bgcolor="#9CA8B3"><c:out value="${userSession.userId}"/></td>
+			<td align="center" bgcolor="#9CA8B3"><c:out value="${user.userId}"/></td>
 		</tr>
 		<tr>
 			<td align="center" bgcolor="#9CA8B3">POINT</td>
-			<td align="center" bgcolor="#9CA8B3"><c:out value="${loginCommand.point}"/></td>
+			<td align="center" bgcolor="#9CA8B3"><c:out value="${user.userPoint}"/></td>
 		</tr>
 		<tr>
 			<td align="center" bgcolor="#9CA8B3"><input type="submit"

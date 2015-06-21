@@ -29,20 +29,21 @@ public class LoginController {
 	}
 
 	@RequestMapping("/user/login.do")
-	public ModelAndView handleRequest(HttpServletRequest request,
+	public String handleRequest(HttpServletRequest request,
 			@RequestParam("userId") String userId,
 			@RequestParam("userPwd") String userPwd, ModelMap model)
 			throws Exception {
 
 		User user = this.sBuf.getUser(userId);
+		model.put("user", user);
 
 		if (user == null) {
-			return new ModelAndView("UserMain");
+			return "UserMain";
 		} else {
 			UserSession userSession = new UserSession(user);
 			model.addAttribute("userSession", userSession);
 
-			return new ModelAndView("UserMainLogined");
+			return "UserMainLogined";
 		}
 
 	}
