@@ -10,13 +10,13 @@
 <body>
 	<center>
 		<h2>이벤트 상품 목록</h2>
-		<c:out value='${ cateNum }' />
+		<c:out value='${ eventText }' />
 		<br>
-		<c:if test='${ empty productList }'>
+		<c:if test='${ empty eventProductList }'>
 			<c:out value='등록된 상품이 없습니다.' />
 		</c:if>
 
-		<c:forEach var="product" items="${ productList.pageList }">
+		<c:forEach var="product" items="${ eventProductList.pageList }">
 			<table border="1" cellspacing="0" width="900" cellpadding="20"
 				bgcolor="#ffe4e1">
 				<tr>
