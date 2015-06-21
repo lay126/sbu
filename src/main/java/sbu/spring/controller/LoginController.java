@@ -51,6 +51,7 @@ public class LoginController {
 		model.put("eventList", eventList);
 		
 		productAll = new PagedListHolder<Product>(this.sBuf.getProductAll());
+		model.put("productAll", productAll);
 		
 		recoLastProduct = this.sBuf.getProduct(3);
 		model.put("recoLastProduct", recoLastProduct);
