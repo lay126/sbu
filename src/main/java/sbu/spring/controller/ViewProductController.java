@@ -32,7 +32,7 @@ public class ViewProductController {
 	
 	@RequestMapping("/jsp/viewProductRemain.do")
 	public String handleRequest2(
-			@RequestParam(value = "productNum") int productNum,
+			@RequestParam("productNum") int productNum,
 			ModelMap model) throws Exception {
 		Product product = this.sBuf.getProduct(productNum);
 		model.put("product", product);
