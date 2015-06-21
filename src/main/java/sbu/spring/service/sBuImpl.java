@@ -73,7 +73,7 @@ public class sBuImpl implements sBuFacade {
 
 	@Override
 	public void updateProductRemain(int productNum, int productRemain) {
-		
+		productDao.updateProductRemain(productNum, productRemain);
 	}
 
 	@Override
