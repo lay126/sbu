@@ -88,8 +88,10 @@ public class sBuImpl implements sBuFacade {
 	}
 
 	@Override
-	public Product getProductByEventNum(int productEventNum) {
-		return productDao.getProductByEventNum(productEventNum);
+	public List<Product> getProductListByEventNum(int productEventNum) {
+		return productDao.getProductListByEventNum(productEventNum);
 	}
+
+	
 
 }

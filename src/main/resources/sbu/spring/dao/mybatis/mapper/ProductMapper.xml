@@ -33,7 +33,7 @@
       product_num = #{productNum}
    </select>
    
-   <select id="getProductByEventNum" resultType="sbu.spring.domain.Product">
+   <select id="getProductListByEventNum" resultType="sbu.spring.domain.Product">
       SELECT
       PRODUCTDB.product_num AS productNum,
       PRODUCTDB.product_name AS productName,

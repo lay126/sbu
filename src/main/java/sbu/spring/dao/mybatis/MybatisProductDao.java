@@ -26,8 +26,8 @@ public class MybatisProductDao implements ProductDao {
    }
    
    @Override
-   public Product getProductByEventNum(int productEventNum) {
-      return productMapper.getProductByEventNum(productEventNum);
+   public List<Product> getProductListByEventNum(int productEventNum) {
+      return productMapper.getProductListByEventNum(productEventNum);
    }
 
    @Override

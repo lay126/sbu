@@ -8,7 +8,7 @@ public interface ProductMapper {
 
      Product getProduct(int productNum);
      
-     Product getProductByEventNum(int producEventNum);
+     List<Product> getProductListByEventNum(int productEventNum);
      
      void updateProductRemain(int productNum);
 

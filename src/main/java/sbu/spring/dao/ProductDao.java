@@ -14,6 +14,6 @@ public interface ProductDao {
 
 	void updateProductRemain(int productNum) throws DataAccessException;
 
-	Product getProductByEventNum(int productEventNum)
+	List<Product> getProductListByEventNum(int productEventNum)
 			throws DataAccessException;
 }
