@@ -53,7 +53,7 @@ public class BuyController {
 
 		return "AdminSellForm";
 	}
-	
+
 	@RequestMapping("/user/buy2.do")
 	public String handleRequest2(@RequestParam("productNum") int productNum,
 			@RequestParam("userId") String userId,
@@ -80,6 +80,12 @@ public class BuyController {
 		this.sBuf.updateUserPoint(userPoint, userId);
 
 		model.put("product", product);
+		model.put("user", user);
+		
+		if (user != null) {
+			UserSession userSession = new UserSession(user);
+			model.addAttribute("userSession", userSession);
+		}
 
 		return "UserMain";
 	}

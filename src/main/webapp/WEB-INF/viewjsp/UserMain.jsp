@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>this is User Main page</title>
+<title>Main page</title>
 </head>
 <body>
 	<table>
