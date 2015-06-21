@@ -31,6 +31,8 @@ public interface sBuFacade {
 	List<Product> getProductListByEventNum(int productEventNum);
 
 	List<Event> getEventList();
+	
+	void insertEvent(String eventName, String eventStartName, String eventEndName, String eventText);
 
 	void insertEvent(Event event);
 

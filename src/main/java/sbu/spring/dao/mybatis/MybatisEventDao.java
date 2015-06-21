@@ -24,14 +24,18 @@ public class MybatisEventDao implements EventDao {
 		return eventMapper.getEventList();
 	}
 
-	@Override
-	public void insertEvent(Event event) throws DataAccessException {
-		eventMapper.insertEvent(event);
-	}
-
+	
 	@Override
 	public void deleteEvent(int eventNum) throws DataAccessException {
 		eventMapper.deleteEvent(eventNum);
 	}
+
+
+	@Override
+	public void insertEvent(String eventName, String eventStartName,
+			String eventEndName, String eventText) {
+		eventMapper.insertEvent(eventText, eventText, eventText, eventText);
+	}
+
 
 }
