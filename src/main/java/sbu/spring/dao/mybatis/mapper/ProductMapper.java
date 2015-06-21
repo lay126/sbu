@@ -4,10 +4,12 @@ import java.util.List;
 
 public interface ProductMapper {
 
-	  List<Product> getProductListByCategory(int productCateNum);
+     List<Product> getProductListByCategory(int productCateNum);
 
-	  Product getProduct(int productNum);
+     Product getProduct(int productNum);
+     
+     void updateProductRemian(int productNum);
 
-	  //List<Product> searchProductList(String keywords);
+     //List<Product> searchProductList(String keywords);
 
 }
