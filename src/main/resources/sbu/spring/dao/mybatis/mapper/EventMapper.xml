@@ -20,7 +20,7 @@
 
 	<insert id="insertEvent">
 		INSERT INTO EVENTDB
-		(EVENT_NAME,
+		(seq_event_num.NEXTVAL, EVENT_NAME,
 		EVENT_START_DATE, EVENT_END_DATE, EVENT_TEXT)
 		VALUES
 		(#{eventName, jdbcType=VARCHAR},

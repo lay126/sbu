@@ -9,7 +9,7 @@ import sbu.spring.domain.Event;
 
 public interface EventDao{
 	
-	void insertEvent(String eventName, String eventStartDate, String eventEndName, String eventDate);
+	void insertEvent(String eventName, int eventStartDate, int eventEndDate, String eventText);
 	
 	List<Event> getEventList() throws DataAccessException;
 

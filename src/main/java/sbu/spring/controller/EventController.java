@@ -1,11 +1,14 @@
 package sbu.spring.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import sbu.spring.domain.Event;
 import sbu.spring.domain.User;
@@ -23,20 +26,20 @@ public class EventController {
 	}
 	
 	@RequestMapping("/jsp/writeEvent.do")
-	public String handleRequest(@RequestParam("eventName")String eventName,
-			@RequestParam("eventText")String eventText, 
-			@RequestParam("eventStartDate")String eventStartDate,
-			@RequestParam("eventEndDate")String eventEndDate, ModelMap model)throws Exception{
+	public String writeEvent(
+			@RequestParam("eventName")String eventName,
+			@RequestParam("eventStartDate")int eventStartDate,
+			@RequestParam("eventEndDate")int eventEndDate, 
+			@RequestParam("eventText")String eventText,
+			ModelMap model)throws Exception{
 			
-			this.sBuf.insertEvent(eventName, eventStartDate, eventEndDate, eventText);
+			this.sBuf.insertEvent(eventName, eventStartDate, eventText, eventEndDate);
 			
 			//model.put("event", event);
 			//eventName = event.getEventName();
 			
-		
-			
-		
-		return "EventList";
+			//model.put("event", event);
+			return "EventList";
 		
 		
 		

@@ -12,8 +12,8 @@ public interface EventMapper {
 	List<Event> getEventList();
 
 	void insertEvent(@Param("eventName") String eventName,
-			@Param("eventStartDate") String eventStartDate,
-			@Param("eventEndDate") String eventEndDate,
+			@Param("eventStartDate") int eventStartDate,
+			@Param("eventEndDate") int eventEndDate,
 			@Param("eventText") String eventText);
 
 	void deleteEvent(int eventNum);

@@ -32,8 +32,8 @@ public class MybatisEventDao implements EventDao {
 
 
 	@Override
-	public void insertEvent(String eventName, String eventStartDate,
-			String eventEndDate, String eventText) {
+	public void insertEvent(String eventName, int eventStartDate,
+			int eventEndDate, String eventText) {
 		eventMapper.insertEvent(eventName, eventStartDate, eventEndDate, eventText);
 	}
 

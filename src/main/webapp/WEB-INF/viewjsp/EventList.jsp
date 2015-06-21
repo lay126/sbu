@@ -16,6 +16,7 @@
 
 
 				<tr>
+
 					<td width="10%" bgcolor="#E6E6E6" align="center">이벤트 이름<input
 						type="text" name="eventName" /></td>
 
