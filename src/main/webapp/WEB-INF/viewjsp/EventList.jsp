@@ -8,55 +8,45 @@
 <title>ProductList</title>
 </head>
 <body>
-	<center>
-		<h2>이벤트 등록</h2>
-		<form action="<c:url value='/jsp/writeEvent.do' />" method="POST">
-			<table align="center" cellspacing="5" cellpadding="5" border="0"
-				bordercolor="#E6E6E6" rules="rows" width="80%">
+
+	<table>
+<tr><td>
+			<h2>이벤트 등록</h2>
+			<form action="<c:url value='/jsp/writeEvent.do' />" method="POST">
+				<table align="center" cellspacing="5" cellpadding="5" border="0"
+					bordercolor="#E6E6E6" rules="rows" width="80%">
 
 
-				<tr>
+					<tr>
 
-					<td width="10%" bgcolor="#E6E6E6" align="center">이벤트 이름<input
-						type="text" name="eventName" /></td>
+						<td width="10%" bgcolor="#E6E6E6" align="center">이벤트 이름<input
+							type="text" name="eventName" /></td>
 
-					<td width="10%" bgcolor="#E6E6E6" align="center">이벤트 시작날짜<input
-						type="text" name="eventStartDate" /></td>
+						<td width="10%" bgcolor="#E6E6E6" align="center">이벤트 시작날짜<input
+							type="text" name="eventStartDate" /></td>
 
-					<td width="10%" bgcolor="#E6E6E6" align="center">이벤트 종료날짜<input
-						type="text" name="eventEndDate" /></td>
+						<td width="10%" bgcolor="#E6E6E6" align="center">이벤트 종료날짜<input
+							type="text" name="eventEndDate" /></td>
 
-					<td width="10%" bgcolor="#E6E6E6" align="center">이벤트 설명<input
-						type="text" name="eventText" /></td>
-				</tr>
-			</table>
-			<center>
-				<input type="submit" value="등록" />
-			</center>
+						<td width="10%" bgcolor="#E6E6E6" align="center">이벤트 설명<input
+							type="text" name="eventText" /></td>
+					</tr>
+				</table>
+				<center>
+					<input type="submit" value="등록" />
+				</center>
 
-		</form>
+			</form>
+			
+			</td></tr>
 
-		<h2>이벤트 삭제</h2>
 
 
-		<form action="/jsp/deleteEvent.do" method="POST">
-			<table align="center" cellspacing="5" cellpadding="5" border="0"
-				bordercolor="#E6E6E6" rules="rows" width="80%">
-				<tr>
-					<td width="10%" bgcolor="#E6E6E6" align="center">이벤트 이름<input
-						type="text" name="eventName"></td>
-				</tr>
+<tr><td>
+			<%@ include file="EventListView.jsp"%>
+</td></tr>
 
-			</table>
-			<br>
-			<center>
-				<input type="submit" value="삭제" />
-			</center>
-		</form>
-
-<%@ include file="EventListView.jsp"%>
-		
-	</center>
+	</table>
 
 </body>
 </html>

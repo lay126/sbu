@@ -39,6 +39,12 @@ public class EventController {
 			//eventName = event.getEventName();
 			
 			//model.put("event", event);
+			
+			eventList = new PagedListHolder<Event>(
+					this.sBuf.getEventList());
+			eventList.setPageSize(10);
+
+			model.put("eventList", eventList);
 			return "EventList";
 		
 		
@@ -72,7 +78,7 @@ public class EventController {
 	
 	
 	
-	//@RequestMapping("/jsp/viewEventList.do")
+	@RequestMapping("/jsp/viewEventList.do")
 	public String handleRequest(
 			@RequestParam(value = "eventNum") int eventNum, ModelMap model)
 			throws Exception {
@@ -84,6 +90,6 @@ public class EventController {
 		model.put("eventList", eventList);
 		model.put("eventText", eventNum);
 
-		return "EventListView";
+		return "EventList";
 	}
 }
