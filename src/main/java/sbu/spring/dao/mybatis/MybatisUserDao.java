@@ -12,25 +12,30 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class MybatisUserDao implements UserDao{
+public class MybatisUserDao implements UserDao {
 
 	@Autowired
 	private UserMapper userMapper;
 
-//	@Override
+	// @Override
 	public User getUser(String userId) throws DataAccessException {
 		return userMapper.getUserByUserId(userId);
 	}
 
-//	@Override
+	// @Override
 	public User getUser(String userId, String userPwd)
 			throws DataAccessException {
 		return userMapper.getUserByUserIdAndUserPwd(userId, userPwd);
 	}
 
-//	@Override
+	// @Override
 	public String getUserNameByUserId(String userId) {
 		return userMapper.getUserNameByUserId(userId);
+	}
+
+	@Override
+	public User getUserByUserBirth(String userBirth) throws DataAccessException {
+		return userMapper.getUserByUserBirth(userBirth);
 	}
 
 }

@@ -13,5 +13,7 @@ public interface UserDao {
 	
 	User getUser(String userId, String userPwd) throws DataAccessException;
 	
-	String getUserNameByUserId(String userId);
+	String getUserNameByUserId(String userId) throws DataAccessException;
+	
+	User getUserByUserBirth(String userBirth) throws DataAccessException;
 }

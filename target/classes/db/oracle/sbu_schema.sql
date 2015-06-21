@@ -84,6 +84,9 @@ ADD user_id varchar(32)unique;
 ALTER TABLE userDB
 ADD user_birth varchar(32);
 
+ALTER TABLE userDB
+modify user_point default 0;
+
 ALTER TABLE productDB
 modify product_remain int;
 

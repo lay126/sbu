@@ -12,6 +12,8 @@ public interface UserMapper {
 	 User getUserByUserIdAndUserPwd(@Param("userId")String userId, @Param("userPwd")String userPwd);
 
 	User getUserByUserId(String userId);
+	
+	User getUserByUserBirth(String userBirth);
 
 	String getUserNameByUserId(String userId);
 

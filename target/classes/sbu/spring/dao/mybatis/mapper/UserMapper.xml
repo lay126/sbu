@@ -36,8 +36,24 @@
 		FROM USERDB
 		WHERE
 		user_id = #{userId}
-
 	</select>
+	
+	<select id="getUserByUserBirth" resultType="sbu.spring.domain.User">
+		SELECT
+		USERDB.user_id AS
+		userId,
+		USERDB.user_num AS userNumber,
+		USERDB.user_name AS userName,
+		USERDB.user_pwd AS userPwd,
+		USERDB.user_email AS userEmail,
+		USERDB.user_phone AS userPhone,
+		USERDB.user_birth AS userBirth,
+		USERDB.user_point AS userPoint
+		FROM USERDB
+		WHERE
+		user_birth = #{userBirth}
+	</select>
+	
 	<select id="getUserNameByUserId" resultType="String">
 		SELECT
 		USERDB.user_name AS userName

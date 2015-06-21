@@ -17,6 +17,8 @@ public interface sBuFacade {
 	User getUser(String userId, String userPwd);
 	
 	String getUserNameByUserId(String userId);
+	
+	User getUserByBirth(String userBirth);
 
 	List<Product> getProductListByProductCateNum(int productCateNum);
 	

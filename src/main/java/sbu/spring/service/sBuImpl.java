@@ -91,6 +91,11 @@ public class sBuImpl implements sBuFacade {
 		return productDao.getProductListByEventNum(productEventNum);
 	}
 
+	@Override
+	public User getUserByBirth(String userBirth) {
+		return userDao.getUserByUserBirth(userBirth);
+	}
+
 	
 
 }
