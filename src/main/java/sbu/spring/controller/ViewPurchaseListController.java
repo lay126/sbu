@@ -30,9 +30,9 @@ public class ViewPurchaseListController {
 	
 	@RequestMapping("/jsp/viewPurchaseList.do")
 	public String handleRequest(
-			@RequestParam(value = "productCateNum") int productCateNum,
+			@RequestParam(value = "userSession.userId") int userId,
 			ModelMap model) throws Exception {
-		productList = new PagedListHolder<Purchase>(
+		purchaseList = new PagedListHolder<Purchase>(
 				this.sBuf.getPurchaseListByCategory(productCateNum));
 		productList.setPageSize(10);
 		model.put("productList", productList);

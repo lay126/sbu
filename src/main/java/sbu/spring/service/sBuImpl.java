@@ -36,10 +36,6 @@ public class sBuImpl implements sBuFacade {
 		return userDao.getUser(userId, userPwd);
 	}
 
-	@Override
-	public List<Product> getProductListByCategory(int productCateNum) {
-		return productDao.getProductListByCategory(productCateNum);
-	}
 
 	@Override
 	public Product getProduct(int productNum) {
@@ -73,6 +69,12 @@ public class sBuImpl implements sBuFacade {
 
 	@Override
 	public List<Purchase> getpurchaseList(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> getProductListByUserId(String userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -20,7 +20,7 @@ public interface sBuFacade {
 	
 	List<Purchase> getPurchaseList(String userId);
 
-	List<Product> getProductListByCategory(int productCateNum);
+	List<Product> getProductListByUserId(String userId);
 
 	Product getProduct(int productNum);
 

@@ -5,6 +5,8 @@ import java.util.List;
 
 public interface PurchaseMapper {
 
+
 	List<Purchase> getPurchaseList(String userId);
+	
  
 }
