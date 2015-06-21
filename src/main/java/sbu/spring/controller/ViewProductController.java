@@ -16,26 +16,28 @@ public class ViewProductController {
 	private sBuFacade sBuf;
 
 	@Autowired
-	public void setPetStore(sBuFacade sBu) {
+	public void setSBuf(sBuFacade sBu) {
 		this.sBuf = sBu;
 	}
 
-	// @RequestMapping(value = "/jsp/viewProduct.do", method =
-	// RequestMethod.POST)
 	@RequestMapping("/jsp/viewProduct.do")
 	public String handleRequest(
-			@RequestParam(value = "productNum", defaultValue = "1") int productNum,
+			@RequestParam(value = "productNum") int productNum,
 			ModelMap model) throws Exception {
 		Product product = this.sBuf.getProduct(productNum);
 		model.put("product", product);
 
-		if (product == null) {
-			System.out.println("product null");
-		} else {
-			System.out.println("product name : " + product.getProductName());
-		}
-
 		return "Product";
+	}
+	
+	@RequestMapping("/jsp/viewProductRemain.do")
+	public String handleRequest2(
+			@RequestParam(value = "productNum") int productNum,
+			ModelMap model) throws Exception {
+		Product product = this.sBuf.getProduct(productNum);
+		model.put("product", product);
+
+		return "AdminSellForm";
 	}
 
 }
