@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import sbu.spring.domain.Product;
 import sbu.spring.service.sBuFacade;
@@ -18,8 +16,8 @@ public class ViewProductController {
 	private sBuFacade sBuf;
 
 	@Autowired
-	public void setPetStore(sBuFacade sBu) {
-		this.sBuf = sBu;
+	public void setSBuf(sBuFacade sBuf) {
+		this.sBuf = sBuf;
 	}
 
 	// @RequestMapping(value = "/jsp/viewProduct.do", method =
@@ -28,9 +26,9 @@ public class ViewProductController {
 	public String handleRequest(
 			@RequestParam(value = "productNum", defaultValue = "1") int productNum,
 			ModelMap model) throws Exception {
-		Product product = this.sBuf.getProduct(productNum);
+		product = this.sBuf.getProduct(productNum);
 		model.put("product", product);
-		model.put("product", product.getProductName());
+		// model.put("productName", product.getProductName());
 		if (product == null) {
 			System.out.println("product null");
 		} else {

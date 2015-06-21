@@ -8,8 +8,8 @@
 </head>
 <body>
 
-	product jsp
-
+	product jsp 
+	<br>$ { product .productName} :  ${product.productName}
 	<%
 	if (request != null) {
 		System.out.println("not null");
