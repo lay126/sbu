@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import sbu.spring.domain.Event;
 import sbu.spring.domain.Product;
+import sbu.spring.domain.Purchase;
 import sbu.spring.domain.User;
 import sbu.spring.service.sBuFacade;
 
@@ -25,9 +26,11 @@ public class LoginController {
 	User user = new User();
 	PagedListHolder<Event> eventList = null;
 	PagedListHolder<Product> productAll = null;
-	Product recoLastProduct = null;
+	PagedListHolder<Purchase> purchaseList = null;
+	PagedListHolder<User> userAll = null;
+	Product recoProduct = null;
 	private sBuFacade sBuf;
-	
+
 	@Autowired
 	public void setSBuf(sBuFacade sBuf) {
 		this.sBuf = sBuf;
@@ -46,31 +49,51 @@ public class LoginController {
 			UserSession userSession = new UserSession(user);
 			model.addAttribute("userSession", userSession);
 		}
-		
+
 		eventList = new PagedListHolder<Event>(this.sBuf.getEventList());
 		model.put("eventList", eventList);
-		
+
 		productAll = new PagedListHolder<Product>(this.sBuf.getProductAll());
 		model.put("productAll", productAll);
 		model.put("productLastNum", productAll.getNrOfElements());
-		
+
+		userAll = new PagedListHolder<User>(this.sBuf.getUserAll());
+
 		// get new product (recoLastProduct)
-		for (int i = 0; i < productAll.getNrOfElements(); i++ ){
-			if (i == productAll.getNrOfElements()-1) {
+		for (int i = 0; i < productAll.getNrOfElements(); i++) {
+			if (i == productAll.getNrOfElements() - 1) {
 				model.put("recoLastProduct", productAll.getSource().get(i));
 			}
 		}
+
+		// get same age
+		for (int i = 0; i < userAll.getNrOfElements(); i++) {
+			if (userAll.getSource().get(i).getUserBirth().subSequence(0, 1)
+					.equals(user.getUserBirth().subSequence(0, 1))
+					&& (userAll.getSource().get(i).getUserId() != user
+							.getUserId())) {
+				
+				purchaseList = new PagedListHolder<Purchase>(this.sBuf.getPurchaseListByUserId(userAll.getSource().get(i).getUserId()));
+				recoProduct = sBuf.getProduct(purchaseList.getSource().get(1).getProductNum());
+				
+				System.out.println("a: "+purchaseList.getSource().get(0).getBuyUserId());
+				System.out.println("b: "+purchaseList.getSource().get(0).getProductNum());
+				System.out.println("c: "+purchaseList.getSource().get(0).getBuyDate());
+				model.put("recoAgeProduct",
+						recoProduct);
+				break;
+			}
+		}
+
 		
-		
-		
-		model.put("recoAgeProduct", productAll.getPageList().get(productAll.getLastElementOnPage()));
-		model.put("recoBuyProduct", productAll.getPageList().get(productAll.getLastElementOnPage()));
-		
+		model.put("recoBuyProduct",
+				productAll.getPageList().get(productAll.getLastElementOnPage()));
+
 		if (user.getUserId().equals("admin")) {
 			return "AdminMain";
 		} else {
 			return "UserMain";
 		}
-		
+
 	}
 }

@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class Purchase implements Serializable{
 	//for user
 	private String buyUserId;
-	private int productNum;
+	private int buyProductNum;
 	private String buyDate;
 	private int buyNum;
 	
@@ -18,10 +18,10 @@ public class Purchase implements Serializable{
 		this.buyUserId = buyUserId;
 	}
 	public int getProductNum() {
-		return productNum;
+		return buyProductNum;
 	}
-	public void setProductNum(int productNum) {
-		this.productNum = productNum;
+	public void setProductNum(int buyProductNum) {
+		this.buyProductNum = buyProductNum;
 	}
 	public String getBuyDate() {
 		return buyDate;
