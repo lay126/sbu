@@ -34,4 +34,5 @@ public interface sBuFacade {
 	
 	List<Purchase> getpurchaseList(String userId);
 
+	void updateProductRemian(int productNum);
 }
