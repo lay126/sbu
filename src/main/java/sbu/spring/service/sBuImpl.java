@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sbu.spring.dao.*;
+import sbu.spring.domain.Event;
 import sbu.spring.domain.Product;
 import sbu.spring.domain.Purchase;
 import sbu.spring.domain.User;
@@ -18,6 +19,9 @@ public class sBuImpl implements sBuFacade {
 	
 	@Autowired
 	private ProductDao productDao;
+	
+	@Autowired
+	private EventDao eventDao;
 
 	@Override
 	public User getUser(String userId) {
@@ -47,6 +51,21 @@ public class sBuImpl implements sBuFacade {
 	@Override
 	public String getUserNameByUserId(String userId) {
 		return userDao.getUserNameByUserId(userId);
+	}
+
+	@Override
+	public List<Event> getEventList() {
+		return eventDao.getEventList();
+	}
+
+	@Override
+	public void insertEvent(Event event) {
+		eventDao.insertEvent(event);
+	}
+
+	@Override
+	public void deleteEvent(int eventNum) {
+		eventDao.deleteEvent(eventNum);
 	}
 
 	

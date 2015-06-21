@@ -1,17 +1,14 @@
 package sbu.spring.dao.mybatis.mapper;
-import sbu.spring.domain.Product;
+
+import sbu.spring.domain.*;
 import java.util.List;
 
 public interface EventMapper {
 
-	  List<Product> getProductListByCategory(int productCateNum);
+	List<Event> getEventList();
 
-	  Product getProduct(int productNum);
+	void insertEvent(Event event);
 
-	  //List<Product> searchProductList(String keywords);
-	  
-//	  getEventList
-//	  insertEvent
-//	  deleteEvent
+	void deleteEvent(int eventNum);
 
 }

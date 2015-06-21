@@ -7,25 +7,32 @@
 
 	<select id="getEventList" resultType="sbu.spring.domain.Event">
 		SELECT
-		EVENTDB.event_num As eventNum,
+		EVENTDB.event_num As
+		eventNum,
 		EVENTDB.event_name As eventName,
-		EVENTDB.event_kind As eventKind,
+		EVENTDB.event_kind As
+		eventKind,
 		EVENTDB.event_productNum As eventProductNum,
 		EVENTDB.event_startDatd As eventStartDate,
-		EVENTDB.event_endDatd As eventEndDate,
+		EVENTDB.event_endDatd As
+		eventEndDate,
 		EVENTDB.event_text As eventText
 		FROM EVENTDB
 	</select>
+	
 	<insert id="insertEvent" parameterType="sbu.spring.domain.Event">
 		INSERT INTO EVENTDB
-		(EVENT_NAME, EVENT_KIND, EVENT_PRODUCTNUM, 
+		(EVENT_NAME, EVENT_KIND, EVENT_PRODUCTNUM,
 		EVENT_STARTDATE, EVENT_ENDDATE, EVENT_TEXT)
 		VALUES
-		(#{eventName}, #{eventKind}, #{eventProductNum}, 
+		(#{eventName}, #{eventKind},
+		#{eventProductNum},
 		#{eventStartDate}, #{eventEndDate}, #{eventText})
 	</insert>
+	
 	<delete id="deleteEvent" parameterType="int">
 		DELETE FROM EVENTDB
-		WHERE EVENT_NUM = #{eventNum}
+		WHERE
+		EVENT_NUM = #{eventNum}
 	</delete>
 </mapper>
