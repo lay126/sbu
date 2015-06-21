@@ -18,7 +18,7 @@
 		FROM EVENTDB
 	</select>
 
-	<insert id="insertEvent" parameterType="sbu.spring.domain.Event">
+	<insert id="insertEvent" parameterType="String">
 		INSERT INTO EVENTDB
 		(EVENT_NAME,
 		EVENT_START_DATE, EVENT_END_DATE, EVENT_TEXT)

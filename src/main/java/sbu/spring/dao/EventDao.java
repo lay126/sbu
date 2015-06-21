@@ -12,9 +12,11 @@ public interface EventDao{
 
 	List<Event> getEventList() throws DataAccessException;
 
-	void insertEvent(Event event) throws DataAccessException;
+	void insertEvent() throws DataAccessException;
 
 	void deleteEvent(int eventNum) throws DataAccessException;
+	
+	
 	
 	
 }
