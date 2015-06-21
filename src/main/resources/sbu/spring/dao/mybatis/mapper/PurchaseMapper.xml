@@ -20,7 +20,7 @@
 	<insert id="insertPurchase">
 		INSERT INTO 
 		BUYLISTDB (buy_num, buy_product_num, buy_user_id, buy_date)
-		VALUES (seq_buy_num, #{buyProductNum, jdbcType=INTEGER}, #{buyUserId, jdbcType=VARCHAR}, sysdate)
+		VALUES (seq_buy_num.NEXTVAL, #{buyProductNum, jdbcType=INTEGER}, #{buyUserId, jdbcType=VARCHAR}, sysdate)
 	</insert>
 
 </mapper>

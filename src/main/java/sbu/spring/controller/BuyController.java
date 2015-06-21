@@ -15,8 +15,8 @@ import sbu.spring.service.sBuFacade;
 public class BuyController {
 	User user;
 	Product product;
-	Purchase purchase; 
-	
+	Purchase purchase;
+
 	private sBuFacade sBuf;
 
 	@Autowired
@@ -34,15 +34,19 @@ public class BuyController {
 
 		int productRemain = product.getProductRemain() - salesNum;
 		this.sBuf.updateProductRemain(productNum, productRemain);
-		System.out.println("*****productNum, userId, salesNum, productRemain: " + productNum
-				+ ", " + userId + ", " + salesNum + ", " + productRemain);
-		System.out.println("*****product.productRemain: " + product.getProductRemain());
+		System.out.println("*****productNum, userId, salesNum, productRemain: "
+				+ productNum + ", " + userId + ", " + salesNum + ", "
+				+ productRemain);
+		System.out.println("*****product.productRemain: "
+				+ product.getProductRemain());
 		// productNum 의 productRemain 을 salesNum 만큼 빼주기
 		// userId 의 userPoint 를 productPrice의 10퍼센트 증가
 
+		System.out.println("*****productNum, userId: " + productNum + ", "
+				+ userId);
+
 		this.sBuf.insertPurchase(productNum, userId);
-		
-		
+
 		model.put("product", product);
 
 		return "AdminSellForm";
