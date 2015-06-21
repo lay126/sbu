@@ -9,12 +9,7 @@
 	</tr>
 	<tr>
 		<td align="center" bgcolor="#ffe4e1"><a
-			href="<c:url value='/jsp/viewProductList.do'><c:param name='productCateNum' value='1'/></c:url>">
-				salse volume</a></td>
-	</tr>
-	<tr>
-		<td align="center" bgcolor="#ffe4e1"><a
-			href="<c:url value='/jsp/viewProductList.do'><c:param name='productCateNum' value='2'/></c:url>">total
+			href="<c:url value='/jsp/viewTotalProductList.do'/>">total
 				stock </a></td>
 	</tr>
 	<tr>

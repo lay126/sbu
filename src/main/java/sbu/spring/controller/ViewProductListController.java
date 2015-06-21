@@ -32,7 +32,17 @@ public class ViewProductListController {
 		productList.setPageSize(10);
 		model.put("productList", productList);
 		model.put("cateNum", productCateNum);
-		
+
 		return "ProductList";
+	}
+
+	@RequestMapping("/jsp/viewTotalProductList.do")
+	public String handleRequest2(ModelMap model) throws Exception {
+		productList = new PagedListHolder<Product>(
+				this.sBuf.getProductAll());
+		productList.setPageSize(10);
+		model.put("productList", productList);
+
+		return "TotalStockList";
 	}
 }
