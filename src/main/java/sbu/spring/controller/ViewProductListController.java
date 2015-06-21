@@ -7,13 +7,14 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import sbu.spring.domain.Event;
 import sbu.spring.domain.Product;
 import sbu.spring.service.sBuFacade;
 
 @Controller
 public class ViewProductListController {
 
-	PagedListHolder<Product> productList = null;
+	PagedListHolder<Event> productList = null;
 	// Category category = null;
 	private sBuFacade sBuf;
 
@@ -26,8 +27,8 @@ public class ViewProductListController {
 	public String handleRequest(
 			@RequestParam(value = "productCateNum") int productCateNum,
 			ModelMap model) throws Exception {
-		productList = new PagedListHolder<Product>(
-				this.sBuf.getProductListByProductCateNum(productCateNum));
+		productList = new PagedListHolder<Event>(
+				this.sBuf.getEventList());
 		productList.setPageSize(10);
 		model.put("productList", productList);
 		model.put("cateNum", productCateNum);

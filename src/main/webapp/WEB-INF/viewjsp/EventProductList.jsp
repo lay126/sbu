@@ -16,17 +16,15 @@
 			<c:out value='등록된 상품이 없습니다.' />
 		</c:if>
 
-		<c:forEach var="product" items="${ eventProductList.pageList }">
+		<c:forEach var="event" items="${ eventProductList.pageList }">
 			<table border="1" cellspacing="0" width="900" cellpadding="20"
 				bgcolor="#ffe4e1">
 				<tr>
-					<td><a
-						href="<c:url value='/jsp/viewProduct.do'><c:param name='productNum' value='${ product.productNum }' /><c:param name='product' value='${ product }' /></c:url>">
-							<c:out value='${ product.productName }' />
+					<td><c:out value='이벤트 : ${ event.eventNum } ' /></td>
 					</a></td>
-					<td><c:out value='가격 : ${ product.productPrice } 원' /></td>
+					<td><c:out value='이벤트 명: ${ event.eventName } ' /></td>
 					</td>
-					<td><c:out value='남은 수량 : ${ product.productRemain } 개' /></td>
+					<td><c:out value='이벤트 내용: ${ event.eventText } ' /></td>
 				</tr>
 
 			</table>
