@@ -17,9 +17,12 @@ public class MybatisPurchaseDao implements PurchaseDao{
 
 	@Autowired
 	PurchaseMapper userMapper;
-	  @Override
-	   public List<Product> getPurchasetListByCategory(int productCateNum) {
-	      return productMapper.getPurchaseListByCategory(productCateNum);
-	   }
+
+	@Override
+	public List<Purchase> getPurchaseListByUserId(String userId)
+			throws DataAccessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

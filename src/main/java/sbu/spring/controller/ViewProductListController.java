@@ -27,7 +27,7 @@ public class ViewProductListController {
 			@RequestParam(value = "productCateNum") int productCateNum,
 			ModelMap model) throws Exception {
 		productList = new PagedListHolder<Product>(
-				this.sBuf.getProductListByCategory(productCateNum));
+				this.sBuf.getProductListByProductCateNum(productCateNum));
 		productList.setPageSize(10);
 		model.put("productList", productList);
 		model.put("cateNum", productCateNum);

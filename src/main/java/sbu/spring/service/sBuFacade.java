@@ -17,10 +17,10 @@ public interface sBuFacade {
 	User getUser(String userId, String userPwd);
 	
 	String getUserNameByUserId(String userId);
-	
-	List<Purchase> getPurchaseList(String userId);
 
-	List<Product> getProductListByUserId(String userId);
+	List<Product> getProductListByProductCateNum(int productCateNum);
+	
+	List<Purchase> getPurchaseListByUserId(String userId);
 
 	Product getProduct(int productNum);
 
@@ -29,10 +29,8 @@ public interface sBuFacade {
 	void insertEvent(Event event);
 	
 	void deleteEvent(int eventNum);
-	
+
 	Category getCategory(int cateNum);
-	
-	List<Purchase> getpurchaseList(String userId);
 
 	void updateProductRemain(int productNum);
 }

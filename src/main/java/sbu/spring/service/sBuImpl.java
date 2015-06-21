@@ -1,4 +1,5 @@
 package sbu.spring.service;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,6 @@ public class sBuImpl implements sBuFacade {
 		return userDao.getUser(userId, userPwd);
 	}
 
-
 	@Override
 	public Product getProduct(int productNum) {
 		return productDao.getProduct(productNum);
@@ -67,28 +67,23 @@ public class sBuImpl implements sBuFacade {
 		return categoryDao.getCategory(cateNum);
 	}
 
-	@Override
-	public List<Purchase> getpurchaseList(String userId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Product> getProductListByUserId(String userId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Purchase> getPurchaseList(String userId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void updateProductRemain(int productNum) {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	@Override
+	public List<Product> getProductListByProductCateNum(int productCateNum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Purchase> getPurchaseListByUserId(String userId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
