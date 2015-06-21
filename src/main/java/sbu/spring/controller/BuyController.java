@@ -32,21 +32,16 @@ public class BuyController {
 		product = this.sBuf.getProduct(productNum);
 		user = this.sBuf.getUser(userId);
 
+		// productNum 의 productRemain 을 salesNum 만큼 빼주기
 		int productRemain = product.getProductRemain() - salesNum;
 		this.sBuf.updateProductRemain(productNum, productRemain);
-		System.out.println("*****productNum, userId, salesNum, productRemain: "
-				+ productNum + ", " + userId + ", " + salesNum + ", "
-				+ productRemain);
-		System.out.println("*****product.productRemain: "
-				+ product.getProductRemain());
-		// productNum 의 productRemain 을 salesNum 만큼 빼주기
-		// userId 의 userPoint 를 productPrice의 10퍼센트 증가
 
-		System.out.println("*****productNum, userId: " + productNum + ", "
-				+ userId);
-
+		// buylistDB에 상품명과 고객id 추가
 		this.sBuf.insertPurchase(productNum, userId);
 
+		// userId 의 userPoint 를 productPrice의 10퍼센트 증가
+		
+		
 		model.put("product", product);
 
 		return "AdminSellForm";
