@@ -11,6 +11,15 @@ public class Product implements Serializable{
 	private int productCateNum;
 	private String productPrice;
 	private String productDescription;
+	private int productEventNum;
+
+	public int getProductEventNum() {
+		return productEventNum;
+	}
+
+	public void setProductEventNum(int productEventNum) {
+		this.productEventNum = productEventNum;
+	}
 
 	public int getProductNum() {
 		return productNum;

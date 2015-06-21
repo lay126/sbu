@@ -12,7 +12,8 @@
       PRODUCTDB.product_remain AS productRemain,
       PRODUCTDB.product_description AS productDescription,
       PRODUCTDB.product_price AS productPrice,
-      PRODUCTDB.product_cate_num AS productCateNum
+      PRODUCTDB.product_cate_num AS productCateNum,
+      PRODUCTDB.product_event_num AS productEventNum
       FROM PRODUCTDB
       WHERE product_cate_num =
       #{productCateNum}
@@ -24,7 +25,8 @@
       PRODUCTDB.product_remain AS productRemain,
       PRODUCTDB.product_description AS productDescription,
       PRODUCTDB.product_price AS productPrice,
-      PRODUCTDB.product_cate_num AS productCateNum
+      PRODUCTDB.product_cate_num AS productCateNum,
+      PRODUCTDB.product_event_num AS productEventNum
       FROM PRODUCTDB
       WHERE
       product_num = #{productNum}
