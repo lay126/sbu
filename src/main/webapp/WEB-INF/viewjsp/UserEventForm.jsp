@@ -17,7 +17,13 @@
 	<c:forEach var="event" items="${ eventList.pageList }">
 		<tr>
 			<td align="center" colspan="2" align="center" bgcolor="#f5f5dc">
-				${event.eventText}</td>
+				<a href="<c:url value='/jsp/viewEventProduct.do'>
+				<c:param name='eventNum' value='${ event.eventNum }' />
+				<c:param name='event' value='${ event }' /></c:url>">
+							<c:out value='${ event.eventText }' />
+					</a>
+				
+				</td>
 		</tr>
 
 	</c:forEach>
