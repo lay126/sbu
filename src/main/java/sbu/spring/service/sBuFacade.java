@@ -11,6 +11,8 @@ import sbu.spring.domain.User;
 import sbu.spring.domain.Product;
 
 public interface sBuFacade {
+	
+	List<User> getUserAll();
 
 	User getUser(String userId);
 

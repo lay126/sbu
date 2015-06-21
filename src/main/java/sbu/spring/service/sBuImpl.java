@@ -29,7 +29,7 @@ public class sBuImpl implements sBuFacade {
 
 	@Autowired
 	private PurchaseDao purchaseDao;
-	
+
 	@Override
 	public User getUser(String userId) {
 		return userDao.getUser(userId);
@@ -44,7 +44,7 @@ public class sBuImpl implements sBuFacade {
 	public Product getProduct(int productNum) {
 		return productDao.getProduct(productNum);
 	}
-	
+
 	@Override
 	public List<Product> getProductAll() {
 		return productDao.getProductAll();
@@ -69,7 +69,6 @@ public class sBuImpl implements sBuFacade {
 	public Category getCategory(int cateNum) {
 		return categoryDao.getCategory(cateNum);
 	}
-
 
 	@Override
 	public void updateProductRemain(int productNum, int productRemain) {
@@ -109,13 +108,18 @@ public class sBuImpl implements sBuFacade {
 	@Override
 	public void updateUserPoint(int userPoint, String userId) {
 		purchaseDao.updateUserPoint(userPoint, userId);
-		
+
 	}
 
 	@Override
 	public void insertEvent(String eventName, String eventStartDate,
 			String eventEndDate, String eventText) {
-		eventDao.insertEvent(eventName, eventStartDate, eventEndDate, eventText);	
+		eventDao.insertEvent(eventName, eventStartDate, eventEndDate, eventText);
+	}
+
+	@Override
+	public List<User> getUserAll() {
+		return userDao.getUserAll();
 	}
 
 }

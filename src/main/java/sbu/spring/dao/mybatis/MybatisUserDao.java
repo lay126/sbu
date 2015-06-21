@@ -38,4 +38,9 @@ public class MybatisUserDao implements UserDao {
 		return userMapper.getUserByUserBirth(userBirth);
 	}
 
+	@Override
+	public List<User> getUserAll() throws DataAccessException {
+		return userMapper.getUserAll();
+	}
+
 }

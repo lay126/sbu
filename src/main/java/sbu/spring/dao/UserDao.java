@@ -9,6 +9,8 @@ import sbu.spring.domain.User;
 
 public interface UserDao {
 
+	List<User> getUserAll() throws DataAccessException;
+	
 	User getUser(String userId) throws DataAccessException;
 	
 	User getUser(String userId, String userPwd) throws DataAccessException;

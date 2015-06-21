@@ -4,6 +4,22 @@
 
 <mapper namespace="sbu.spring.dao.mybatis.mapper.UserMapper">
 	<cache />
+	
+	<select id="getUserAll" resultType="sbu.spring.domain.User">
+		SELECT
+		USERDB.user_id as userId,
+		USERDB.user_num as userNumber,
+		USERDB.user_name as userName,
+		USERDB.user_pwd as userPwd,
+		USERDB.user_email AS userEmail,
+		USERDB.user_phone AS userPhone,
+		USERDB.user_birth AS userBirth,
+		USERDB.user_point AS userPoint
+		FROM
+		USERDB
+	</select>
+	
+	
 	<select id="getUserByUserIdAndUserPwd" resultType="sbu.spring.domain.User">
 		SELECT
 		USERDB.user_id as userId,

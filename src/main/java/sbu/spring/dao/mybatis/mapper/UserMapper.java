@@ -13,6 +13,8 @@ public interface UserMapper {
 
 	User getUserByUserId(String userId);
 	
+	List<User> getUserAll();
+	
 	User getUserByUserBirth(String userBirth);
 
 	String getUserNameByUserId(String userId);
