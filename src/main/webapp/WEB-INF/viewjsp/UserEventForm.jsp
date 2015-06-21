@@ -8,10 +8,8 @@
 				test="${empty userSession.user}">
 				please login!
 			</c:if> <c:if test="${!empty userSession.user}">
-				welcome!
-			</c:if></td>
-		<td align="center" bgcolor="#ffe4c4"><input type="button"
-			value="more" /></td>
+				<%@ include file="RecoForm.jsp"%>
+			</c:if>
 	</tr>
 
 	<c:forEach var="event" items="${ eventList.pageList }">
