@@ -106,6 +106,12 @@ public class sBuImpl implements sBuFacade {
 		return productDao.getLastProduct();
 	}
 
+	@Override
+	public void updateUserPoint(int userPoint, String userId) {
+		purchaseDao.updateUserPoint(userPoint, userId);
+		
+	}
+
 
 
 }

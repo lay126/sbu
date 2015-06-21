@@ -15,30 +15,32 @@ public interface sBuFacade {
 	User getUser(String userId);
 
 	User getUser(String userId, String userPwd);
-	
+
 	String getUserNameByUserId(String userId);
-	
+
 	User getUserByBirth(String userBirth);
 
 	List<Product> getProductListByProductCateNum(int productCateNum);
-	
+
 	List<Purchase> getPurchaseListByUserId(String userId);
 
 	Product getProduct(int productNum);
-	
+
 	Product getLastProduct();
-	
+
 	List<Product> getProductListByEventNum(int productEventNum);
 
 	List<Event> getEventList();
-	
+
 	void insertEvent(Event event);
-	
+
 	void deleteEvent(int eventNum);
 
 	Category getCategory(int cateNum);
 
 	void updateProductRemain(int productNum, int productRemain);
-	
+
 	void insertPurchase(int buyProductNum, String buyUserId);
+
+	void updateUserPoint(int userPoint, String userId);
 }

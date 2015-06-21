@@ -30,4 +30,10 @@ public class MybatisPurchaseDao implements PurchaseDao {
 		purchaseMapper.insertPurchase(buyProductNum, buyUserId);
 	}
 
+	@Override
+	public void updateUserPoint(int userPoint, String userId)
+			throws DataAccessException {
+		purchaseMapper.updateUserPoint(userPoint, userId);
+	}
+
 }
