@@ -4,7 +4,7 @@ import sbu.spring.domain.*;
 import java.util.List;
 
 public interface EventMapper {
-
+	
 	List<Event> getEventList();
 
 	void insertEvent(Event event);
