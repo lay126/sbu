@@ -16,7 +16,7 @@ import sbu.spring.service.sBuFacade;
 @Controller
 public class ViewEventProductListController {
 
-	PagedListHolder<Event> eventProductList = null;
+	PagedListHolder<Product> eventProductList = null;
 	private sBuFacade sBuf;
 
 	@Autowired
@@ -29,10 +29,8 @@ public class ViewEventProductListController {
 			@RequestParam(value = "eventNum") int eventNum, ModelMap model)
 			throws Exception {
 
-		System.out.println("viewEventProductList: " + eventNum);
-
-		eventProductList = new PagedListHolder<Event>(
-				this.sBuf.getEventList());
+		eventProductList = new PagedListHolder<Product>(
+				this.sBuf.getProductListByEventNum(eventNum));
 		eventProductList.setPageSize(10);
 
 		model.put("eventProductList", eventProductList);
