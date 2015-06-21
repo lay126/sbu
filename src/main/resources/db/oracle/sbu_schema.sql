@@ -70,11 +70,8 @@ create table recolistDB (
 create table buylistDB (
 	buy_num int not null,
     buy_product_num int not null,
-    buy_user_num int not null,
-    buy_date varchar(64) null,
-   	constraint pk_buylistDB primary key (buy_product_num, buy_user_num),
-    FOREIGN KEY (buy_product_num) REFERENCES productDB(product_num),
-    FOREIGN KEY (buy_user_num) REFERENCES userDB(user_num)
+    buy_user_id varchar(32) not null,
+    buy_date varchar(64) null
 );
 
 ALTER TABLE userDB 

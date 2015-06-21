@@ -42,6 +42,9 @@ public class BuyController {
 		// userId 의 userPoint 를 productPrice의 10퍼센트 증가
 		int userPoint = user.getUserPoint()
 				+ (int) (product.getProductPrice() * 0.1);
+		System.out.println("****** userPoint :" + userPoint
+				+ ", product.getProductPrice() : " + product.getProductPrice()
+				+ ", user.getUserPoint() : " + user.getUserPoint());
 		this.sBuf.updateUserPoint(userPoint, userId);
 
 		model.put("product", product);
