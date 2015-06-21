@@ -41,7 +41,7 @@ public class MybatisProductDao implements ProductDao {
 	}
 
 	@Override
-	public Product getProductAll() throws DataAccessException {
+	public List<Product> getProductAll() throws DataAccessException {
 		return productMapper.getProductAll();
 	}
 

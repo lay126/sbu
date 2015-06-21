@@ -46,7 +46,7 @@ public class sBuImpl implements sBuFacade {
 	}
 	
 	@Override
-	public Product getProductAll() {
+	public List<Product> getProductAll() {
 		return productDao.getProductAll();
 	}
 

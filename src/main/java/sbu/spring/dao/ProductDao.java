@@ -19,5 +19,5 @@ public interface ProductDao {
 	List<Product> getProductListByEventNum(int productEventNum)
 			throws DataAccessException;
 
-	Product getProductAll() throws DataAccessException;
+	List<Product> getProductAll() throws DataAccessException;
 }

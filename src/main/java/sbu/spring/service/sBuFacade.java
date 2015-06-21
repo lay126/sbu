@@ -44,5 +44,5 @@ public interface sBuFacade {
 
 	void updateUserPoint(int userPoint, String userId);
 
-	Product getProductAll();
+	List<Product> getProductAll();
 }
