@@ -18,14 +18,14 @@
 		FROM EVENTDB
 	</select>
 
-	<insert id="insertEvent" parameterType="String">
+	<insert id="insertEvent">
 		INSERT INTO EVENTDB
 		(EVENT_NAME,
 		EVENT_START_DATE, EVENT_END_DATE, EVENT_TEXT)
 		VALUES
-		(#{eventName},
-		#{eventStartDate},
-		#{eventEndDate}, #{eventText})
+		(#{eventName, jdbcType=VARCHAR},
+		#{eventStartDate, jdbcType=INTEGER},
+		#{eventEndDate, jdbcType=INTEGER}, #{eventText, jdbcType=VARCHAR})
 	</insert>
 
 	<delete id="deleteEvent" parameterType="int">

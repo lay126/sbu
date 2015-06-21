@@ -32,9 +32,7 @@ public interface sBuFacade {
 
 	List<Event> getEventList();
 	
-	void insertEvent(String eventName, String eventStartName, String eventEndName, String eventText);
-
-	void insertEvent(Event event);
+	void insertEvent(String eventName, String eventStartDate, String eventEndDate, String eventText);
 
 	void deleteEvent(int eventNum);
 

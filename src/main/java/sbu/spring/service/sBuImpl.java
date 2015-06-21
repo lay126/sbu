@@ -113,16 +113,9 @@ public class sBuImpl implements sBuFacade {
 	}
 
 	@Override
-	public void insertEvent(String eventName, String eventStartName,
-			String eventEndName, String eventText) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void insertEvent(Event event) {
-		// TODO Auto-generated method stub
-		
+	public void insertEvent(String eventName, String eventStartDate,
+			String eventEndDate, String eventText) {
+		eventDao.insertEvent(eventName, eventStartDate, eventEndDate, eventText);	
 	}
 
 }

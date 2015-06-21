@@ -28,11 +28,13 @@ public class EventController {
 			@RequestParam("eventStartDate")String eventStartDate,
 			@RequestParam("eventEndDate")String eventEndDate, ModelMap model)throws Exception{
 			
-			//Event event = this.sBuf.set
-			//event.getEventName() = eventName;
+			this.sBuf.insertEvent(eventName, eventStartDate, eventEndDate, eventText);
 			
-			//User user = this.sBuf.getUser(userId, userPwd);
+			//model.put("event", event);
+			//eventName = event.getEventName();
+			
 		
+			
 		
 		return "EventList";
 		
