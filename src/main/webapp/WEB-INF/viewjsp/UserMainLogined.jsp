@@ -10,7 +10,7 @@
 	<table>
 		<tr>
 			<td><%@ include file="loginedForm.jsp"%></td>
-			<td rowspan="2"><%@ include file="UserEventForm.jsp"%></td>
+			<td rowspan="2"><%@ include file="UserEventFormLogined.jsp"%></td>
 		</tr>
 		<tr>
 			<td>
