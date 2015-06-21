@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
-<table align="left" bgcolor="#ffe4e1" width="200" height="400">
+<table align="left" bgcolor="#ffe4e1" width="200" height="800">
 	<tr>
 		<td align="center" bgcolor="#ffb6c1">wishlist</td>
 	</tr>

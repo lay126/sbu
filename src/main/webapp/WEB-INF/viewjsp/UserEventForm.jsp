@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<table align="left" bgcolor="#ffe4c4" width="700" height="600">
+<table align="left" bgcolor="#ffe4c4" width="700" height="1000">
 	<tr>
 		<td align="center" bgcolor="#ffe4c4"><c:if
 				test="${empty userSession.user}">
