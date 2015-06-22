@@ -25,14 +25,12 @@ public class MybatisPurchaseDao implements PurchaseDao {
 		return purchaseMapper.getPurchaseList(userId);
 	}
 
-	@Transactional
 	@Override
 	public void insertPurchase(int buyProductNum, String buyUserId)
 			throws DataAccessException {
 		purchaseMapper.insertPurchase(buyProductNum, buyUserId);
 	}
 
-	@Transactional
 	@Override
 	public void updateUserPoint(int userPoint, String userId)
 			throws DataAccessException {

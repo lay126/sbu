@@ -27,14 +27,14 @@ public class BuyController {
 		this.sBuf = sBuf;
 	}
 
+	// admin sell
 	@RequestMapping("/user/buy.do")
 	public String handleRequest(
-			@ModelAttribute("userSession") UserSession userSession,
 			@RequestParam("productNum") int productNum,
 			@RequestParam("userId") String userId,
 			@RequestParam("salesNum") int salesNum, ModelMap model)
 			throws Exception {
-		System.out.println("********* " + productNum + ", " + userId + ", "
+		System.out.println("*1111******** " + productNum + ", " + userId + ", "
 				+ salesNum);
 		product = this.sBuf.getProduct(productNum);
 		user = this.sBuf.getUser(userId);
@@ -50,24 +50,25 @@ public class BuyController {
 		// userId 의 userPoint 를 productPrice의 10퍼센트 증가
 		int userPoint = user.getUserPoint()
 				+ (int) (product.getProductPrice() * 0.1);
-		System.out.println("****** userPoint :" + userPoint
+		System.out.println("*1111***** userPoint :" + userPoint
 				+ ", product.getProductPrice() : " + product.getProductPrice()
 				+ ", user.getUserPoint() : " + user.getUserPoint());
 		this.sBuf.updateUserPoint(userPoint, userId);
 
 		model.put("product", product);
-		userSession.setUser(user);
-		model.addAttribute("userSession", userSession);
-		
+
 		return "AdminSellForm";
 	}
 
+	// user buy
 	@RequestMapping("/user/buy2.do")
-	public String handleRequest2(@RequestParam("productNum") int productNum,
+	public String handleRequest2(
+			@ModelAttribute("userSession") UserSession userSession,
+			@RequestParam("productNum") int productNum,
 			@RequestParam("userId") String userId,
 			@RequestParam("salesNum") int salesNum, ModelMap model)
 			throws Exception {
-		System.out.println("********* " + productNum + ", " + userId + ", "
+		System.out.println("**2222******* " + productNum + ", " + userId + ", "
 				+ salesNum);
 		product = this.sBuf.getProduct(productNum);
 		user = this.sBuf.getUser(userId);
@@ -82,19 +83,22 @@ public class BuyController {
 		// userId 의 userPoint 를 productPrice의 10퍼센트 증가
 		int userPoint = user.getUserPoint()
 				+ (int) (product.getProductPrice() * 0.1);
-		System.out.println("****** userPoint :" + userPoint
+		System.out.println("**2222**** userPoint :" + userPoint
 				+ ", product.getProductPrice() : " + product.getProductPrice()
 				+ ", user.getUserPoint() : " + user.getUserPoint());
 		this.sBuf.updateUserPoint(userPoint, userId);
-
+		System.out.println("**3333**** userPoint :" + userPoint
+				+ ", product.getProductPrice() : " + product.getProductPrice()
+				+ ", user.getUserPoint() : " + user.getUserPoint());
 		model.put("product", product);
 		model.put("user", user);
 
-		if (user != null) {
-			UserSession userSession = new UserSession(user);
-			model.addAttribute("userSession", userSession);
-		}
-
+		// if (user != null) {
+		// UserSession userSession = new UserSession(user);
+		// model.addAttribute("userSession", userSession);
+		// }
+		userSession.setUser(user);
+		model.put("userSession", userSession);
 		return "UserMain";
 	}
 }
