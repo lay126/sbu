@@ -15,7 +15,7 @@
 			<td align="center" bgcolor="#FFF9E3">EMAIL</td>
 			<td align="center" bgcolor="#FFF9E3"><c:out value="${userSession.user.userEmail}"/></td>
 		</tr>
-		<c:if test="${userSession.user.userPoint != '0'}">
+		<c:if test="${userSession.user.userId != 'admin'}">
 		<tr>
 			<td align="center" bgcolor="#FFF9E3">POINT</td>
 			<td align="center" bgcolor="#FFF9E3">
