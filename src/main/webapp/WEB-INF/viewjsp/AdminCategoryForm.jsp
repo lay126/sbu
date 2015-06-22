@@ -13,9 +13,7 @@
 				stock </a></td>
 	</tr>
 	<tr>
-		<td align="center" bgcolor="#ffe4e1"><a
-			href="<c:url value='/jsp/viewProductList.do'><c:param name='productCateNum' value='3'/></c:url>">
-				recommend</a></td>
+		<td align="center" bgcolor="#ffe4e1">recommened</td>
 	</tr>
 	<tr>
 		<td align="center" bgcolor="#ffe4e1"><a

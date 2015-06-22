@@ -8,7 +8,7 @@
 <title>ProductList</title>
 </head>
 <body>
-	<form action="<c:url value='/admin/login.do' />" method="POST">
+	<form action="<c:url value='/select/admin.do' />">
 
 		<input type="hidden" name="userId"
 			value="<c:url value="${useSession.user.userId}" />" /> <input
