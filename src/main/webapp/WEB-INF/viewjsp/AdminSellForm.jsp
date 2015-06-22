@@ -1,6 +1,5 @@
 <%@ page pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<center>
 	<form action="<c:url value='/select/admin.do' />">
 
 		<input type="hidden" name="userId"
@@ -8,13 +7,14 @@
 			type="hidden" name="userPwd"
 			value="<c:url value="${useSession.user.userPwd}" />" />
 
-		<table align="center" width="1400">
+		<table>
 			<tr>
 				<td align="left"><input type="submit" value="홈으로 이동" /></td>
 			</tr>
 		</table>
 
 	</form>
+<center>
 	<form name="productNumForm"
 		action="<c:url value='/jsp/viewProductRemain.do' />" method="POST">
 
