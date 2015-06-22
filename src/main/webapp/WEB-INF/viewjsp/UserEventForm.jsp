@@ -15,13 +15,16 @@
 	<c:forEach var="event" items="${ eventList.pageList }">
 		<tr>
 			<td align="center" colspan="2" align="center" bgcolor="#f5f5dc">
-				<a href="<c:url value='/jsp/viewEventProductList.do'>
-				<c:param name='event' value='${ event }' />
+				<a
+				href="<c:url value='/jsp/viewEventProductList.do'>
+				c:param name='event' value='${ event }' />
 				<c:param name='eventNum' value='${ event.eventNum }' /></c:url>">
-							<c:out value='${ event.eventText }' />
-					</a>
-				
-				</td>
+				<c:out value='${ event.eventName }' /></a><br>
+				<c:out value='${ event.eventText }' /> <br> ${ event.eventStartDate }
+				부터 ${ event.eventEndDate } 까지
+
+
+			</td>
 		</tr>
 
 	</c:forEach>
