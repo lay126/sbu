@@ -1,12 +1,27 @@
 <%@ page pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <center>
+	<form action="<c:url value='/select/admin.do' />">
+
+		<input type="hidden" name="userId"
+			value="<c:url value="${useSession.user.userId}" />" /> <input
+			type="hidden" name="userPwd"
+			value="<c:url value="${useSession.user.userPwd}" />" />
+
+		<table align="center" width="1400">
+			<tr>
+				<td align="left"><input type="submit" value="홈으로 이동" /></td>
+			</tr>
+		</table>
+
+	</form>
 	<form name="productNumForm"
 		action="<c:url value='/jsp/viewProductRemain.do' />" method="POST">
 
 		<table bgcolor="#A8BDCC" width="700" cellpadding="10" height="150">
 			<tr>
-				<td align="center" bgcolor="#A8BDCC" width="150" height="150">product number :</td>
+				<td align="center" bgcolor="#A8BDCC" width="150" height="150">product
+					number :</td>
 				<td><c:if test="${empty product}">
 						<input type="text" name="productNum" />
 					</c:if> <c:if test="${!empty product}">
@@ -20,7 +35,7 @@
 
 	<form name="buyForm" action="<c:url value='/user/buy.do' />"
 		method="POST">
-		<table bgcolor="#A8BDCC" width="700" cellpadding="10"  height="200">
+		<table bgcolor="#A8BDCC" width="700" cellpadding="10" height="200">
 			<tr>
 				<td align="center" width="150">customer id :</td>
 				<td><input type="text" name="userId" /></td>
@@ -40,7 +55,7 @@
 	<br>
 	<c:if test="${!empty product}">
 		<table align="center" bgcolor="#A8BDCC" cellspacing="0"
-			cellpadding="10" border="1" width="700"  height="200">
+			cellpadding="10" border="1" width="700" height="200">
 			<tr bgcolor="#A8BDCC">
 				<th>product</th>
 				<th>number of remain</th>
@@ -51,8 +66,8 @@
 						<font color="RED" size="2"> no remain </font>
 					</c:if> <c:if test='${product.productRemain > 0}'>
 						<font size="2"><fmt:formatNumber
-								value='${product.productRemain}' /> ${product.productRemain} 개 남음
-						</font>
+								value='${product.productRemain}' /> ${product.productRemain} 개
+							남음 </font>
 					</c:if></td>
 			</tr>
 		</table>
