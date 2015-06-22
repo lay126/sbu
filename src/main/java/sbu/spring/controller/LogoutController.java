@@ -11,7 +11,6 @@ public class LogoutController {
 	@RequestMapping("/user/logout.do")
 	public String handleRequest(HttpSession session) throws Exception {
 		session.removeAttribute("userSession");
-		session.removeAttribute("viewStateSession");
 
 		session.invalidate();
 		return "index";
