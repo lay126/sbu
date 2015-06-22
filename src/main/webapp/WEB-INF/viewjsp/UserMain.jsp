@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Main page</title>
 </head>
-<body>
-<center>
+<body bgcolor="#FFC9C8">
+<center><br><br>
 		<table>
 			<tr>
 				<td><c:if test="${empty userSession.user}">

@@ -7,7 +7,7 @@
 <title>this is Admin Main page</title>
 </head>
 <body bgcolor="#A8BDCC">
-<center>
+<center><br><br>
 	<table>
 		<tr>
 			<td><c:if test="${empty userSession.user}">

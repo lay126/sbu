@@ -13,21 +13,21 @@
 	<input type="hidden" name="forwardAction" value="<c:url value="${signonForwardAction}" />"/>
 </c:if>
 
-	<table align="left" bgcolor="#6D839A" width="200" height="200">
+	<table align="left" bgcolor="#FFEBA3" width="200" height="200">
 		<tr>
-			<td align="center" bgcolor="#9CA8B3">ID</td>
-			<td align="center" bgcolor="#9CA8B3"><input type="text"
+			<td align="center" bgcolor="#FFF9E3">ID</td>
+			<td align="center" bgcolor="#FFF9E3"><input type="text"
 				name=userId size="10" /></td>
 		</tr>
 		<tr>
-			<td align="center" bgcolor="#9CA8B3">PWD</td>
-			<td align="center" bgcolor="#9CA8B3"><input type="password"
+			<td align="center" bgcolor="#FFF9E3">PWD</td>
+			<td align="center" bgcolor="#FFF9E3"><input type="password"
 				name="userPwd" size="10" /></td>
 		</tr>
 		<tr>
-			<td align="center" bgcolor="#9CA8B3"><input type="submit"
+			<td align="center" bgcolor="#FFF9E3"><input type="submit"
 				value="login" /></td>
-			<td align="center" bgcolor="#9CA8B3"><a
+			<td align="center" bgcolor="#FFF9E3"><a
 				href="<c:url value='/join/user.do'/>">join</a></td>
 		</tr>
 	</table>
