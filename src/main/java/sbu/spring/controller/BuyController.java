@@ -43,6 +43,7 @@ public class BuyController {
 		// productNum 의 productRemain 을 salesNum 만큼 빼주기
 		int productRemain = product.getProductRemain() - salesNum;
 		this.sBuf.updateProductRemain(productNum, productRemain);
+		product = this.sBuf.getProduct(productNum);
 
 		// buylistDB에 상품명과 고객id 추가
 		this.sBuf.insertPurchase(productNum, userId);
