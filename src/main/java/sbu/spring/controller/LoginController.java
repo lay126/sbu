@@ -26,7 +26,9 @@ public class LoginController {
 	User user = new User();
 	PagedListHolder<Event> eventList = null;
 	PagedListHolder<Product> productAll = null;
+	PagedListHolder<Product> productCateList = null;
 	PagedListHolder<Purchase> purchaseList = null;
+	PagedListHolder<Purchase> purchaseList2 = null;
 	PagedListHolder<User> userAll = null;
 	Product recoProduct = null;
 	private sBuFacade sBuf;
@@ -98,31 +100,52 @@ public class LoginController {
 			}
 
 			// reco by buyList
-			for (int i = 0; i < purchaseList.getNrOfElements(); i++) {
-				System.out.println("purchaseList.getSource().get(i).getBuyUserId(): "+purchaseList.getSource().get(i).getBuyUserId());
-				if (purchaseList.getSource().get(i).getBuyUserId()
+			purchaseList2 = new PagedListHolder<Purchase>(
+					this.sBuf.getPurchaseListByUserId(userId));
+
+			for (int i = 0; i < purchaseList2.getNrOfElements(); i++) {
+				if (purchaseList2.getSource().get(i).getBuyUserId()
 						.equals(userId)) {
 					if (sBuf.getProduct(
-							purchaseList.getSource().get(i).getProductNum())
+							purchaseList2.getSource().get(i).getProductNum())
 							.getProductCateNum() == 1) {
 						cate1 += 1;
 					} else if (sBuf.getProduct(
-							purchaseList.getSource().get(i).getProductNum())
+							purchaseList2.getSource().get(i).getProductNum())
 							.getProductCateNum() == 2) {
 						cate2 += 1;
 					} else if (sBuf.getProduct(
-							purchaseList.getSource().get(i).getProductNum())
+							purchaseList2.getSource().get(i).getProductNum())
 							.getProductCateNum() == 3) {
 						cate3 += 1;
 					}
-					System.out.println("cate1: "+cate1);
 				}
 			}
-			System.out.println("11cate1: "+cate1);
-			model.put(
-					"recoBuyProduct",
-					productAll.getPageList().get(
-							productAll.getLastElementOnPage()));
+
+			int max;
+			if (cate1 >= cate2 && cate1 >= cate3) {
+				max = 1;
+			} else if (cate2 >= cate3 && cate2 >= cate1) {
+				max = 2;
+			} else {
+				max = 3;
+			}
+
+			int remain = 100000;
+			productCateList = new PagedListHolder<Product>(
+					this.sBuf.getProductListByProductCateNum(max));
+			for (int i = 0; i < productCateList.getNrOfElements(); i++) {
+				if (remain >= productCateList.getSource().get(i)
+						.getProductRemain()) {
+					remain = productCateList.getSource().get(i)
+							.getProductRemain();
+					if (purchaseList2 != null) {
+						model.put("recoBuyProduct", productCateList.getSource()
+								.get(i));
+					}
+				}
+			}
+
 		} catch (Exception e) {
 
 		}
