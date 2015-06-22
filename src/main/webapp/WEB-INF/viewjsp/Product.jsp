@@ -20,28 +20,31 @@
 <body>
 
 	<center>
-		<h2>${product.productName}상품정보</h2>
+		<br>
+		<h2>" ${product.productName} " 의 정보를 알려드려요~</h2>
 		<br>
 		<form name="productForm"
 			action="<c:url value='/user/buy2.do' > <c:param name='userId' value='${userSession.user.userId}'/><c:param name='productNum' value='${product.productNum}'/> </c:url>"
 			method="POST">
-			<table align="center" bgcolor="#008800" cellspacing="0"
-				cellpadding="10" border="1">
+			<table align="center" bgcolor="#D6FFB6" cellspacing="0"
+				cellpadding="10" border="1" bordercolor="white" width="600"
+				height="500">
 				<caption align="left">
 					<a
 						href="<c:url value='/jsp/viewProductList.do'><c:param name='productCateNum' value='${ product.productCateNum }'/></c:url>">
-						목록보기</a>
+						목록보기</a> <br>
+					<br>
 				</caption>
-				<tr bgcolor="#FFFF88">
+				<tr bgcolor="#FFD8CA">
 					<th>상품명</th>
 					<td width="300"><b>${product.productName}</b></td>
 				</tr>
-				<tr bgcolor="#FFFF88">
+				<tr bgcolor="#FFD8CA">
 					<th height="100">상품 설명</th>
 					<td>${product.productDescription}</td>
 				</tr>
 
-				<tr bgcolor="#FFFF88">
+				<tr bgcolor="#FFD8CA">
 					<th>재고수량</th>
 					<td><c:if test='${product.productRemain <= 0}'>
 							<font color="RED" size="2"> 재고 없음 </font>
@@ -51,17 +54,19 @@
 								남음 </font>
 						</c:if></td>
 				</tr>
-				<tr bgcolor="#FFFF88">
+				<tr bgcolor="#FFD8CA">
 					<th>가격</th>
 					<td>${product.productPrice}원</td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center">구매 수량 : <input type="text"
-						name="salesNum" /> 개&nbsp;&nbsp;&nbsp;&nbsp;<input type="button"
-						value="구매하기" onclick="buyCheck()"></td>
-					<%-- 	<td colspan="2" align="center"> 구매 수량 : <input type="text"
-						name="salesNum" /> 개&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit"
-						value="구매하기"></td> --%>
+					<td colspan="2" align="center"><c:if
+							test='${product.productRemain <= 0}'>
+							<font color="RED" size="2"> 구매가 불가한 상품입니다. </font>
+						</c:if> <c:if test='${product.productRemain > 0}'>
+							구매 수량 : <input type="text" name="salesNum" /> 개&nbsp;&nbsp;&nbsp;&nbsp;<input
+								type="button" value="구매하기" onclick="buyCheck()">
+							</font>
+						</c:if></td>
 				</tr>
 			</table>
 		</form>
