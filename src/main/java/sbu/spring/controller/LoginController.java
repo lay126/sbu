@@ -24,7 +24,7 @@ import sbu.spring.service.sBuFacade;
 public class LoginController {
 
 	User user = new User();
-	PagedListHolder<Event> eventList = null;
+	PagedListHolder<Event> eventList2 = null;
 	PagedListHolder<Product> productAll = null;
 	PagedListHolder<Product> productCateList = null;
 	PagedListHolder<Purchase> purchaseList = null;
@@ -56,8 +56,8 @@ public class LoginController {
 			model.addAttribute("userSession", userSession);
 		}
 
-		eventList = new PagedListHolder<Event>(this.sBuf.getEventList());
-		model.put("eventList", eventList);
+		eventList2 = new PagedListHolder<Event>(this.sBuf.getEventList());
+		model.put("eventList", eventList2);
 
 		productAll = new PagedListHolder<Product>(this.sBuf.getProductAll());
 		model.put("productAll", productAll);
@@ -77,8 +77,7 @@ public class LoginController {
 			for (int i = 0; i < userAll.getNrOfElements(); i++) {
 				if (userAll.getSource().get(i).getUserBirth().subSequence(0, 1)
 						.equals(user.getUserBirth().subSequence(0, 1))
-						&& (userAll.getSource().get(i).getUserId() != user
-								.getUserId())) {
+						&& (userAll.getSource().get(i).getUserId() != userId)) {
 
 					purchaseList = new PagedListHolder<Purchase>(
 							this.sBuf.getPurchaseListByUserId(userAll
@@ -150,7 +149,7 @@ public class LoginController {
 
 		}
 
-		if (user.getUserId().equals("admin")) {
+		if (userId.equals("admin")) {
 			return "AdminMain";
 		} else {
 			return "UserMain";

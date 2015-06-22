@@ -8,11 +8,20 @@
 <title>ProductList</title>
 </head>
 <body>
-<table align="center" width="1400">
-		<tr>
-			<td align="left"><a href="/sBu/select/user.do"> 홈으로 이동 </a></td>
-		</tr>
-	</table>
+	<form action="<c:url value='/user/login.do' />" method="POST">
+
+		<input type="hidden" name="userId"
+			value="<c:url value="${useSession.user.userId}" />" /> <input
+			type="hidden" name="userPwd"
+			value="<c:url value="${useSession.user.userPwd}" />" />
+
+		<table align="center" width="1400">
+			<tr>
+				<td align="left"><input type="submit" value="홈으로 이동" /></td>
+			</tr>
+		</table>
+
+	</form>
 	<center>
 		<h2>이벤트 등록</h2>
 		<table>
