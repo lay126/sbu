@@ -9,7 +9,11 @@
 <title>ProductList</title>
 </head>
 <body>
-	<a href="/sBu/select/user.do"> 홈으로 이동</a>
+	<table align="center" width="1400">
+		<tr>
+			<td align="left"><a href="/sBu/select/user.do"> 홈으로 이동 </a></td>
+		</tr>
+	</table>
 	<center>
 		<h2>상품 목록</h2>
 		<br>

@@ -7,6 +7,7 @@
 <title>Main page</title>
 </head>
 <body>
+<center>
 		<table>
 			<tr>
 				<td><c:if test="${empty userSession.user}">

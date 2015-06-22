@@ -6,7 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>this is Admin Main page</title>
 </head>
-<body bgcolor="black">
+<body bgcolor="#A8BDCC">
+<center>
 	<table>
 		<tr>
 			<td><c:if test="${empty userSession.user}">
@@ -21,5 +22,6 @@
 			<td><%@ include file="AdminCategoryForm.jsp"%></td>
 		</tr>
 	</table>
+	</center>
 </body>
 </html>

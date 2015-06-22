@@ -8,7 +8,11 @@
 <title>Purchase List</title>
 </head>
 <body>
-
+<table align="center" width="1400">
+		<tr>
+			<td align="left"><a href="/sBu/select/user.do"> 홈으로 이동 </a></td>
+		</tr>
+	</table>
 <br/>
 	<table align="left" bgcolor="#ffe4c4" width="700">
 		<tr>

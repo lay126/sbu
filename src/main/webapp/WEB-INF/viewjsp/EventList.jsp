@@ -8,6 +8,11 @@
 <title>ProductList</title>
 </head>
 <body>
+<table align="center" width="1400">
+		<tr>
+			<td align="left"><a href="/sBu/select/user.do"> 홈으로 이동 </a></td>
+		</tr>
+	</table>
 	<center>
 		<h2>이벤트 등록</h2>
 		<table>

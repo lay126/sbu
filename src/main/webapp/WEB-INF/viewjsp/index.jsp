@@ -13,9 +13,15 @@
 	<hr>
 	<br>
 	<center>
-		<a href="<c:url value='/select/user.do'/>">user</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="<c:url value='/select/admin.do'/>">admin</a>
+		<table align="center" bgcolor="#FFCEC8" width="700" height="200"
+			border="5" bordercolor="white">
+			<tr align="center">
+				<td align="center" width="350"><font color="#000000" size=10>
+						<a href="<c:url value='/select/user.do'/>">user</a>
+				</font></td>
+				<td align="center" width="350"><font color="#000000" size=10><a
+					href="<c:url value='/select/admin.do'/>">admin</a></font></td>
+		</table>
 	</center>
 	<br>
 	<br>

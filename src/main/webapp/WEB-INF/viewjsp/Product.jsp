@@ -18,6 +18,11 @@
 <title>Product</title>
 </head>
 <body>
+<table align="center" width="1400">
+		<tr>
+			<td align="left"><a href="/sBu/select/user.do"> 홈으로 이동 </a></td>
+		</tr>
+	</table>
 
 	<center>
 		<br>
