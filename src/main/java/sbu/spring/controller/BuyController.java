@@ -87,11 +87,12 @@ public class BuyController {
 				+ ", product.getProductPrice() : " + product.getProductPrice()
 				+ ", user.getUserPoint() : " + user.getUserPoint());
 		this.sBuf.updateUserPoint(userPoint, userId);
+		user = this.sBuf.getUser(userId);
+		model.put("user", user);
 		System.out.println("**3333**** userPoint :" + userPoint
 				+ ", product.getProductPrice() : " + product.getProductPrice()
 				+ ", user.getUserPoint() : " + user.getUserPoint());
 		model.put("product", product);
-		model.put("user", user);
 
 		// if (user != null) {
 		// UserSession userSession = new UserSession(user);
